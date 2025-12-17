@@ -81,20 +81,27 @@ nav a:hover{color:#3f51b5;}
 }
 .overlay.active{display:block;}
 
-/* ===== CONTENT ===== */
-.container{
+/* ===== COMMON SECTION ===== */
+.section{
   max-width:1200px;
   margin:60px auto;
-  padding:0 20px;
+  padding:40px;
+  border-radius:26px;
+  background:#ffffff;
+  box-shadow:0 12px 35px rgba(0,0,0,.1);
+  transition:.35s ease;
+}
+.section:hover{
+  transform:translateY(-8px);
+  background:#eef3ff;
 }
 
-/* TOP SECTION */
+/* ===== HERO ===== */
 .about-hero{
   display:grid;
   grid-template-columns:260px 1fr;
   gap:40px;
   align-items:center;
-  margin-bottom:60px;
 }
 .about-hero img{
   width:260px;
@@ -103,7 +110,9 @@ nav a:hover{color:#3f51b5;}
   object-fit:cover;
   border:6px solid #3f51b5;
   cursor:pointer;
+  transition:.3s;
 }
+.about-hero img:hover{transform:scale(1.05);}
 .about-hero h1{
   font-size:40px;
   color:#1a237e;
@@ -119,50 +128,55 @@ nav a:hover{color:#3f51b5;}
   margin-bottom:12px;
 }
 
-/* INFO CARDS */
+/* ===== INFO CARDS ===== */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
-  margin-bottom:60px;
 }
 .info-card{
-  background:#fff;
+  background:#f6f8ff;
   padding:30px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  border-radius:20px;
+  transition:.35s;
+}
+.info-card:hover{
+  transform:translateY(-10px);
+  background:#e8eeff;
 }
 .info-card h3{
   color:#3f51b5;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
-/* SKILLS */
-.skills{
-  background:#fff;
-  padding:40px;
+/* ===== SKILLS ===== */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+.skill-card{
+  background:#f7f9ff;
+  padding:30px;
   border-radius:20px;
-  box-shadow:0 12px 35px rgba(0,0,0,.12);
+  text-align:center;
+  transition:.35s;
 }
-.skill{
-  margin-bottom:18px;
+.skill-card:hover{
+  transform:translateY(-10px);
+  background:#e9efff;
 }
-.skill span{
-  font-weight:600;
+.skill-card h3{
+  font-size:20px;
+  color:#1a237e;
+  margin-bottom:6px;
 }
-.bar{
-  height:10px;
-  background:#e0e0e0;
-  border-radius:10px;
-  margin-top:6px;
-  overflow:hidden;
-}
-.bar div{
-  height:100%;
-  background:#3f51b5;
+.skill-card p{
+  font-size:15px;
+  color:#555;
 }
 
-/* POPUP */
+/* ===== POPUP ===== */
 .popup{
   display:none;
   position:fixed;
@@ -186,7 +200,7 @@ nav a:hover{color:#3f51b5;}
   cursor:pointer;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
   margin-top:70px;
   text-align:center;
@@ -195,7 +209,7 @@ footer{
   color:#555;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
   nav{display:none;}
   .menu-btn{display:block;}
@@ -215,7 +229,6 @@ footer{
     <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -224,7 +237,6 @@ footer{
     <a href="contact.html">Contact</a>
     <a href="Education.html">Education</a>
   </nav>
-
   <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
 
@@ -238,57 +250,48 @@ footer{
 </div>
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-<div class="container">
+<!-- HERO -->
+<section class="section about-hero">
+  <img src="profile.jpg" onclick="openPopup(this.src)">
+  <div>
+    <h1>About Me</h1>
+    <div class="typing" id="typing"></div>
+    <p>I am <b>Kanhya</b>, a creative Graphic Designer and Web Developer.</p>
+    <p>I design logos, banners, posters, flex and responsive websites.</p>
+    <p>Clean design, affordable pricing & client satisfaction is my focus.</p>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="about-hero">
-    <img src="profile.jpg" onclick="openPopup(this.src)">
-    <div>
-      <h1>About Me</h1>
-      <div class="typing" id="typing"></div>
-      <p>I am <b>Kanhya</b>, a creative Graphic Designer and beginner Web Developer.</p>
-      <p>I design logos, banners, posters, flex and build responsive websites.</p>
-      <p>My focus is clean design, affordable pricing and client satisfaction.</p>
-    </div>
-  </section>
-
-  <!-- INFO -->
-  <section class="info-grid">
+<!-- INFO -->
+<section class="section">
+  <div class="info-grid">
     <div class="info-card">
       <h3>🎨 Graphic Design</h3>
-      <p>Branding, logos, posters, flex, social media creatives.</p>
+      <p>Logos, banners, posters, flex & branding designs.</p>
     </div>
     <div class="info-card">
       <h3>💻 Web Development</h3>
-      <p>Responsive HTML & CSS websites for business & portfolio.</p>
+      <p>HTML, CSS & responsive websites.</p>
     </div>
     <div class="info-card">
       <h3>🤝 Work Style</h3>
-      <p>Friendly communication, on-time delivery & quality focus.</p>
+      <p>Friendly communication & on-time delivery.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section class="skills">
-    <h2>My Skills</h2>
-
-    <div class="skill">
-      <span>Graphic Design</span>
-      <div class="bar"><div style="width:90%"></div></div>
-    </div>
-
-    <div class="skill">
-      <span>HTML & CSS</span>
-      <div class="bar"><div style="width:75%"></div></div>
-    </div>
-
-    <div class="skill">
-      <span>Social Media Design</span>
-      <div class="bar"><div style="width:85%"></div></div>
-    </div>
-  </section>
-
-</div>
+<!-- SKILLS -->
+<section class="section">
+  <h2 style="color:#1a237e;margin-bottom:25px;">My Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><h3>Graphic Design</h3><p>Logos, banners & creatives</p></div>
+    <div class="skill-card"><h3>Photoshop</h3><p>Photo editing & design</p></div>
+    <div class="skill-card"><h3>CorelDraw</h3><p>Flex & print designs</p></div>
+    <div class="skill-card"><h3>Web Development</h3><p>HTML, CSS websites</p></div>
+    <div class="skill-card"><h3>MS Office</h3><p>Word, Excel & PowerPoint</p></div>
+    <div class="skill-card"><h3>Social Media Design</h3><p>Instagram & WhatsApp</p></div>
+  </div>
+</section>
 
 <footer>
   © 2025 Kanhya Graphic World
@@ -308,7 +311,6 @@ function closeMenu(){
   sidebar.classList.remove("active");
   overlay.classList.remove("active");
 }
-
 function openPopup(src){
   popup.style.display="flex";
   popupImg.src=src;
@@ -316,8 +318,6 @@ function openPopup(src){
 function closePopup(){
   popup.style.display="none";
 }
-
-/* Typing */
 let text="Graphic Designer | Web Developer",i=0;
 (function type(){
   if(i<text.length){
