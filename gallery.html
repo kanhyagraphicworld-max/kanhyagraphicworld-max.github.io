@@ -15,7 +15,7 @@ body{
   color:#333;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
   position:sticky;
   top:0;
@@ -23,7 +23,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 50px;
+  padding:15px 40px;
   background:#fff;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
@@ -32,7 +32,7 @@ header{
   align-items:center;
   gap:12px;
 }
-.logo img{height:55px;}
+.logo img{height:45px;}
 .logo span{
   font-size:20px;
   font-weight:600;
@@ -46,7 +46,46 @@ nav a{
 }
 nav a:hover{color:#3f51b5;}
 
-/* CONTENT */
+/* ===== MENU BUTTON ===== */
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100%;
+  background:#fff;
+  box-shadow:4px 0 20px rgba(0,0,0,.2);
+  padding:25px;
+  transition:.4s;
+  z-index:2000;
+}
+.sidebar.active{left:0;}
+.sidebar a{
+  display:block;
+  margin:18px 0;
+  text-decoration:none;
+  font-weight:500;
+  color:#1a237e;
+}
+.sidebar a:hover{color:#3f51b5;}
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:1500;
+}
+.overlay.active{display:block;}
+
+/* ===== CONTENT ===== */
 .content{
   max-width:1200px;
   margin:60px auto;
@@ -60,15 +99,44 @@ nav a:hover{color:#3f51b5;}
 .content p{
   font-size:18px;
   color:#555;
-  margin-bottom:35px;
+  margin-bottom:20px;
 }
 
-/* GALLERY GRID */
+/* ===== SHOW / HIDE BUTTON ===== */
+.toggle-btn{
+  padding:14px 40px;
+  border:none;
+  border-radius:40px;
+  background:#3f51b5;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  margin-bottom:40px;
+}
+.toggle-btn:hover{
+  background:#1a237e;
+}
+
+/* ===== GALLERY ===== */
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:22px;
+
+  /* HIDDEN BY DEFAULT */
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.6s ease;
 }
+
+.gallery.show{
+  max-height:3000px;
+  opacity:1;
+  transform:translateY(0);
+}
+
 .gallery img{
   width:100%;
   height:220px;
@@ -82,7 +150,7 @@ nav a:hover{color:#3f51b5;}
   transform:scale(1.08);
 }
 
-/* POPUP */
+/* ===== POPUP ===== */
 .popup{
   display:none;
   position:fixed;
@@ -90,7 +158,7 @@ nav a:hover{color:#3f51b5;}
   background:rgba(0,0,0,0.85);
   justify-content:center;
   align-items:center;
-  z-index:2000;
+  z-index:3000;
 }
 .popup img{
   max-width:90%;
@@ -106,7 +174,7 @@ nav a:hover{color:#3f51b5;}
   cursor:pointer;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
   margin-top:70px;
   text-align:center;
@@ -115,13 +183,11 @@ footer{
   color:#555;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-  header{
-    flex-direction:column;
-    padding:15px 20px;
-  }
-  nav{margin-top:10px;}
+  nav{display:none;}
+  .menu-btn{display:block;}
+  header{padding:15px 20px;}
 }
 </style>
 </head>
@@ -130,9 +196,10 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="kanhya graphic world.png" alt="Logo">
+    <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -141,13 +208,32 @@ footer{
     <a href="contact.html">Contact</a>
     <a href="Education.html">Education</a>
   </nav>
+
+  <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="Education.html">Education</a>
+</div>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <div class="content">
   <h1>My Design Gallery</h1>
   <p>Some of my recent graphic design work</p>
 
-  <div class="gallery">
+  <!-- BUTTON -->
+  <button class="toggle-btn" onclick="toggleGallery()" id="toggleBtn">
+    Show Designs
+  </button>
+
+  <!-- GALLERY -->
+  <div class="gallery" id="gallery">
     <img src="SHAKTI MOTORS.png" onclick="openPopup(this.src)">
     <img src="new design.png" onclick="openPopup(this.src)">
     <img src="logo7.png" onclick="openPopup(this.src)">
@@ -173,12 +259,30 @@ footer{
 </footer>
 
 <script>
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+}
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+}
+
+function toggleGallery(){
+  const gallery=document.getElementById("gallery");
+  const btn=document.getElementById("toggleBtn");
+  gallery.classList.toggle("show");
+  btn.innerText = gallery.classList.contains("show")
+    ? "Hide Designs"
+    : "Show Designs";
+}
+
 function openPopup(src){
-  document.getElementById("popup").style.display="flex";
-  document.getElementById("popupImg").src = src;
+  popup.style.display="flex";
+  popupImg.src=src;
 }
 function closePopup(){
-  document.getElementById("popup").style.display="none";
+  popup.style.display="none";
 }
 </script>
 
