@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gallery | Kanhya Graphic World</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Poppins',sans-serif;
-  background:#f7f9ff;
+  background:#f5f7ff;
   color:#333;
 }
 
@@ -20,24 +20,16 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
+  background:#fff;
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:15px 40px;
-  background:#fff;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+.logo{display:flex;align-items:center;gap:12px;}
 .logo img{height:45px;}
-.logo span{
-  font-size:20px;
-  font-weight:600;
-  color:#1a237e;
-}
+.logo span{font-size:20px;font-weight:600;color:#1a237e;}
 nav a{
   margin-left:18px;
   text-decoration:none;
@@ -45,109 +37,79 @@ nav a{
   color:#333;
 }
 nav a:hover{color:#3f51b5;}
+.menu-btn{display:none;font-size:28px;cursor:pointer;}
 
-/* ===== MENU BUTTON ===== */
-.menu-btn{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
-
-/* ===== SIDEBAR ===== */
-.sidebar{
-  position:fixed;
-  top:0;
-  left:-260px;
-  width:260px;
-  height:100%;
-  background:#fff;
-  box-shadow:4px 0 20px rgba(0,0,0,.2);
-  padding:25px;
-  transition:.4s;
-  z-index:2000;
-}
-.sidebar.active{left:0;}
-.sidebar a{
-  display:block;
-  margin:18px 0;
-  text-decoration:none;
-  font-weight:500;
-  color:#1a237e;
-}
-.sidebar a:hover{color:#3f51b5;}
-
-.overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.5);
-  z-index:1500;
-}
-.overlay.active{display:block;}
-
-/* ===== CONTENT ===== */
-.content{
-  max-width:1200px;
-  margin:60px auto;
-  padding:0 20px;
+/* ===== PAGE TITLE ===== */
+.page-title{
   text-align:center;
+  padding:70px 20px;
+  background:linear-gradient(135deg,#eef3ff,#ffffff);
 }
-.content h1{
+.page-title h1{
   font-size:40px;
   color:#1a237e;
 }
-.content p{
+.page-title p{
+  margin-top:10px;
   font-size:18px;
   color:#555;
-  margin-bottom:20px;
 }
 
-/* ===== SHOW / HIDE BUTTON ===== */
-.toggle-btn{
-  padding:14px 40px;
-  border:none;
-  border-radius:40px;
-  background:#3f51b5;
-  color:#fff;
-  font-weight:600;
-  cursor:pointer;
-  margin-bottom:40px;
-}
-.toggle-btn:hover{
-  background:#1a237e;
-}
-
-/* ===== GALLERY ===== */
+/* ===== GALLERY GRID ===== */
 .gallery{
+  max-width:1200px;
+  margin:50px auto;
+  padding:0 20px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
 
-  /* HIDDEN BY DEFAULT */
-  max-height:0;
+/* CARD */
+.gallery-item{
+  position:relative;
+  border-radius:20px;
   overflow:hidden;
-  opacity:0;
-  transform:translateY(20px);
-  transition:0.6s ease;
-}
-
-.gallery.show{
-  max-height:3000px;
-  opacity:1;
-  transform:translateY(0);
-}
-
-.gallery img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:14px;
+  box-shadow:0 14px 35px rgba(0,0,0,.15);
   cursor:pointer;
-  box-shadow:0 6px 18px rgba(0,0,0,0.15);
-  transition:0.4s;
+  transition:.35s;
 }
-.gallery img:hover{
-  transform:scale(1.08);
+.gallery-item:hover{
+  transform:translateY(-10px);
+}
+
+/* IMAGE */
+.gallery-item img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  transition:.5s;
+}
+.gallery-item:hover img{
+  transform:scale(1.1);
+}
+
+/* OVERLAY */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(63,81,181,.15),rgba(26,35,126,.85));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition:.35s;
+}
+.gallery-item:hover .overlay{
+  opacity:1;
+}
+.overlay span{
+  color:#fff;
+  font-size:18px;
+  font-weight:600;
+  border:2px solid #fff;
+  padding:10px 26px;
+  border-radius:40px;
 }
 
 /* ===== POPUP ===== */
@@ -155,7 +117,7 @@ nav a:hover{color:#3f51b5;}
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.85);
+  background:rgba(0,0,0,.85);
   justify-content:center;
   align-items:center;
   z-index:3000;
@@ -163,7 +125,12 @@ nav a:hover{color:#3f51b5;}
 .popup img{
   max-width:90%;
   max-height:90%;
-  border-radius:12px;
+  border-radius:16px;
+  animation:zoom .4s ease;
+}
+@keyframes zoom{
+  from{transform:scale(.85);opacity:0;}
+  to{transform:none;opacity:1;}
 }
 .popup span{
   position:absolute;
@@ -176,7 +143,7 @@ nav a:hover{color:#3f51b5;}
 
 /* ===== FOOTER ===== */
 footer{
-  margin-top:70px;
+  margin-top:60px;
   text-align:center;
   padding:20px;
   background:#f1f1f1;
@@ -199,7 +166,6 @@ footer{
     <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -208,78 +174,58 @@ footer{
     <a href="contact.html">Contact</a>
     <a href="Education.html">Education</a>
   </nav>
-
-  <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
 
-<!-- SIDEBAR -->
-<div class="sidebar" id="sidebar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-  <a href="Education.html">Education</a>
-</div>
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
-<div class="content">
+<section class="page-title">
   <h1>My Design Gallery</h1>
-  <p>Some of my recent graphic design work</p>
+  <p>Some of my creative & professional design works</p>
+</section>
 
-  <!-- BUTTON -->
-  <button class="toggle-btn" onclick="toggleGallery()" id="toggleBtn">
-    Show Designs
-  </button>
-
-  <!-- GALLERY -->
-  <div class="gallery" id="gallery">
-    <img src="SHAKTI MOTORS.png" onclick="openPopup(this.src)">
-    <img src="new design.png" onclick="openPopup(this.src)">
-    <img src="logo7.png" onclick="openPopup(this.src)">
-    <img src="logo4.png" onclick="openPopup(this.src)">
-    <img src="logo17.png" onclick="openPopup(this.src)">
-    <img src="logo15.png" onclick="openPopup(this.src)">
-    <img src="logo13a.png" onclick="openPopup(this.src)">
-    <img src="kanhya graphic world.png" onclick="openPopup(this.src)">
-    <img src="kaali face.jpg" onclick="openPopup(this.src)">
-    <img src="Image 2.jpeg" onclick="openPopup(this.src)">
-    <img src="image 1.jpeg" onclick="openPopup(this.src)">
-    <img src="design 5.png" onclick="openPopup(this.src)">
+<div class="gallery">
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="SHAKTI MOTORS.png">
+    <div class="overlay"><span>View Design</span></div>
   </div>
-</div>
 
-<div class="popup" id="popup" onclick="closePopup()">
-  <span>&times;</span>
-  <img id="popupImg">
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="new design.png">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="logo7.png">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="logo4.png">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="logo17.png">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="design 5.png">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
 </div>
 
 <footer>
   © 2025 Kanhya Graphic World | Designed with ❤️
 </footer>
 
+<div class="popup" id="popup" onclick="closePopup()">
+  <span>&times;</span>
+  <img id="popupImg">
+</div>
+
 <script>
-function openMenu(){
-  sidebar.classList.add("active");
-  overlay.classList.add("active");
-}
-function closeMenu(){
-  sidebar.classList.remove("active");
-  overlay.classList.remove("active");
-}
-
-function toggleGallery(){
-  const gallery=document.getElementById("gallery");
-  const btn=document.getElementById("toggleBtn");
-  gallery.classList.toggle("show");
-  btn.innerText = gallery.classList.contains("show")
-    ? "Hide Designs"
-    : "Show Designs";
-}
-
-function openPopup(src){
+function openPopup(el){
   popup.style.display="flex";
-  popupImg.src=src;
+  popupImg.src = el.querySelector("img").src;
 }
 function closePopup(){
   popup.style.display="none";
