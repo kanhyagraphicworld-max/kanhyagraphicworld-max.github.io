@@ -6,16 +6,154 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f6f8ff;
+  color:#333;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo img{height:45px;}
+.logo span{
+  font-size:20px;
+  font-weight:600;
+  color:#1a237e;
+}
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:500;
+  color:#333;
+}
+nav a.active,
+nav a:hover{color:#3f51b5;}
+
+/* ===== MENU BUTTON ===== */
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100%;
+  background:#fff;
+  box-shadow:4px 0 20px rgba(0,0,0,.2);
+  padding:25px;
+  transition:.4s;
+  z-index:2000;
+}
+.sidebar.active{left:0;}
+.sidebar a{
+  display:block;
+  margin:18px 0;
+  text-decoration:none;
+  font-weight:500;
+  color:#1a237e;
+}
+.sidebar a:hover{color:#3f51b5;}
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:1500;
+}
+.overlay.active{display:block;}
+
+/* ===== PAGE HERO ===== */
+.page-hero{
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#eef3ff,#fff);
+}
+.page-hero h1{
+  font-size:38px;
+  color:#1a237e;
+}
+.page-hero p{
+  margin-top:10px;
+  font-size:17px;
+  color:#555;
+}
+
+/* ===== SERVICES ===== */
+.section{
+  max-width:1100px;
+  margin:60px auto;
+  padding:0 20px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.service-card{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+.service-card:hover{
+  transform:translateY(-6px);
+}
+.service-card h3{
+  color:#1a237e;
+  margin-bottom:8px;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#f1f1f1;
+  color:#555;
+  margin-top:60px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav{display:none;}
+  .menu-btn{display:block;}
+  header{padding:15px 20px;}
+  .page-hero h1{font-size:32px;}
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="logo">
-    <img src="kanhya graphic world.png" alt="Kanhya Graphic World Logo">
+    <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -24,7 +162,20 @@
     <a href="contact.html">Contact</a>
     <a href="Education.html">Education</a>
   </nav>
+
+  <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="Education.html">Education</a>
+</div>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <section class="page-hero">
   <h1>My Services</h1>
@@ -32,44 +183,30 @@
 </section>
 
 <section class="section">
-  <div class="cards services-grid">
-
-    <div class="service-card">
-      <h3>🎨 Graphic Design</h3>
-      <p>Logos, banners, posters, flex & branding designs.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>📱 Social Media Design</h3>
-      <p>Instagram & WhatsApp creatives to boost engagement.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>💻 Website Design</h3>
-      <p>Responsive HTML & CSS websites.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>📄 Portfolio Websites</h3>
-      <p>Personal & business portfolio websites.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>🖼️ Banner & Flex</h3>
-      <p>Shop banners, flex & promotional designs.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>🚀 Multi-Page Website</h3>
-      <p>Home, About, Services, Gallery & Contact pages.</p>
-    </div>
-
+  <div class="cards">
+    <div class="service-card"><h3>🎨 Graphic Design</h3><p>Logos, banners, posters & branding.</p></div>
+    <div class="service-card"><h3>📱 Social Media Design</h3><p>Instagram & WhatsApp creatives.</p></div>
+    <div class="service-card"><h3>💻 Website Design</h3><p>Responsive HTML & CSS websites.</p></div>
+    <div class="service-card"><h3>📄 Portfolio Websites</h3><p>Personal & business portfolios.</p></div>
+    <div class="service-card"><h3>🖼️ Banner & Flex</h3><p>Shop banners & flex designs.</p></div>
+    <div class="service-card"><h3>🚀 Multi-Page Website</h3><p>Complete business websites.</p></div>
   </div>
 </section>
 
 <footer>
   © 2025 Kanhya Graphic World | Designed with ❤️
 </footer>
+
+<script>
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+}
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+}
+</script>
 
 </body>
 </html>
