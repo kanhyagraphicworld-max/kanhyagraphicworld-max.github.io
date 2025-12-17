@@ -10,7 +10,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
-  font-family:'Poppins', sans-serif;
+  font-family:'Poppins',sans-serif;
   background:linear-gradient(135deg,#eef3ff,#ffffff);
   color:#333;
 }
@@ -76,11 +76,11 @@ nav a:hover{color:#3f51b5;}
   padding:20px;
 }
 
-/* ===== REVEAL ANIMATION ===== */
+/* ===== REVEAL ===== */
 .reveal{
   opacity:0;
   transform:translateY(40px);
-  transition:0.9s ease;
+  transition:.8s ease;
 }
 .reveal.active{
   opacity:1;
@@ -115,81 +115,73 @@ h1{
 .box h2{
   font-size:26px;
   color:#3f51b5;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
-/* ===== CERTIFICATES ===== */
-.certificates{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:24px;
+/* ===== FILTER BUTTON ===== */
+.filter-btn{
+  text-align:center;
+  margin-bottom:25px;
 }
+.filter-btn button{
+  padding:12px 36px;
+  background:#3f51b5;
+  color:#fff;
+  border:none;
+  border-radius:40px;
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
+}
+.filter-btn button:hover{
+  background:#1a237e;
+  transform:scale(1.05);
+}
+
+/* ===== MASONRY ===== */
+.masonry{
+  column-count:4;
+  column-gap:22px;
+}
+@media(max-width:1200px){.masonry{column-count:3;}}
+@media(max-width:768px){.masonry{column-count:2;}}
+@media(max-width:480px){.masonry{column-count:1;}}
+
 .certificate{
+  break-inside:avoid;
+  margin-bottom:22px;
   text-align:center;
   cursor:pointer;
   transition:.35s;
 }
 .certificate:hover{
-  transform:translateY(-10px);
+  transform:translateY(-8px);
 }
 .certificate img{
   width:100%;
-  height:280px;
-  object-fit:cover;
   border-radius:16px;
-  box-shadow:0 8px 22px rgba(0,0,0,0.15);
+  box-shadow:0 10px 28px rgba(0,0,0,.15);
   transition:.35s;
 }
 .certificate:hover img{
-  transform:scale(1.06);
+  transform:scale(1.05);
 }
 .certificate p{
-  margin-top:12px;
+  margin-top:10px;
   font-weight:600;
   color:#1a237e;
 }
 
-/* ===== GOALS ===== */
-.goal{
-  display:flex;
-  gap:14px;
-  margin-bottom:18px;
-  align-items:flex-start;
-  transition:.3s;
+/* ===== SHOW / HIDE ===== */
+.certificates{
+  transition:all .6s ease;
 }
-.goal:hover{
-  transform:translateX(8px);
-}
-.goal span{font-size:28px;}
-
-.highlight{
-  margin-top:25px;
-  padding:18px;
-  background:linear-gradient(135deg,#3f51b5,#1a237e);
-  color:#fff;
-  font-size:18px;
-  font-weight:600;
-  border-radius:14px;
-  text-align:center;
-}
-
-.resume-link{
-  margin-top:30px;
-  text-align:center;
-}
-.resume-link a{
-  display:inline-block;
-  padding:14px 36px;
-  background:#3f51b5;
-  color:#fff;
-  border-radius:40px;
-  font-weight:600;
-  text-decoration:none;
-  transition:.3s;
-}
-.resume-link a:hover{
-  background:#1a237e;
-  transform:scale(1.07);
+.certificates.hide{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transform:translateY(-25px);
 }
 
 /* ===== POPUP ===== */
@@ -197,7 +189,7 @@ h1{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.85);
+  background:rgba(0,0,0,.85);
   justify-content:center;
   align-items:center;
   z-index:3000;
@@ -206,9 +198,9 @@ h1{
   max-width:90%;
   max-height:90%;
   border-radius:14px;
-  animation:zoomIn .4s ease;
+  animation:zoom .4s ease;
 }
-@keyframes zoomIn{
+@keyframes zoom{
   from{transform:scale(.85);opacity:0;}
   to{transform:none;opacity:1;}
 }
@@ -273,14 +265,21 @@ footer{
     <h1>My Education</h1>
     <p class="intro">
       I have completed my <b>12th</b> and I am currently pursuing
-      <b>Psychology Honours</b>. Along with academics, I work as a
-      <b>Graphic Designer</b> and beginner <b>Web Developer</b>.
+      <b>Psychology Honours</b>. Along with studies, I work as a
+      <b>Graphic Designer</b> and <b>Web Developer</b>.
     </p>
   </div>
 
   <div class="box reveal">
     <h2>Marksheets & Certificates</h2>
-    <div class="certificates">
+
+    <div class="filter-btn">
+      <button onclick="toggleCertificates()" id="filterBtn">
+        Show Certificates
+      </button>
+    </div>
+
+    <div class="certificates masonry hide" id="certificates">
       <div class="certificate" onclick="openPopup(this)"><img src="10th marksheet.jpg"><p>10th Marksheet</p></div>
       <div class="certificate" onclick="openPopup(this)"><img src="10th certificate.jpg"><p>10th Certificate</p></div>
       <div class="certificate" onclick="openPopup(this)"><img src="12thmarksheet.jpg"><p>12th Marksheet</p></div>
@@ -292,18 +291,11 @@ footer{
     </div>
   </div>
 
-  <div class="box reveal">
-    <h2>Career Goal</h2>
-    <div class="goal"><span>🎯</span><p>To become a professional <b>Graphic Designer</b>.</p></div>
-    <div class="goal"><span>💻</span><p>To combine <b>design</b> & <b>web development</b>.</p></div>
-    <div class="goal"><span>🚀</span><p>Helping businesses grow digitally.</p></div>
-    <div class="highlight">Design that speaks. Websites that work.</div>
-    <div class="resume-link"><a href="resume.html">View My Resume</a></div>
-  </div>
-
 </div>
 
-<footer>© 2025 Kanhya Graphic World | Designed with ❤️</footer>
+<footer>
+  © 2025 Kanhya Graphic World | Designed with ❤️
+</footer>
 
 <div class="popup" id="popup" onclick="closePopup()">
   <span>&times;</span>
@@ -319,19 +311,29 @@ function closeMenu(){
   sidebar.classList.remove("active");
   overlay.classList.remove("active");
 }
+
+function toggleCertificates(){
+  const cert=document.getElementById("certificates");
+  const btn=document.getElementById("filterBtn");
+  cert.classList.toggle("hide");
+  btn.innerText = cert.classList.contains("hide")
+    ? "Show Certificates"
+    : "Hide Certificates";
+}
+
 function openPopup(el){
   popup.style.display="flex";
-  popupImg.src = el.querySelector("img").src;
+  popupImg.src=el.querySelector("img").src;
 }
 function closePopup(){
   popup.style.display="none";
 }
 
-/* Scroll Reveal */
+/* Reveal on scroll */
 const reveals=document.querySelectorAll(".reveal");
 function revealOnScroll(){
   reveals.forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight-80){
+    if(el.getBoundingClientRect().top < innerHeight-80){
       el.classList.add("active");
     }
   });
