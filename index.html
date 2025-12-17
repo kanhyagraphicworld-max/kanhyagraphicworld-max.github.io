@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kanhya Graphic World</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#ffffff;
+  color:#333;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  background:#ffffff;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo img{height:55px;}
+.logo span{
+  font-size:20px;
+  font-weight:600;
+  color:#1a237e;
+}
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+  color:#333;
+}
+nav a:hover{color:#3f51b5;}
+
+.hero{
+  padding:100px 60px;
+  background:linear-gradient(135deg,#eef3ff,#ffffff);
+}
+.hero h1{
+  font-size:46px;
+  color:#1a237e;
+}
+.hero p{
+  margin-top:15px;
+  font-size:18px;
+  max-width:650px;
+  line-height:1.7;
+  color:#555;
+}
+.hero-btns a{
+  display:inline-block;
+  margin-top:30px;
+  margin-right:15px;
+  padding:14px 36px;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.3s;
+}
+.btn-primary{
+  background:#3f51b5;
+  color:#fff;
+}
+.btn-outline{
+  border:2px solid #3f51b5;
+  color:#3f51b5;
+}
+.section{padding:80px 60px;}
+.section h2{
+  font-size:34px;
+  color:#1a237e;
+  margin-bottom:30px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.card,.testimonial{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+.why{background:#f6f8ff;}
+.cta{
+  text-align:center;
+  padding:90px 40px;
+  background:linear-gradient(135deg,#3f51b5,#1a237e);
+  color:#fff;
+}
+.cta a{
+  display:inline-block;
+  margin-top:25px;
+  padding:15px 40px;
+  background:#fff;
+  color:#3f51b5;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+}
+footer{
+  text-align:center;
+  padding:20px;
+  background:#f1f1f1;
+  color:#555;
+}
+@media(max-width:768px){
+  header{flex-direction:column;padding:15px 20px;}
+  nav{margin-top:10px;}
+  .hero,.section{padding:50px 20px;}
+  .hero h1{font-size:36px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="kanhya graphic world.png" alt="Kanhya Graphic World Logo">
+    <span>Kanhya Graphic World</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="Education.html">Education</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Hello, I’m Kanhya 👋</h1>
+  <p>
+    I’m a <b>Graphic Designer</b> and beginner <b>Web Developer</b>.
+    I help individuals and small businesses grow with
+    creative designs and clean, professional websites.
+  </p>
+  <div class="hero-btns">
+    <a href="contact.html" class="btn-primary">Hire Me</a>
+    <a href="gallery.html" class="btn-outline">View Work</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>What I Do</h2>
+  <div class="cards">
+    <div class="card"><h3>🎨 Graphic Design</h3><p>Logo, banner, poster & branding.</p></div>
+    <div class="card"><h3>💻 Website Design</h3><p>Responsive HTML & CSS websites.</p></div>
+    <div class="card"><h3>📱 Social Media Design</h3><p>Instagram & WhatsApp creatives.</p></div>
+  </div>
+</section>
+
+<section class="section why">
+  <h2>Why Choose Me</h2>
+  <div class="cards">
+    <div class="card">✔ Creative designs</div>
+    <div class="card">✔ Affordable pricing</div>
+    <div class="card">✔ On-time delivery</div>
+    <div class="card">✔ Friendly support</div>
+  </div>
+</section>
+
+<section class="cta">
+  <h1>Let’s Work Together 🚀</h1>
+  <p>Graphic design ya website chahiye? Aaj hi contact karein.</p>
+  <a href="https://whatsapp.com/channel/0029Vb7Q9XI6RGJLRCXjUj27" target="_blank">
+    WhatsApp Me
+  </a>
+</section>
+
+<footer>
+  © 2025 Kanhya Graphic World | Designed with ❤️
+</footer>
+
+</body>
+</html>

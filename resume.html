@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resume | Kanhya Kant Singh</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- PDF Generator -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins', Arial, sans-serif;
+  background:#f4f6fb;
+  color:#333;
+}
+
+/* ===== RESUME ===== */
+.resume{
+  max-width:780px;
+  margin:20px auto;
+  background:#ffffff;
+  padding:28px;
+  border-radius:12px;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  border-bottom:2px solid #ddd;
+  padding-bottom:15px;
+}
+
+.photo img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:3px solid #3f51b5;
+  object-fit:cover;
+}
+
+.header h1{
+  margin:0;
+  font-size:28px;
+  color:#1a237e;
+}
+
+.header h2{
+  margin:4px 0 0;
+  font-size:16px;
+  font-weight:500;
+  color:#555;
+}
+
+/* SECTION */
+.section{
+  margin-top:18px;
+}
+
+.section h3{
+  font-size:18px;
+  color:#3f51b5;
+  margin-bottom:6px;
+}
+
+.section p, li{
+  font-size:14px;
+  line-height:1.6;
+}
+
+ul{
+  padding-left:18px;
+  margin:6px 0;
+}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+.skill{
+  background:#eef1ff;
+  padding:6px;
+  font-size:13px;
+  text-align:center;
+  border-radius:6px;
+  font-weight:500;
+}
+
+/* CONTACT */
+.contact p{
+  margin:3px 0;
+}
+
+/* BUTTON */
+.download{
+  text-align:center;
+  margin:20px 0;
+}
+
+.download button{
+  padding:10px 26px;
+  border:none;
+  border-radius:40px;
+  background:#3f51b5;
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* PRINT / PDF FIX */
+@media print{
+  body{background:#fff;}
+  .download{display:none;}
+  .resume{
+    margin:0;
+    padding:18px;
+  }
+  @page{
+    size:A4;
+    margin:8mm;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="resume" id="resume">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="photo">
+      <img src="gallery/profile.jpg">
+    </div>
+    <div>
+      <h1>Kanhya Kant Singh</h1>
+      <h2>Graphic Designer | Beginner Web Developer</h2>
+    </div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="section">
+    <h3>Profile</h3>
+    <p>
+      Creative Graphic Designer and beginner Web Developer with experience
+      in logos, banners, posters and responsive website layouts using HTML & CSS.
+    </p>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <h3>Education</h3>
+    <ul>
+      <li>12th Passed</li>
+      <li>Psychology Honours (Pursuing)</li>
+    </ul>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <h3>Skills</h3>
+    <div class="skills">
+      <div class="skill">Logo Design</div>
+      <div class="skill">Banner Design</div>
+      <div class="skill">Poster Design</div>
+      <div class="skill">Social Media</div>
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <h3>Experience</h3>
+    <p>
+      Fresher Graphic Designer with hands-on experience creating
+      digital creatives for local businesses.
+    </p>
+  </div>
+
+  <!-- CAREER GOAL -->
+  <div class="section">
+    <h3>Career Goal</h3>
+    <p>
+      To grow as a professional graphic designer and web developer
+      and help businesses build strong digital identities.
+    </p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section contact">
+    <h3>Contact</h3>
+    <p>📞 +91 9288450325</p>
+    <p>📧 kanhyagraphicworld@gmail.com</p>
+    <p>📍 India</p>
+  </div>
+
+</div>
+
+<div class="download">
+  <button onclick="downloadPDF()">⬇ Download PDF</button>
+</div>
+
+<script>
+function downloadPDF(){
+  html2pdf().from(document.getElementById("resume")).set({
+    filename: "Kanhya_Kant_Singh_Resume.pdf",
+    html2canvas:{scale:2},
+    jsPDF:{format:"a4",unit:"mm"}
+  }).save();
+}
+</script>
+
+</body>
+</html>

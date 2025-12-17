@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Education | Kanhya Graphic World</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(135deg,#eef3ff,#ffffff);
+  color:#333;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo img{
+  height:50px;
+}
+
+.logo span{
+  font-size:20px;
+  font-weight:600;
+  color:#1a237e;
+}
+
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:500;
+  color:#333;
+}
+
+nav a:hover{
+  color:#3f51b5;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+  max-width:1200px;
+  margin:40px auto;
+  padding:20px;
+  animation:fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  font-size:38px;
+  color:#1a237e;
+  margin-bottom:10px;
+}
+
+.intro{
+  font-size:17px;
+  color:#555;
+  max-width:850px;
+}
+
+/* ===== BOX ===== */
+.box{
+  background:#fff;
+  margin-top:40px;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.1);
+}
+
+.box h2{
+  font-size:26px;
+  color:#3f51b5;
+  margin-bottom:20px;
+}
+
+/* ===== CERTIFICATES GRID ===== */
+.certificates{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+
+.certificate{
+  text-align:center;
+  cursor:pointer;
+}
+
+.certificate img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+
+.certificate img:hover{
+  transform:scale(1.05);
+}
+
+.certificate p{
+  margin-top:10px;
+  font-weight:600;
+  color:#1a237e;
+}
+
+/* ===== CAREER GOAL ===== */
+.goal{
+  display:flex;
+  gap:14px;
+  margin-bottom:15px;
+  align-items:flex-start;
+}
+
+.goal span{
+  font-size:28px;
+}
+
+/* ===== HIGHLIGHT LINE ===== */
+.highlight{
+  margin-top:20px;
+  padding:15px;
+  background:linear-gradient(135deg,#3f51b5,#1a237e);
+  color:#fff;
+  font-size:18px;
+  font-weight:600;
+  border-radius:12px;
+  text-align:center;
+}
+
+/* ===== RESUME LINK ===== */
+.resume-link{
+  margin-top:25px;
+  text-align:center;
+}
+
+.resume-link a{
+  display:inline-block;
+  padding:14px 34px;
+  background:#3f51b5;
+  color:#fff;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.resume-link a:hover{
+  background:#1a237e;
+}
+
+/* ===== POPUP ===== */
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.popup img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+}
+
+.popup span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:36px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:60px;
+  text-align:center;
+  padding:20px;
+  background:#f1f1f1;
+  color:#555;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  header{
+    flex-direction:column;
+  }
+  nav{
+    margin-top:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="gallery/kanhya graphic world.png">
+    <span>Kanhya Graphic World</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="Education.html">Education</a>
+    <a href="resume.html">Resume</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h1>My Education</h1>
+<p class="intro">
+I have completed my <b>12th</b> and I am currently pursuing
+<b>Psychology Honours</b>. Along with academics, I work as a
+<b>Graphic Designer</b> and beginner <b>Web Developer</b>.
+</p>
+
+<!-- CERTIFICATES -->
+<div class="box">
+<h2>Marksheets & Certificates</h2>
+
+<div class="certificates">
+
+  <div class="certificate" onclick="openPopup(this)">
+    <img src="education/10th marksheet.jpg">
+    <p>10th Marksheet</p>
+  </div>
+
+  <div class="certificate" onclick="openPopup(this)">
+    <img src="education/10th certificate.jpg">
+    <p>10th Certificate</p>
+  </div>
+
+  <div class="certificate" onclick="openPopup(this)">
+    <img src="education/12thmarksheet.jpg">
+    <p>12th Marksheet</p>
+  </div>
+
+  <div class="certificate" onclick="openPopup(this)">
+    <img src="education/12th certificatea.jpg">
+    <p>12th Certificate</p>
+  </div>
+
+  <div class="certificate" onclick="openPopup(this)">
+    <img src="education/adca.jpg">
+    <p>ADCA Certificate</p>
+  </div>
+
+  <div class="certificate" onclick="openPopup(this)">
+    <img src="education/diploma certificate.png">
+    <p>Web Development Certificate</p>
+  </div>
+
+  <div class="certificate" onclick="openPopup(this)">
+    <img src="education/typing certificate.jpg">
+    <p>Typing Certificate</p>
+  </div>
+
+</div>
+</div>
+
+<!-- CAREER GOAL -->
+<div class="box">
+<h2>Career Goal</h2>
+
+<div class="goal">
+  <span>🎯</span>
+  <p>To become a professional <b>Graphic Designer</b> creating impactful designs.</p>
+</div>
+
+<div class="goal">
+  <span>💻</span>
+  <p>To combine <b>design</b> and <b>web development</b> for user-friendly websites.</p>
+</div>
+
+<div class="goal">
+  <span>🚀</span>
+  <p>Helping individuals & businesses grow digitally.</p>
+</div>
+
+<div class="highlight">
+  Design that speaks. Websites that work.
+</div>
+
+<div class="resume-link">
+  <a href="resume.html">View My Resume</a>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+  © 2025 Kanhya Graphic World | Designed with ❤️
+</footer>
+
+<!-- POPUP -->
+<div class="popup" id="popup" onclick="closePopup()">
+  <span>&times;</span>
+  <img id="popupImg">
+</div>
+
+<script>
+function openPopup(el){
+  document.getElementById("popup").style.display="flex";
+  document.getElementById("popupImg").src =
+    el.querySelector("img").src;
+}
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>

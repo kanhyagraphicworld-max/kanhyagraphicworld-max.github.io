@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About | Kanhya Graphic World</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f5f7ff;
+  color:#333;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo img{height:45px;}
+.logo span{
+  font-size:20px;
+  font-weight:600;
+  color:#1a237e;
+}
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:500;
+  color:#333;
+}
+nav a:hover{color:#3f51b5;}
+
+.container{
+  max-width:1100px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.about-top{
+  display:flex;
+  gap:50px;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+.about-photo img{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid #3f51b5;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+  transition:0.4s;
+  cursor:pointer;
+}
+.about-photo img:hover{transform:scale(1.05);}
+
+.about-text h1{
+  font-size:40px;
+  color:#1a237e;
+}
+.typing{
+  font-size:20px;
+  font-weight:600;
+  color:#3f51b5;
+  height:28px;
+}
+.about-text p{
+  font-size:18px;
+  line-height:1.7;
+  color:#555;
+  margin-top:10px;
+}
+
+.about-extra{
+  font-size:17px;
+  line-height:1.7;
+  color:#555;
+  margin-bottom:45px;
+}
+
+.skills-box{
+  background:#fff;
+  padding:35px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.skill{
+  background:#eef1ff;
+  padding:14px 18px;
+  border-radius:10px;
+  font-weight:500;
+  color:#1a237e;
+}
+
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+.popup img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+}
+.popup span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:36px;
+  color:#fff;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  margin:50px 0 20px;
+  font-size:14px;
+  color:#666;
+}
+
+@media(max-width:768px){
+  header{flex-direction:column;}
+  nav{margin-top:10px;}
+  .about-top{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="kanhya graphic world.png" alt="Kanhya Graphic World Logo">
+    <span>Kanhya Graphic World</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="Education.html">Education</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="about-top reveal">
+    <div class="about-photo" onclick="openPopup()">
+      <img src="profile.jpg" alt="Kanhya Profile">
+    </div>
+
+    <div class="about-text">
+      <h1>About Me</h1>
+      <div class="typing" id="typing"></div>
+      <p>
+        I am <b>Kanhya</b>, a passionate <b>Graphic Designer</b> and beginner
+        <b>Web Developer</b>. I create clean, simple and attractive designs
+        that help businesses build a strong online identity.
+      </p>
+    </div>
+  </div>
+
+  <div class="about-extra reveal">
+    <p>
+      I design professional <b>logos, banners, posters, flex designs</b>
+      and social media creatives for shops, startups and individuals.
+    </p>
+    <p>
+      Along with graphic design, I also develop <b>simple and responsive websites</b>
+      using HTML and CSS for portfolios and small businesses.
+    </p>
+    <p>
+      My focus is on <b>creative work, affordable pricing</b> and
+      <b>on-time delivery</b> with friendly communication.
+    </p>
+  </div>
+
+  <div class="skills-box reveal">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="skill">Logo Design & Branding</div>
+      <div class="skill">Banner & Flex Design</div>
+      <div class="skill">Poster & Creative Design</div>
+      <div class="skill">Social Media Graphics</div>
+      <div class="skill">HTML5 & CSS3</div>
+      <div class="skill">Multi-page Website Design</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Kanhya Graphic World | Designed with ❤️
+</footer>
+
+<div class="popup" id="popup" onclick="closePopup()">
+  <span>&times;</span>
+  <img src="profile.jpg" alt="Profile Large">
+</div>
+
+<script>
+  function openPopup(){
+    document.getElementById("popup").style.display="flex";
+  }
+  function closePopup(){
+    document.getElementById("popup").style.display="none";
+  }
+  
+  /* Typing Effect */
+  const text = "Graphic Designer | Web Developer";
+  let i = 0;
+  function typingEffect(){
+    if(i < text.length){
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typingEffect, 80);
+    }
+  }
+  typingEffect();
+  
+  /* Scroll Reveal FIXED */
+  function revealOnScroll(){
+    document.querySelectorAll(".reveal").forEach(el=>{
+      const top = el.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+  
+      if(top < windowHeight - 100){
+        el.classList.add("active");
+      }
+    });
+  }
+  
+  window.addEventListener("scroll", revealOnScroll);
+  
+  /* 🔥 IMPORTANT: page load par bhi call */
+  window.addEventListener("load", revealOnScroll);
+  </script>
+  
+
+</body>
+</html>
