@@ -5,16 +5,10 @@
 <title>Education | Kanhya Graphic World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Poppins', sans-serif;
   background:linear-gradient(135deg,#eef3ff,#ffffff);
@@ -33,45 +27,74 @@ header{
   align-items:center;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-
 .logo{
   display:flex;
   align-items:center;
   gap:12px;
 }
-
-.logo img{
-  height:50px;
-}
-
+.logo img{height:45px;}
 .logo span{
   font-size:20px;
   font-weight:600;
   color:#1a237e;
 }
-
 nav a{
   margin-left:18px;
   text-decoration:none;
   font-weight:500;
   color:#333;
 }
+nav a:hover{color:#3f51b5;}
 
-nav a:hover{
-  color:#3f51b5;
+/* ===== MENU BUTTON ===== */
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
 }
 
-/* ===== CONTAINER ===== */
+/* ===== SIDEBAR ===== */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100%;
+  background:#fff;
+  box-shadow:4px 0 20px rgba(0,0,0,.2);
+  padding:25px;
+  transition:.4s;
+  z-index:2000;
+}
+.sidebar.active{left:0;}
+.sidebar a{
+  display:block;
+  margin:18px 0;
+  text-decoration:none;
+  font-weight:500;
+  color:#1a237e;
+}
+.sidebar a:hover{color:#3f51b5;}
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:1500;
+}
+.overlay.active{display:block;}
+
+/* ===== CONTENT ===== */
 .container{
   max-width:1200px;
   margin:40px auto;
   padding:20px;
-  animation:fadeUp 0.8s ease;
+  animation:fadeUp .8s ease;
 }
-
 @keyframes fadeUp{
   from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
+  to{opacity:1; transform:none;}
 }
 
 h1{
@@ -79,7 +102,6 @@ h1{
   color:#1a237e;
   margin-bottom:10px;
 }
-
 .intro{
   font-size:17px;
   color:#555;
@@ -94,57 +116,50 @@ h1{
   border-radius:18px;
   box-shadow:0 12px 35px rgba(0,0,0,0.1);
 }
-
 .box h2{
   font-size:26px;
   color:#3f51b5;
   margin-bottom:20px;
 }
 
-/* ===== CERTIFICATES GRID ===== */
+/* ===== CERTIFICATES ===== */
 .certificates{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:22px;
 }
-
 .certificate{
   text-align:center;
   cursor:pointer;
 }
-
 .certificate img{
   width:100%;
   height:280px;
   object-fit:cover;
   border-radius:14px;
   box-shadow:0 6px 18px rgba(0,0,0,0.15);
-  transition:0.3s;
+  transition:.3s;
 }
-
 .certificate img:hover{
   transform:scale(1.05);
 }
-
 .certificate p{
   margin-top:10px;
   font-weight:600;
   color:#1a237e;
 }
 
-/* ===== CAREER GOAL ===== */
+/* ===== GOALS ===== */
 .goal{
   display:flex;
   gap:14px;
   margin-bottom:15px;
   align-items:flex-start;
 }
-
 .goal span{
   font-size:28px;
 }
 
-/* ===== HIGHLIGHT LINE ===== */
 .highlight{
   margin-top:20px;
   padding:15px;
@@ -156,12 +171,10 @@ h1{
   text-align:center;
 }
 
-/* ===== RESUME LINK ===== */
 .resume-link{
   margin-top:25px;
   text-align:center;
 }
-
 .resume-link a{
   display:inline-block;
   padding:14px 34px;
@@ -171,7 +184,6 @@ h1{
   font-weight:600;
   text-decoration:none;
 }
-
 .resume-link a:hover{
   background:#1a237e;
 }
@@ -184,15 +196,13 @@ h1{
   background:rgba(0,0,0,0.85);
   justify-content:center;
   align-items:center;
-  z-index:2000;
+  z-index:3000;
 }
-
 .popup img{
   max-width:90%;
   max-height:90%;
   border-radius:12px;
 }
-
 .popup span{
   position:absolute;
   top:20px;
@@ -213,12 +223,9 @@ footer{
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-  header{
-    flex-direction:column;
-  }
-  nav{
-    margin-top:10px;
-  }
+  nav{display:none;}
+  .menu-btn{display:block;}
+  header{padding:15px 20px;}
 }
 </style>
 </head>
@@ -238,9 +245,21 @@ footer{
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
     <a href="Education.html">Education</a>
-    <a href="resume.html">Resume</a>
   </nav>
+
+  <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="Education.html">Education</a>
+</div>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <div class="container">
 
@@ -251,56 +270,45 @@ I have completed my <b>12th</b> and I am currently pursuing
 <b>Graphic Designer</b> and beginner <b>Web Developer</b>.
 </p>
 
-<!-- CERTIFICATES -->
 <div class="box">
 <h2>Marksheets & Certificates</h2>
 
 <div class="certificates">
-
   <div class="certificate" onclick="openPopup(this)">
     <img src="10th marksheet.jpg">
     <p>10th Marksheet</p>
   </div>
-
   <div class="certificate" onclick="openPopup(this)">
     <img src="10th certificate.jpg">
     <p>10th Certificate</p>
   </div>
-
   <div class="certificate" onclick="openPopup(this)">
     <img src="12thmarksheet.jpg">
     <p>12th Marksheet</p>
   </div>
-
   <div class="certificate" onclick="openPopup(this)">
     <img src="12th certificatea.jpg">
     <p>12th Certificate</p>
   </div>
-
   <div class="certificate" onclick="openPopup(this)">
     <img src="adca.jpg">
     <p>ADCA Certificate</p>
   </div>
-
   <div class="certificate" onclick="openPopup(this)">
     <img src="diploma certificate.png">
     <p>Web Development Certificate</p>
   </div>
-
   <div class="certificate" onclick="openPopup(this)">
     <img src="diplomamarksheet.png">
     <p>Web Development Marksheet</p>
   </div>
-
   <div class="certificate" onclick="openPopup(this)">
     <img src="typing certificate.jpg">
     <p>Typing Certificate</p>
   </div>
-
 </div>
 </div>
 
-<!-- CAREER GOAL -->
 <div class="box">
 <h2>Career Goal</h2>
 
@@ -308,12 +316,10 @@ I have completed my <b>12th</b> and I am currently pursuing
   <span>🎯</span>
   <p>To become a professional <b>Graphic Designer</b> creating impactful designs.</p>
 </div>
-
 <div class="goal">
   <span>💻</span>
   <p>To combine <b>design</b> and <b>web development</b> for user-friendly websites.</p>
 </div>
-
 <div class="goal">
   <span>🚀</span>
   <p>Helping individuals & businesses grow digitally.</p>
@@ -326,7 +332,6 @@ I have completed my <b>12th</b> and I am currently pursuing
 <div class="resume-link">
   <a href="resume.html">View My Resume</a>
 </div>
-
 </div>
 
 </div>
@@ -335,20 +340,26 @@ I have completed my <b>12th</b> and I am currently pursuing
   © 2025 Kanhya Graphic World | Designed with ❤️
 </footer>
 
-<!-- POPUP -->
 <div class="popup" id="popup" onclick="closePopup()">
   <span>&times;</span>
   <img id="popupImg">
 </div>
 
 <script>
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+}
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+}
 function openPopup(el){
-  document.getElementById("popup").style.display="flex";
-  document.getElementById("popupImg").src =
-    el.querySelector("img").src;
+  popup.style.display="flex";
+  popupImg.src = el.querySelector("img").src;
 }
 function closePopup(){
-  document.getElementById("popup").style.display="none";
+  popup.style.display="none";
 }
 </script>
 
