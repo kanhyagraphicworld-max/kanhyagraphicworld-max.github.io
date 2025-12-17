@@ -76,29 +76,6 @@ nav a:hover{color:#3f51b5;}
   padding:20px;
 }
 
-/* ===== REVEAL ===== */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:.8s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:none;
-}
-
-/* ===== HEADINGS ===== */
-h1{
-  font-size:40px;
-  color:#1a237e;
-  margin-bottom:12px;
-}
-.intro{
-  font-size:17px;
-  color:#555;
-  max-width:850px;
-}
-
 /* ===== BOX ===== */
 .box{
   background:#fff;
@@ -118,6 +95,51 @@ h1{
   margin-bottom:20px;
 }
 
+/* ===== RESUME SECTION ===== */
+.resume-box{
+  margin-top:45px;
+  padding:40px;
+  text-align:center;
+  border-radius:22px;
+  background:linear-gradient(135deg,#3f51b5,#1a237e);
+  color:#fff;
+}
+.resume-box h2{
+  font-size:32px;
+  margin-bottom:12px;
+}
+.resume-box p{
+  font-size:18px;
+  margin-bottom:25px;
+}
+.resume-actions{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.resume-btn{
+  padding:14px 36px;
+  background:#fff;
+  color:#3f51b5;
+  font-weight:700;
+  text-decoration:none;
+  border-radius:40px;
+  transition:.3s;
+}
+.resume-btn:hover{
+  transform:translateY(-6px) scale(1.05);
+}
+.resume-btn.outline{
+  background:transparent;
+  color:#fff;
+  border:2px solid #fff;
+}
+.resume-btn.outline:hover{
+  background:#fff;
+  color:#3f51b5;
+}
+
 /* ===== FILTER BUTTON ===== */
 .filter-btn{
   text-align:center;
@@ -132,11 +154,6 @@ h1{
   font-weight:600;
   font-size:16px;
   cursor:pointer;
-  transition:.3s;
-}
-.filter-btn button:hover{
-  background:#1a237e;
-  transform:scale(1.05);
 }
 
 /* ===== MASONRY ===== */
@@ -153,19 +170,11 @@ h1{
   margin-bottom:22px;
   text-align:center;
   cursor:pointer;
-  transition:.35s;
-}
-.certificate:hover{
-  transform:translateY(-8px);
 }
 .certificate img{
   width:100%;
   border-radius:16px;
   box-shadow:0 10px 28px rgba(0,0,0,.15);
-  transition:.35s;
-}
-.certificate:hover img{
-  transform:scale(1.05);
 }
 .certificate p{
   margin-top:10px;
@@ -173,15 +182,10 @@ h1{
   color:#1a237e;
 }
 
-/* ===== SHOW / HIDE ===== */
-.certificates{
-  transition:all .6s ease;
-}
 .certificates.hide{
   max-height:0;
   opacity:0;
   overflow:hidden;
-  transform:translateY(-25px);
 }
 
 /* ===== POPUP ===== */
@@ -198,11 +202,6 @@ h1{
   max-width:90%;
   max-height:90%;
   border-radius:14px;
-  animation:zoom .4s ease;
-}
-@keyframes zoom{
-  from{transform:scale(.85);opacity:0;}
-  to{transform:none;opacity:1;}
 }
 .popup span{
   position:absolute;
@@ -220,13 +219,6 @@ footer{
   padding:20px;
   background:#f1f1f1;
   color:#555;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  nav{display:none;}
-  .menu-btn{display:block;}
-  header{padding:15px 20px;}
 }
 </style>
 </head>
@@ -246,37 +238,33 @@ footer{
     <a href="Education.html">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
-
-<div class="sidebar" id="sidebar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="Education.html">Education</a>
-  <a href="contact.html">Contact</a>
-</div>
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <div class="container">
 
-  <div class="reveal">
-    <h1>My Education</h1>
-    <p class="intro">
+  <div class="box">
+    <h2>My Education</h2>
+    <p>
       I have completed my <b>12th</b> and I am currently pursuing
       <b>Psychology Honours</b>. Along with studies, I work as a
       <b>Graphic Designer</b> and <b>Web Developer</b>.
     </p>
   </div>
 
-  <div class="box reveal">
-    <h2>Marksheets & Certificates</h2>
+  <!-- ✅ RESUME SECTION -->
+  <div class="resume-box">
+    <h2>My Resume</h2>
+    <p>View or download my complete resume</p>
+    <div class="resume-actions">
+      <a class="resume-btn" href="resume.pdf" target="_blank">👁 View Resume</a>
+      <a class="resume-btn outline" href="resume.pdf" download>⬇ Download Resume</a>
+    </div>
+  </div>
 
+  <div class="box">
+    <h2>Marksheets & Certificates</h2>
     <div class="filter-btn">
-      <button onclick="toggleCertificates()" id="filterBtn">
-        Show Certificates
-      </button>
+      <button onclick="toggleCertificates()" id="filterBtn">Show Certificates</button>
     </div>
 
     <div class="certificates masonry hide" id="certificates">
@@ -303,15 +291,6 @@ footer{
 </div>
 
 <script>
-function openMenu(){
-  sidebar.classList.add("active");
-  overlay.classList.add("active");
-}
-function closeMenu(){
-  sidebar.classList.remove("active");
-  overlay.classList.remove("active");
-}
-
 function toggleCertificates(){
   const cert=document.getElementById("certificates");
   const btn=document.getElementById("filterBtn");
@@ -320,7 +299,6 @@ function toggleCertificates(){
     ? "Show Certificates"
     : "Hide Certificates";
 }
-
 function openPopup(el){
   popup.style.display="flex";
   popupImg.src=el.querySelector("img").src;
@@ -328,18 +306,6 @@ function openPopup(el){
 function closePopup(){
   popup.style.display="none";
 }
-
-/* Reveal on scroll */
-const reveals=document.querySelectorAll(".reveal");
-function revealOnScroll(){
-  reveals.forEach(el=>{
-    if(el.getBoundingClientRect().top < innerHeight-80){
-      el.classList.add("active");
-    }
-  });
-}
-window.addEventListener("scroll",revealOnScroll);
-window.addEventListener("load",revealOnScroll);
 </script>
 
 </body>
