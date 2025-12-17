@@ -27,22 +27,11 @@ header{
   background:#ffffff;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+.logo{display:flex;align-items:center;gap:12px;}
 .logo img{height:55px;}
-.logo span{
-  font-size:20px;
-  font-weight:600;
-  color:#1a237e;
-}
+.logo span{font-size:20px;font-weight:600;color:#1a237e;}
 
-/* NAV */
-nav{
-  display:flex;
-}
+nav{display:flex;}
 nav a{
   margin-left:20px;
   text-decoration:none;
@@ -51,54 +40,48 @@ nav a{
 }
 nav a:hover{color:#3f51b5;}
 
-/* HAMBURGER */
-.menu-btn{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
+.menu-btn{display:none;font-size:28px;cursor:pointer;}
 
 /* HERO */
 .hero{
-  padding:100px 60px;
+  padding:110px 60px;
   background:linear-gradient(135deg,#eef3ff,#ffffff);
 }
-.hero h1{
-  font-size:46px;
-  color:#1a237e;
-}
+.hero h1{font-size:48px;color:#1a237e;}
 .hero p{
   margin-top:15px;
   font-size:18px;
-  max-width:650px;
+  max-width:680px;
   line-height:1.7;
   color:#555;
 }
+.typing{
+  margin-top:12px;
+  font-weight:600;
+  color:#3f51b5;
+}
 .hero-btns a{
   display:inline-block;
-  margin-top:30px;
+  margin-top:35px;
   margin-right:15px;
-  padding:14px 36px;
+  padding:14px 38px;
   border-radius:40px;
   font-weight:600;
   text-decoration:none;
   transition:.3s;
 }
-.btn-primary{
-  background:#3f51b5;
-  color:#fff;
-}
-.btn-outline{
-  border:2px solid #3f51b5;
-  color:#3f51b5;
-}
+.btn-primary{background:#3f51b5;color:#fff;}
+.btn-outline{border:2px solid #3f51b5;color:#3f51b5;}
+.hero-btns a:hover{transform:translateY(-4px);}
 
 /* SECTIONS */
-.section{padding:80px 60px;}
+.section{
+  padding:90px 60px;
+}
 .section h2{
   font-size:34px;
   color:#1a237e;
-  margin-bottom:30px;
+  margin-bottom:35px;
 }
 .cards{
   display:grid;
@@ -106,30 +89,72 @@ nav a:hover{color:#3f51b5;}
   gap:25px;
 }
 .card{
-  background:#fff;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  background:#ffffff;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.35s;
 }
-.why{background:#f6f8ff;}
+.card:hover{
+  transform:translateY(-10px);
+  background:#eef3ff;
+}
+
+/* HIGHLIGHT STRIP */
+.highlight{
+  background:linear-gradient(135deg,#3f51b5,#1a237e);
+  color:#fff;
+  padding:70px 40px;
+  text-align:center;
+}
+.highlight p{
+  max-width:900px;
+  margin:auto;
+  font-size:20px;
+  line-height:1.7;
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  text-align:center;
+}
+.stat{
+  background:#f6f8ff;
+  padding:30px;
+  border-radius:20px;
+  transition:.3s;
+}
+.stat:hover{
+  transform:translateY(-8px);
+  background:#e8eeff;
+}
+.stat h3{
+  font-size:34px;
+  color:#3f51b5;
+}
 
 /* CTA */
 .cta{
   text-align:center;
-  padding:90px 40px;
+  padding:100px 40px;
   background:linear-gradient(135deg,#3f51b5,#1a237e);
   color:#fff;
 }
 .cta a{
   display:inline-block;
-  margin-top:25px;
-  padding:15px 40px;
+  margin-top:30px;
+  padding:15px 42px;
   background:#fff;
   color:#3f51b5;
   border-radius:40px;
   font-weight:600;
   text-decoration:none;
+  transition:.3s;
 }
+.cta a:hover{transform:scale(1.08);}
 
 /* FOOTER */
 footer{
@@ -139,16 +164,10 @@ footer{
   color:#555;
 }
 
-/* ===== MOBILE SIDEBAR ===== */
+/* MOBILE */
 @media(max-width:768px){
-  header{
-    padding:15px 20px;
-  }
-
-  .menu-btn{
-    display:block;
-  }
-
+  header{padding:15px 20px;}
+  .menu-btn{display:block;}
   nav{
     position:fixed;
     top:0;
@@ -159,36 +178,14 @@ footer{
     box-shadow:-5px 0 15px rgba(0,0,0,0.15);
     flex-direction:column;
     padding-top:80px;
-    transition:0.4s ease;
+    transition:.4s;
   }
-
-  nav a{
-    margin:15px 25px;
-    font-size:18px;
-  }
-
-  nav.active{
-    right:0;
-  }
-
-  .hero{
-    text-align:center;
-    padding:60px 20px;
-  }
-
-  .hero h1{
-    font-size:32px;
-  }
-
-  .hero-btns a{
-    display:block;
-    width:80%;
-    margin:15px auto;
-  }
-
-  .section{
-    padding:50px 20px;
-  }
+  nav a{margin:15px 25px;font-size:18px;}
+  nav.active{right:0;}
+  .hero{text-align:center;padding:60px 20px;}
+  .hero h1{font-size:34px;}
+  .hero-btns a{display:block;width:80%;margin:15px auto;}
+  .section{padding:60px 20px;}
 }
 </style>
 </head>
@@ -197,12 +194,10 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="kanhya graphic world.png" alt="Logo">
+    <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
-
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
   <nav id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -213,12 +208,12 @@ footer{
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero reveal">
   <h1>Hello, I’m Kanhya 👋</h1>
+  <div class="typing" id="typing"></div>
   <p>
-    I’m a <b>Graphic Designer</b> and beginner <b>Web Developer</b>.
-    I help individuals and small businesses grow with creative designs
-    and clean, professional websites.
+    I help individuals & small businesses grow with creative
+    graphic designs and clean, professional websites.
   </p>
   <div class="hero-btns">
     <a href="contact.html" class="btn-primary">Hire Me</a>
@@ -226,26 +221,32 @@ footer{
   </div>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <h2>What I Do</h2>
   <div class="cards">
-    <div class="card">🎨 Graphic Design</div>
-    <div class="card">💻 Website Design</div>
-    <div class="card">📱 Social Media Design</div>
+    <div class="card">🎨 Graphic Design<br><small>Logos, banners & posters</small></div>
+    <div class="card">💻 Web Development<br><small>Responsive HTML & CSS</small></div>
+    <div class="card">📱 Social Media Design<br><small>Instagram & WhatsApp</small></div>
   </div>
 </section>
 
-<section class="section why">
-  <h2>Why Choose Me</h2>
-  <div class="cards">
-    <div class="card">✔ Creative designs</div>
-    <div class="card">✔ Affordable pricing</div>
-    <div class="card">✔ On-time delivery</div>
-    <div class="card">✔ Friendly support</div>
+<section class="highlight reveal">
+  <p>
+    “Design is not just how it looks — it’s how it works.
+    I focus on clean visuals, clarity and user experience.”
+  </p>
+</section>
+
+<section class="section reveal">
+  <h2>My Experience</h2>
+  <div class="stats">
+    <div class="stat"><h3>2+</h3><p>Years Learning & Practice</p></div>
+    <div class="stat"><h3>100+</h3><p>Designs Created</p></div>
+    <div class="stat"><h3>50+</h3><p>Happy Clients</p></div>
   </div>
 </section>
 
-<section class="cta">
+<section class="cta reveal">
   <h1>Let’s Work Together 🚀</h1>
   <p>Graphic design ya website chahiye? Aaj hi contact karein.</p>
   <a href="https://wa.me/918789450325" target="_blank">WhatsApp Me</a>
@@ -259,6 +260,38 @@ footer{
 function toggleMenu(){
   document.getElementById("mobileMenu").classList.toggle("active");
 }
+
+/* Typing */
+let words=["Graphic Designer","Web Developer","Freelancer"];
+let i=0,j=0,current="";
+(function type(){
+  if(j < words[i].length){
+    current += words[i][j++];
+    typing.innerHTML = current;
+    setTimeout(type,100);
+  }else{
+    setTimeout(()=>{
+      current="";j=0;i=(i+1)%words.length;
+      type();
+    },1500);
+  }
+})();
+
+/* Scroll Reveal */
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+  reveals.forEach(r=>{
+    if(r.getBoundingClientRect().top < window.innerHeight-80){
+      r.style.opacity=1;
+      r.style.transform="translateY(0)";
+    }
+  });
+});
+reveals.forEach(r=>{
+  r.style.opacity=0;
+  r.style.transform="translateY(40px)";
+  r.style.transition="0.8s ease";
+});
 </script>
 
 </body>
