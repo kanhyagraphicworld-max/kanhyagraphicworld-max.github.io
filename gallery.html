@@ -37,7 +37,6 @@ nav a{
   color:#333;
 }
 nav a:hover{color:#3f51b5;}
-.menu-btn{display:none;font-size:28px;cursor:pointer;}
 
 /* ===== PAGE TITLE ===== */
 .page-title{
@@ -55,21 +54,54 @@ nav a:hover{color:#3f51b5;}
   color:#555;
 }
 
-/* ===== GALLERY GRID ===== */
-.gallery{
-  max-width:1200px;
-  margin:50px auto;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
+/* ===== FILTER BUTTON ===== */
+.filter-btn{
+  text-align:center;
+  margin:35px 0;
+}
+.filter-btn button{
+  padding:12px 38px;
+  background:#3f51b5;
+  color:#fff;
+  border:none;
+  border-radius:40px;
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
+}
+.filter-btn button:hover{
+  background:#1a237e;
+  transform:scale(1.05);
 }
 
-/* CARD */
+/* ===== MASONRY GRID ===== */
+.gallery{
+  max-width:1300px;
+  margin:0 auto 60px;
+  padding:0 20px;
+  column-count:4;
+  column-gap:26px;
+  transition:all .6s ease;
+}
+@media(max-width:1200px){.gallery{column-count:3;}}
+@media(max-width:768px){.gallery{column-count:2;}}
+@media(max-width:480px){.gallery{column-count:1;}}
+
+.gallery.hide{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transform:translateY(-25px);
+}
+
+/* ===== GALLERY ITEM ===== */
 .gallery-item{
   position:relative;
-  border-radius:20px;
+  margin-bottom:26px;
+  border-radius:22px;
   overflow:hidden;
+  break-inside:avoid;
   box-shadow:0 14px 35px rgba(0,0,0,.15);
   cursor:pointer;
   transition:.35s;
@@ -81,8 +113,7 @@ nav a:hover{color:#3f51b5;}
 /* IMAGE */
 .gallery-item img{
   width:100%;
-  height:260px;
-  object-fit:cover;
+  display:block;
   transition:.5s;
 }
 .gallery-item:hover img{
@@ -93,7 +124,11 @@ nav a:hover{color:#3f51b5;}
 .overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,rgba(63,81,181,.15),rgba(26,35,126,.85));
+  background:linear-gradient(
+    180deg,
+    rgba(63,81,181,.2),
+    rgba(26,35,126,.9)
+  );
   display:flex;
   align-items:center;
   justify-content:center;
@@ -108,7 +143,7 @@ nav a:hover{color:#3f51b5;}
   font-size:18px;
   font-weight:600;
   border:2px solid #fff;
-  padding:10px 26px;
+  padding:10px 28px;
   border-radius:40px;
 }
 
@@ -123,9 +158,9 @@ nav a:hover{color:#3f51b5;}
   z-index:3000;
 }
 .popup img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:16px;
+  max-width:92%;
+  max-height:92%;
+  border-radius:18px;
   animation:zoom .4s ease;
 }
 @keyframes zoom{
@@ -143,18 +178,10 @@ nav a:hover{color:#3f51b5;}
 
 /* ===== FOOTER ===== */
 footer{
-  margin-top:60px;
   text-align:center;
   padding:20px;
   background:#f1f1f1;
   color:#555;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  nav{display:none;}
-  .menu-btn{display:block;}
-  header{padding:15px 20px;}
 }
 </style>
 </head>
@@ -178,10 +205,16 @@ footer{
 
 <section class="page-title">
   <h1>My Design Gallery</h1>
-  <p>Some of my creative & professional design works</p>
+  <p>All my creative & professional design works</p>
 </section>
 
-<div class="gallery">
+<div class="filter-btn">
+  <button id="toggleBtn" onclick="toggleGallery()">Show Designs</button>
+</div>
+
+<div class="gallery hide" id="gallery">
+
+  <!-- 🔽 SARE DESIGNS (NO REMOVAL) 🔽 -->
   <div class="gallery-item" onclick="openPopup(this)">
     <img src="SHAKTI MOTORS.png">
     <div class="overlay"><span>View Design</span></div>
@@ -208,9 +241,40 @@ footer{
   </div>
 
   <div class="gallery-item" onclick="openPopup(this)">
+    <img src="logo15.png">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="logo13a.png">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="kanhya graphic world.png">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="kaali face.jpg">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="Image 2.jpeg">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
+    <img src="image 1.jpeg">
+    <div class="overlay"><span>View Design</span></div>
+  </div>
+
+  <div class="gallery-item" onclick="openPopup(this)">
     <img src="design 5.png">
     <div class="overlay"><span>View Design</span></div>
   </div>
+
 </div>
 
 <footer>
@@ -223,6 +287,17 @@ footer{
 </div>
 
 <script>
+function toggleGallery(){
+  const gallery = document.getElementById("gallery");
+  const btn = document.getElementById("toggleBtn");
+
+  gallery.classList.toggle("hide");
+
+  btn.innerText = gallery.classList.contains("hide")
+    ? "Show Designs"
+    : "Hide Designs";
+}
+
 function openPopup(el){
   popup.style.display="flex";
   popupImg.src = el.querySelector("img").src;
