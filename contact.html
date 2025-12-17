@@ -27,17 +27,9 @@ header{
   background:#fff;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+.logo{display:flex;align-items:center;gap:12px;}
 .logo img{height:45px;}
-.logo span{
-  font-size:20px;
-  font-weight:600;
-  color:#1a237e;
-}
+.logo span{font-size:20px;font-weight:600;color:#1a237e;}
 nav a{
   margin-left:18px;
   text-decoration:none;
@@ -45,13 +37,7 @@ nav a{
   color:#333;
 }
 nav a:hover{color:#3f51b5;}
-
-/* ===== MENU BUTTON ===== */
-.menu-btn{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
+.menu-btn{display:none;font-size:28px;cursor:pointer;}
 
 /* ===== SIDEBAR ===== */
 .sidebar{
@@ -74,8 +60,6 @@ nav a:hover{color:#3f51b5;}
   font-weight:500;
   color:#1a237e;
 }
-.sidebar a:hover{color:#3f51b5;}
-
 .overlay{
   display:none;
   position:fixed;
@@ -99,7 +83,6 @@ nav a:hover{color:#3f51b5;}
 .content h1{
   font-size:42px;
   color:#1a237e;
-  margin-bottom:10px;
 }
 .content p{
   font-size:18px;
@@ -120,12 +103,9 @@ nav a:hover{color:#3f51b5;}
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
   transition:.3s;
 }
-.contact-card:hover{
-  transform:translateY(-8px);
-}
+.contact-card:hover{transform:translateY(-8px);}
 .contact-card h3{
   font-size:22px;
-  margin-bottom:8px;
   color:#3f51b5;
 }
 .contact-card a{
@@ -135,36 +115,55 @@ nav a:hover{color:#3f51b5;}
   font-weight:600;
 }
 
-/* ===== WHATSAPP BOX ===== */
+/* ===== WHATSAPP SECTION (2 BUTTON) ===== */
 .whatsapp-box{
   margin-top:50px;
-  padding:45px;
+  padding:55px 40px;
   text-align:center;
-  border-radius:22px;
+  border-radius:26px;
   background:linear-gradient(135deg,#25D366,#1ebc5a);
   color:#fff;
 }
 .whatsapp-box h2{
-  font-size:32px;
-  margin-bottom:10px;
+  font-size:34px;
+  margin-bottom:12px;
 }
 .whatsapp-box p{
   font-size:18px;
-  margin-bottom:25px;
+  margin-bottom:30px;
 }
+
+.whatsapp-actions{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
 .whatsapp-btn{
   display:inline-block;
-  padding:14px 36px;
+  padding:15px 40px;
   background:#fff;
   color:#25D366;
-  font-size:18px;
+  font-size:17px;
   font-weight:700;
   text-decoration:none;
   border-radius:50px;
-  transition:.3s;
+  transition:.35s;
+  border:2px solid transparent;
 }
 .whatsapp-btn:hover{
-  transform:scale(1.08);
+  transform:translateY(-6px) scale(1.05);
+}
+
+.whatsapp-btn.outline{
+  background:transparent;
+  color:#fff;
+  border:2px solid #fff;
+}
+.whatsapp-btn.outline:hover{
+  background:#fff;
+  color:#25D366;
 }
 
 /* ===== FLOATING WHATSAPP ===== */
@@ -218,7 +217,6 @@ footer{
     <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -227,11 +225,9 @@ footer{
     <a href="contact.html">Contact</a>
     <a href="Education.html">Education</a>
   </nav>
-
   <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
 
-<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -259,14 +255,28 @@ footer{
     </div>
   </div>
 
+  <!-- ✅ FINAL WHATSAPP SECTION -->
   <div class="whatsapp-box">
-    <h2>Message Me on WhatsApp</h2>
-    <p>Fast reply • Project discussion • Instant support</p>
-    <a class="whatsapp-btn"
-       href="https://wa.me/918789450325"
-       target="_blank">
-      Chat on WhatsApp
-    </a>
+    <h2>Connect on WhatsApp</h2>
+    <p>
+      Direct message karein ya  
+      <b>Kanhya Graphic World</b> WhatsApp channel follow karein
+      for latest designs & updates.
+    </p>
+
+    <div class="whatsapp-actions">
+      <a class="whatsapp-btn"
+         href="https://wa.me/918789450325"
+         target="_blank">
+        💬 Chat on WhatsApp
+      </a>
+
+      <a class="whatsapp-btn outline"
+         href="https://whatsapp.com/channel/0029Vb7Q9XI6RGJLRCXjUj27"
+         target="_blank">
+        📢 Follow WhatsApp Channel
+      </a>
+    </div>
   </div>
 </div>
 
