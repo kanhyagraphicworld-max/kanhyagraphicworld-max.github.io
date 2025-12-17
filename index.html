@@ -42,6 +42,19 @@ nav a:hover{color:#3f51b5;}
 
 .menu-btn{display:none;font-size:28px;cursor:pointer;}
 
+/* ===== PAGE LOAD ANIMATION ===== */
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 0.9s ease forwards;
+}
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
 /* HERO */
 .hero{
   padding:110px 60px;
@@ -100,18 +113,12 @@ nav a:hover{color:#3f51b5;}
   background:#eef3ff;
 }
 
-/* HIGHLIGHT STRIP */
+/* HIGHLIGHT */
 .highlight{
   background:linear-gradient(135deg,#3f51b5,#1a237e);
   color:#fff;
   padding:70px 40px;
   text-align:center;
-}
-.highlight p{
-  max-width:900px;
-  margin:auto;
-  font-size:20px;
-  line-height:1.7;
 }
 
 /* STATS */
@@ -119,7 +126,6 @@ nav a:hover{color:#3f51b5;}
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:25px;
-  text-align:center;
 }
 .stat{
   background:#f6f8ff;
@@ -192,7 +198,7 @@ footer{
 
 <body>
 
-<header>
+<header class="fade-up" style="animation-delay:.1s">
   <div class="logo">
     <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
@@ -208,7 +214,7 @@ footer{
   </nav>
 </header>
 
-<section class="hero reveal">
+<section class="hero fade-up" style="animation-delay:.2s">
   <h1>Hello, I’m Kanhya 👋</h1>
   <div class="typing" id="typing"></div>
   <p>
@@ -221,38 +227,36 @@ footer{
   </div>
 </section>
 
-<section class="section reveal">
+<section class="section fade-up" style="animation-delay:.35s">
   <h2>What I Do</h2>
   <div class="cards">
-    <div class="card">🎨 Graphic Design<br><small>Logos, banners & posters</small></div>
-    <div class="card">💻 Web Development<br><small>Responsive HTML & CSS</small></div>
-    <div class="card">📱 Social Media Design<br><small>Instagram & WhatsApp</small></div>
+    <div class="card">🎨 Graphic Design</div>
+    <div class="card">💻 Web Development</div>
+    <div class="card">📱 Social Media Design</div>
   </div>
 </section>
 
-<section class="highlight reveal">
+<section class="highlight fade-up" style="animation-delay:.45s">
   <p>
-    “Design is not just how it looks — it’s how it works.
-    I focus on clean visuals, clarity and user experience.”
+    “Design is not just how it looks — it’s how it works.”
   </p>
 </section>
 
-<section class="section reveal">
+<section class="section fade-up" style="animation-delay:.55s">
   <h2>My Experience</h2>
   <div class="stats">
-    <div class="stat"><h3>2+</h3><p>Years Learning & Practice</p></div>
-    <div class="stat"><h3>100+</h3><p>Designs Created</p></div>
+    <div class="stat"><h3>2+</h3><p>Years Learning</p></div>
+    <div class="stat"><h3>100+</h3><p>Designs</p></div>
     <div class="stat"><h3>50+</h3><p>Happy Clients</p></div>
   </div>
 </section>
 
-<section class="cta reveal">
+<section class="cta fade-up" style="animation-delay:.65s">
   <h1>Let’s Work Together 🚀</h1>
-  <p>Graphic design ya website chahiye? Aaj hi contact karein.</p>
   <a href="https://wa.me/918789450325" target="_blank">WhatsApp Me</a>
 </section>
 
-<footer>
+<footer class="fade-up" style="animation-delay:.75s">
   © 2025 Kanhya Graphic World | Designed with ❤️
 </footer>
 
@@ -276,22 +280,6 @@ let i=0,j=0,current="";
     },1500);
   }
 })();
-
-/* Scroll Reveal */
-const reveals=document.querySelectorAll(".reveal");
-window.addEventListener("scroll",()=>{
-  reveals.forEach(r=>{
-    if(r.getBoundingClientRect().top < window.innerHeight-80){
-      r.style.opacity=1;
-      r.style.transform="translateY(0)";
-    }
-  });
-});
-reveals.forEach(r=>{
-  r.style.opacity=0;
-  r.style.transform="translateY(40px)";
-  r.style.transition="0.8s ease";
-});
 </script>
 
 </body>
