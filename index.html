@@ -5,7 +5,6 @@
 <title>Kanhya Graphic World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -15,6 +14,8 @@ body{
   background:#ffffff;
   color:#333;
 }
+
+/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -37,6 +38,11 @@ header{
   font-weight:600;
   color:#1a237e;
 }
+
+/* NAV */
+nav{
+  display:flex;
+}
 nav a{
   margin-left:20px;
   text-decoration:none;
@@ -45,6 +51,14 @@ nav a{
 }
 nav a:hover{color:#3f51b5;}
 
+/* HAMBURGER */
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* HERO */
 .hero{
   padding:100px 60px;
   background:linear-gradient(135deg,#eef3ff,#ffffff);
@@ -78,6 +92,8 @@ nav a:hover{color:#3f51b5;}
   border:2px solid #3f51b5;
   color:#3f51b5;
 }
+
+/* SECTIONS */
 .section{padding:80px 60px;}
 .section h2{
   font-size:34px;
@@ -89,13 +105,15 @@ nav a:hover{color:#3f51b5;}
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
 }
-.card,.testimonial{
+.card{
   background:#fff;
   padding:30px;
   border-radius:18px;
   box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 .why{background:#f6f8ff;}
+
+/* CTA */
 .cta{
   text-align:center;
   padding:90px 40px;
@@ -112,17 +130,65 @@ nav a:hover{color:#3f51b5;}
   font-weight:600;
   text-decoration:none;
 }
+
+/* FOOTER */
 footer{
   text-align:center;
   padding:20px;
   background:#f1f1f1;
   color:#555;
 }
+
+/* ===== MOBILE SIDEBAR ===== */
 @media(max-width:768px){
-  header{flex-direction:column;padding:15px 20px;}
-  nav{margin-top:10px;}
-  .hero,.section{padding:50px 20px;}
-  .hero h1{font-size:36px;}
+  header{
+    padding:15px 20px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  nav{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:260px;
+    height:100vh;
+    background:#fff;
+    box-shadow:-5px 0 15px rgba(0,0,0,0.15);
+    flex-direction:column;
+    padding-top:80px;
+    transition:0.4s ease;
+  }
+
+  nav a{
+    margin:15px 25px;
+    font-size:18px;
+  }
+
+  nav.active{
+    right:0;
+  }
+
+  .hero{
+    text-align:center;
+    padding:60px 20px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero-btns a{
+    display:block;
+    width:80%;
+    margin:15px auto;
+  }
+
+  .section{
+    padding:50px 20px;
+  }
 }
 </style>
 </head>
@@ -131,10 +197,13 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="kanhya graphic world.png" alt="Kanhya Graphic World Logo">
+    <img src="kanhya graphic world.png" alt="Logo">
     <span>Kanhya Graphic World</span>
   </div>
-  <nav>
+
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <nav id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
@@ -148,8 +217,8 @@ footer{
   <h1>Hello, I’m Kanhya 👋</h1>
   <p>
     I’m a <b>Graphic Designer</b> and beginner <b>Web Developer</b>.
-    I help individuals and small businesses grow with
-    creative designs and clean, professional websites.
+    I help individuals and small businesses grow with creative designs
+    and clean, professional websites.
   </p>
   <div class="hero-btns">
     <a href="contact.html" class="btn-primary">Hire Me</a>
@@ -160,9 +229,9 @@ footer{
 <section class="section">
   <h2>What I Do</h2>
   <div class="cards">
-    <div class="card"><h3>🎨 Graphic Design</h3><p>Logo, banner, poster & branding.</p></div>
-    <div class="card"><h3>💻 Website Design</h3><p>Responsive HTML & CSS websites.</p></div>
-    <div class="card"><h3>📱 Social Media Design</h3><p>Instagram & WhatsApp creatives.</p></div>
+    <div class="card">🎨 Graphic Design</div>
+    <div class="card">💻 Website Design</div>
+    <div class="card">📱 Social Media Design</div>
   </div>
 </section>
 
@@ -179,16 +248,18 @@ footer{
 <section class="cta">
   <h1>Let’s Work Together 🚀</h1>
   <p>Graphic design ya website chahiye? Aaj hi contact karein.</p>
-
-  <a href="https://wa.me/918789450325" target="_blank">
-    Message Me on WhatsApp
-  </a>
+  <a href="https://wa.me/918789450325" target="_blank">WhatsApp Me</a>
 </section>
-
 
 <footer>
   © 2025 Kanhya Graphic World | Designed with ❤️
 </footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
