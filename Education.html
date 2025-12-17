@@ -123,6 +123,10 @@ nav a:hover{color:#3f51b5;}
   font-weight:600;
   font-size:16px;
   cursor:pointer;
+  transition:.3s;
+}
+.filter-btn button:hover{
+  background:#1a237e;
 }
 
 /* ===== MASONRY ===== */
@@ -134,27 +138,49 @@ nav a:hover{color:#3f51b5;}
 @media(max-width:768px){.masonry{column-count:2;}}
 @media(max-width:480px){.masonry{column-count:1;}}
 
+.certificates.hide{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+}
+
+/* ===== CERTIFICATE ANIMATION ===== */
 .certificate{
   break-inside:avoid;
   margin-bottom:22px;
   text-align:center;
   cursor:pointer;
+  opacity:0;
+  transform:translateY(30px) scale(0.95);
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    opacity .6s ease;
+}
+.certificate.show{
+  opacity:1;
+  transform:none;
+}
+.certificate:hover{
+  transform:translateY(-10px) scale(1.02);
 }
 .certificate img{
   width:100%;
   border-radius:16px;
   box-shadow:0 10px 28px rgba(0,0,0,.15);
+  transition:.4s ease;
+}
+.certificate:hover img{
+  box-shadow:0 18px 45px rgba(63,81,181,.35);
 }
 .certificate p{
   margin-top:10px;
   font-weight:600;
   color:#1a237e;
+  transition:.3s;
 }
-
-.certificates.hide{
-  max-height:0;
-  opacity:0;
-  overflow:hidden;
+.certificate:hover p{
+  color:#3f51b5;
 }
 
 /* ===== POPUP ===== */
@@ -171,6 +197,11 @@ nav a:hover{color:#3f51b5;}
   max-width:90%;
   max-height:90%;
   border-radius:14px;
+  animation:zoom .4s ease;
+}
+@keyframes zoom{
+  from{transform:scale(.85);opacity:0;}
+  to{transform:none;opacity:1;}
 }
 .popup span{
   position:absolute;
@@ -220,22 +251,20 @@ footer{
     </p>
   </div>
 
-  <!-- ✅ FINAL RESUME SECTION -->
+  <!-- RESUME -->
   <div class="resume-box">
     <h2>My Resume</h2>
     <p>View my resume online or download it as a PDF</p>
     <div class="resume-actions">
-      <a class="resume-btn" href="resume.html" target="_blank">
-        👁 View Resume
-      </a>
-      <a class="resume-btn outline" href="resume.html" target="_blank">
-        ⬇ Download Resume
-      </a>
+      <a class="resume-btn" href="resume.html" target="_blank">👁 View Resume</a>
+      <a class="resume-btn outline" href="resume.html" target="_blank">⬇ Download Resume</a>
     </div>
   </div>
 
+  <!-- CERTIFICATES -->
   <div class="box">
     <h2>Marksheets & Certificates</h2>
+
     <div class="filter-btn">
       <button onclick="toggleCertificates()" id="filterBtn">
         Show Certificates
@@ -269,11 +298,28 @@ footer{
 function toggleCertificates(){
   const cert = document.getElementById("certificates");
   const btn = document.getElementById("filterBtn");
+
   cert.classList.toggle("hide");
-  btn.innerText = cert.classList.contains("hide")
-    ? "Show Certificates"
-    : "Hide Certificates";
+
+  if(!cert.classList.contains("hide")){
+    btn.innerText = "Hide Certificates";
+    setTimeout(animateCertificates,200);
+  }else{
+    btn.innerText = "Show Certificates";
+    document.querySelectorAll(".certificate").forEach(c=>{
+      c.classList.remove("show");
+    });
+  }
 }
+
+function animateCertificates(){
+  document.querySelectorAll(".certificate").forEach((el,i)=>{
+    setTimeout(()=>{
+      el.classList.add("show");
+    }, i * 120);
+  });
+}
+
 function openPopup(el){
   popup.style.display="flex";
   popupImg.src = el.querySelector("img").src;
