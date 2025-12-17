@@ -37,37 +37,6 @@ nav a{
   color:#333;
 }
 nav a:hover{color:#3f51b5;}
-.menu-btn{display:none;font-size:28px;cursor:pointer;}
-
-/* ===== SIDEBAR ===== */
-.sidebar{
-  position:fixed;
-  top:0;
-  left:-260px;
-  width:260px;
-  height:100%;
-  background:#fff;
-  box-shadow:4px 0 20px rgba(0,0,0,.2);
-  padding:25px;
-  transition:.4s;
-  z-index:2000;
-}
-.sidebar.active{left:0;}
-.sidebar a{
-  display:block;
-  margin:18px 0;
-  text-decoration:none;
-  font-weight:500;
-  color:#1a237e;
-}
-.overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.5);
-  z-index:1500;
-}
-.overlay.active{display:block;}
 
 /* ===== CONTAINER ===== */
 .container{
@@ -98,34 +67,34 @@ nav a:hover{color:#3f51b5;}
 /* ===== RESUME SECTION ===== */
 .resume-box{
   margin-top:45px;
-  padding:40px;
+  padding:45px;
   text-align:center;
-  border-radius:22px;
+  border-radius:24px;
   background:linear-gradient(135deg,#3f51b5,#1a237e);
   color:#fff;
 }
 .resume-box h2{
-  font-size:32px;
+  font-size:34px;
   margin-bottom:12px;
 }
 .resume-box p{
   font-size:18px;
-  margin-bottom:25px;
+  margin-bottom:28px;
 }
 .resume-actions{
   display:flex;
   justify-content:center;
-  gap:20px;
+  gap:22px;
   flex-wrap:wrap;
 }
 .resume-btn{
-  padding:14px 36px;
+  padding:14px 38px;
   background:#fff;
   color:#3f51b5;
   font-weight:700;
   text-decoration:none;
   border-radius:40px;
-  transition:.3s;
+  transition:.35s;
 }
 .resume-btn:hover{
   transform:translateY(-6px) scale(1.05);
@@ -251,20 +220,26 @@ footer{
     </p>
   </div>
 
-  <!-- ✅ RESUME SECTION -->
+  <!-- ✅ FINAL RESUME SECTION -->
   <div class="resume-box">
     <h2>My Resume</h2>
-    <p>View or download my complete resume</p>
+    <p>View my resume online or download it as a PDF</p>
     <div class="resume-actions">
-      <a class="resume-btn" href="resume.pdf" target="_blank">👁 View Resume</a>
-      <a class="resume-btn outline" href="resume.pdf" download>⬇ Download Resume</a>
+      <a class="resume-btn" href="resume.html" target="_blank">
+        👁 View Resume
+      </a>
+      <a class="resume-btn outline" href="resume.html" target="_blank">
+        ⬇ Download Resume
+      </a>
     </div>
   </div>
 
   <div class="box">
     <h2>Marksheets & Certificates</h2>
     <div class="filter-btn">
-      <button onclick="toggleCertificates()" id="filterBtn">Show Certificates</button>
+      <button onclick="toggleCertificates()" id="filterBtn">
+        Show Certificates
+      </button>
     </div>
 
     <div class="certificates masonry hide" id="certificates">
@@ -292,8 +267,8 @@ footer{
 
 <script>
 function toggleCertificates(){
-  const cert=document.getElementById("certificates");
-  const btn=document.getElementById("filterBtn");
+  const cert = document.getElementById("certificates");
+  const btn = document.getElementById("filterBtn");
   cert.classList.toggle("hide");
   btn.innerText = cert.classList.contains("hide")
     ? "Show Certificates"
@@ -301,7 +276,7 @@ function toggleCertificates(){
 }
 function openPopup(el){
   popup.style.display="flex";
-  popupImg.src=el.querySelector("img").src;
+  popupImg.src = el.querySelector("img").src;
 }
 function closePopup(){
   popup.style.display="none";
