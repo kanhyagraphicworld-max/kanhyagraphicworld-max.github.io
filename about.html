@@ -45,8 +45,6 @@ nav a{
   color:#333;
 }
 nav a:hover{color:#3f51b5;}
-
-/* ===== MOBILE MENU BUTTON ===== */
 .menu-btn{
   display:none;
   font-size:28px;
@@ -74,8 +72,6 @@ nav a:hover{color:#3f51b5;}
   font-weight:500;
   color:#1a237e;
 }
-.sidebar a:hover{color:#3f51b5;}
-
 .overlay{
   display:none;
   position:fixed;
@@ -87,66 +83,126 @@ nav a:hover{color:#3f51b5;}
 
 /* ===== CONTENT ===== */
 .container{
-  max-width:1100px;
+  max-width:1200px;
   margin:60px auto;
   padding:0 20px;
 }
 
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:.8s;
-}
-.reveal.active{
-  opacity:1;
-  transform:none;
-}
-
-.about-top{
-  display:flex;
+/* TOP SECTION */
+.about-hero{
+  display:grid;
+  grid-template-columns:260px 1fr;
   gap:40px;
-  align-items:flex-start;
-  margin-bottom:40px;
+  align-items:center;
+  margin-bottom:60px;
 }
-.about-photo img{
-  width:220px;
-  height:220px;
+.about-hero img{
+  width:260px;
+  height:260px;
   border-radius:50%;
   object-fit:cover;
-  border:5px solid #3f51b5;
+  border:6px solid #3f51b5;
+  cursor:pointer;
 }
-.about-text h1{
-  font-size:38px;
+.about-hero h1{
+  font-size:40px;
   color:#1a237e;
 }
 .typing{
   font-weight:600;
   color:#3f51b5;
-  margin:8px 0 15px;
+  margin:10px 0 20px;
 }
-.about-text p{
+.about-hero p{
   font-size:17px;
   line-height:1.8;
-  color:#555;
-  margin-bottom:14px;
+  margin-bottom:12px;
 }
 
+/* INFO CARDS */
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  margin-bottom:60px;
+}
+.info-card{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+.info-card h3{
+  color:#3f51b5;
+  margin-bottom:10px;
+}
+
+/* SKILLS */
+.skills{
+  background:#fff;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+.skill{
+  margin-bottom:18px;
+}
+.skill span{
+  font-weight:600;
+}
+.bar{
+  height:10px;
+  background:#e0e0e0;
+  border-radius:10px;
+  margin-top:6px;
+  overflow:hidden;
+}
+.bar div{
+  height:100%;
+  background:#3f51b5;
+}
+
+/* POPUP */
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+}
+.popup img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:14px;
+}
+.popup span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:36px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* FOOTER */
 footer{
+  margin-top:70px;
   text-align:center;
-  margin:50px 0 20px;
-  font-size:14px;
-  color:#666;
+  padding:20px;
+  background:#f1f1f1;
+  color:#555;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media(max-width:768px){
   nav{display:none;}
   .menu-btn{display:block;}
   header{padding:15px 20px;}
-  .about-top{
-    flex-direction:column;
+  .about-hero{
+    grid-template-columns:1fr;
     text-align:center;
-    align-items:center;
   }
 }
 </style>
@@ -172,7 +228,6 @@ footer{
   <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
 
-<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -184,41 +239,65 @@ footer{
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <div class="container">
-  <div class="about-top reveal">
-    <div class="about-photo">
-      <img src="profile.jpg" alt="Kanhya">
-    </div>
 
-    <div class="about-text">
+  <!-- HERO -->
+  <section class="about-hero">
+    <img src="profile.jpg" onclick="openPopup(this.src)">
+    <div>
       <h1>About Me</h1>
       <div class="typing" id="typing"></div>
-
-      <p>
-        Hello! I am <b>Kanhya</b>, a passionate Graphic Designer and beginner Web Developer.
-        I love creating visually appealing designs and simple, clean websites.
-      </p>
-
-      <p>
-        I specialize in logo design, banners, posters, flex designs,
-        social media creatives and responsive HTML–CSS websites.
-      </p>
-
-      <p>
-        My goal is to help individuals and small businesses build a strong
-        online presence with affordable and creative solutions.
-      </p>
-
-      <p>
-        I believe in clean design, on-time delivery and friendly communication
-        with every client I work with.
-      </p>
+      <p>I am <b>Kanhya</b>, a creative Graphic Designer and beginner Web Developer.</p>
+      <p>I design logos, banners, posters, flex and build responsive websites.</p>
+      <p>My focus is clean design, affordable pricing and client satisfaction.</p>
     </div>
-  </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="info-grid">
+    <div class="info-card">
+      <h3>🎨 Graphic Design</h3>
+      <p>Branding, logos, posters, flex, social media creatives.</p>
+    </div>
+    <div class="info-card">
+      <h3>💻 Web Development</h3>
+      <p>Responsive HTML & CSS websites for business & portfolio.</p>
+    </div>
+    <div class="info-card">
+      <h3>🤝 Work Style</h3>
+      <p>Friendly communication, on-time delivery & quality focus.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills">
+    <h2>My Skills</h2>
+
+    <div class="skill">
+      <span>Graphic Design</span>
+      <div class="bar"><div style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>HTML & CSS</span>
+      <div class="bar"><div style="width:75%"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>Social Media Design</span>
+      <div class="bar"><div style="width:85%"></div></div>
+    </div>
+  </section>
+
 </div>
 
 <footer>
   © 2025 Kanhya Graphic World
 </footer>
+
+<div class="popup" id="popup" onclick="closePopup()">
+  <span>&times;</span>
+  <img id="popupImg">
+</div>
 
 <script>
 function openMenu(){
@@ -230,25 +309,22 @@ function closeMenu(){
   overlay.classList.remove("active");
 }
 
-/* Typing Effect */
-let text="Graphic Designer | Web Developer", i=0;
+function openPopup(src){
+  popup.style.display="flex";
+  popupImg.src=src;
+}
+function closePopup(){
+  popup.style.display="none";
+}
+
+/* Typing */
+let text="Graphic Designer | Web Developer",i=0;
 (function type(){
-  if(i < text.length){
-    typing.innerHTML += text[i++];
+  if(i<text.length){
+    typing.innerHTML+=text[i++];
     setTimeout(type,80);
   }
 })();
-
-/* Scroll Reveal */
-function reveal(){
-  document.querySelectorAll(".reveal").forEach(el=>{
-    if(el.getBoundingClientRect().top < innerHeight - 80){
-      el.classList.add("active");
-    }
-  });
-}
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
 </script>
 
 </body>
