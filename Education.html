@@ -27,17 +27,9 @@ header{
   align-items:center;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+.logo{display:flex;align-items:center;gap:12px;}
 .logo img{height:45px;}
-.logo span{
-  font-size:20px;
-  font-weight:600;
-  color:#1a237e;
-}
+.logo span{font-size:20px;font-weight:600;color:#1a237e;}
 nav a{
   margin-left:18px;
   text-decoration:none;
@@ -45,13 +37,7 @@ nav a{
   color:#333;
 }
 nav a:hover{color:#3f51b5;}
-
-/* ===== MENU BUTTON ===== */
-.menu-btn{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
+.menu-btn{display:none;font-size:28px;cursor:pointer;}
 
 /* ===== SIDEBAR ===== */
 .sidebar{
@@ -74,8 +60,6 @@ nav a:hover{color:#3f51b5;}
   font-weight:500;
   color:#1a237e;
 }
-.sidebar a:hover{color:#3f51b5;}
-
 .overlay{
   display:none;
   position:fixed;
@@ -85,22 +69,29 @@ nav a:hover{color:#3f51b5;}
 }
 .overlay.active{display:block;}
 
-/* ===== CONTENT ===== */
+/* ===== CONTAINER ===== */
 .container{
   max-width:1200px;
   margin:40px auto;
   padding:20px;
-  animation:fadeUp .8s ease;
-}
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:none;}
 }
 
+/* ===== REVEAL ANIMATION ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.9s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+
+/* ===== HEADINGS ===== */
 h1{
-  font-size:38px;
+  font-size:40px;
   color:#1a237e;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 .intro{
   font-size:17px;
@@ -111,40 +102,49 @@ h1{
 /* ===== BOX ===== */
 .box{
   background:#fff;
-  margin-top:40px;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 12px 35px rgba(0,0,0,0.1);
+  margin-top:45px;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 14px 40px rgba(0,0,0,0.1);
+  transition:.35s;
+}
+.box:hover{
+  transform:translateY(-8px);
+  background:#eef3ff;
 }
 .box h2{
   font-size:26px;
   color:#3f51b5;
-  margin-bottom:20px;
+  margin-bottom:25px;
 }
 
 /* ===== CERTIFICATES ===== */
 .certificates{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;
+  gap:24px;
 }
 .certificate{
   text-align:center;
   cursor:pointer;
+  transition:.35s;
+}
+.certificate:hover{
+  transform:translateY(-10px);
 }
 .certificate img{
   width:100%;
   height:280px;
   object-fit:cover;
-  border-radius:14px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.15);
-  transition:.3s;
+  border-radius:16px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.15);
+  transition:.35s;
 }
-.certificate img:hover{
-  transform:scale(1.05);
+.certificate:hover img{
+  transform:scale(1.06);
 }
 .certificate p{
-  margin-top:10px;
+  margin-top:12px;
   font-weight:600;
   color:#1a237e;
 }
@@ -153,39 +153,43 @@ h1{
 .goal{
   display:flex;
   gap:14px;
-  margin-bottom:15px;
+  margin-bottom:18px;
   align-items:flex-start;
+  transition:.3s;
 }
-.goal span{
-  font-size:28px;
+.goal:hover{
+  transform:translateX(8px);
 }
+.goal span{font-size:28px;}
 
 .highlight{
-  margin-top:20px;
-  padding:15px;
+  margin-top:25px;
+  padding:18px;
   background:linear-gradient(135deg,#3f51b5,#1a237e);
   color:#fff;
   font-size:18px;
   font-weight:600;
-  border-radius:12px;
+  border-radius:14px;
   text-align:center;
 }
 
 .resume-link{
-  margin-top:25px;
+  margin-top:30px;
   text-align:center;
 }
 .resume-link a{
   display:inline-block;
-  padding:14px 34px;
+  padding:14px 36px;
   background:#3f51b5;
   color:#fff;
   border-radius:40px;
   font-weight:600;
   text-decoration:none;
+  transition:.3s;
 }
 .resume-link a:hover{
   background:#1a237e;
+  transform:scale(1.07);
 }
 
 /* ===== POPUP ===== */
@@ -201,7 +205,12 @@ h1{
 .popup img{
   max-width:90%;
   max-height:90%;
-  border-radius:12px;
+  border-radius:14px;
+  animation:zoomIn .4s ease;
+}
+@keyframes zoomIn{
+  from{transform:scale(.85);opacity:0;}
+  to{transform:none;opacity:1;}
 }
 .popup span{
   position:absolute;
@@ -237,7 +246,6 @@ footer{
     <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -246,11 +254,9 @@ footer{
     <a href="contact.html">Contact</a>
     <a href="Education.html">Education</a>
   </nav>
-
   <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
 
-<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -263,82 +269,41 @@ footer{
 
 <div class="container">
 
-<h1>My Education</h1>
-<p class="intro">
-I have completed my <b>12th</b> and I am currently pursuing
-<b>Psychology Honours</b>. Along with academics, I work as a
-<b>Graphic Designer</b> and beginner <b>Web Developer</b>.
-</p>
+  <div class="reveal">
+    <h1>My Education</h1>
+    <p class="intro">
+      I have completed my <b>12th</b> and I am currently pursuing
+      <b>Psychology Honours</b>. Along with academics, I work as a
+      <b>Graphic Designer</b> and beginner <b>Web Developer</b>.
+    </p>
+  </div>
 
-<div class="box">
-<h2>Marksheets & Certificates</h2>
+  <div class="box reveal">
+    <h2>Marksheets & Certificates</h2>
+    <div class="certificates">
+      <div class="certificate" onclick="openPopup(this)"><img src="10th marksheet.jpg"><p>10th Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="10th certificate.jpg"><p>10th Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="12thmarksheet.jpg"><p>12th Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="12th certificatea.jpg"><p>12th Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="adca.jpg"><p>ADCA Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="diploma certificate.png"><p>Web Development Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="diplomamarksheet.png"><p>Web Development Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="typing certificate.jpg"><p>Typing Certificate</p></div>
+    </div>
+  </div>
 
-<div class="certificates">
-  <div class="certificate" onclick="openPopup(this)">
-    <img src="10th marksheet.jpg">
-    <p>10th Marksheet</p>
+  <div class="box reveal">
+    <h2>Career Goal</h2>
+    <div class="goal"><span>🎯</span><p>To become a professional <b>Graphic Designer</b>.</p></div>
+    <div class="goal"><span>💻</span><p>To combine <b>design</b> & <b>web development</b>.</p></div>
+    <div class="goal"><span>🚀</span><p>Helping businesses grow digitally.</p></div>
+    <div class="highlight">Design that speaks. Websites that work.</div>
+    <div class="resume-link"><a href="resume.html">View My Resume</a></div>
   </div>
-  <div class="certificate" onclick="openPopup(this)">
-    <img src="10th certificate.jpg">
-    <p>10th Certificate</p>
-  </div>
-  <div class="certificate" onclick="openPopup(this)">
-    <img src="12thmarksheet.jpg">
-    <p>12th Marksheet</p>
-  </div>
-  <div class="certificate" onclick="openPopup(this)">
-    <img src="12th certificatea.jpg">
-    <p>12th Certificate</p>
-  </div>
-  <div class="certificate" onclick="openPopup(this)">
-    <img src="adca.jpg">
-    <p>ADCA Certificate</p>
-  </div>
-  <div class="certificate" onclick="openPopup(this)">
-    <img src="diploma certificate.png">
-    <p>Web Development Certificate</p>
-  </div>
-  <div class="certificate" onclick="openPopup(this)">
-    <img src="diplomamarksheet.png">
-    <p>Web Development Marksheet</p>
-  </div>
-  <div class="certificate" onclick="openPopup(this)">
-    <img src="typing certificate.jpg">
-    <p>Typing Certificate</p>
-  </div>
-</div>
-</div>
-
-<div class="box">
-<h2>Career Goal</h2>
-
-<div class="goal">
-  <span>🎯</span>
-  <p>To become a professional <b>Graphic Designer</b> creating impactful designs.</p>
-</div>
-<div class="goal">
-  <span>💻</span>
-  <p>To combine <b>design</b> and <b>web development</b> for user-friendly websites.</p>
-</div>
-<div class="goal">
-  <span>🚀</span>
-  <p>Helping individuals & businesses grow digitally.</p>
-</div>
-
-<div class="highlight">
-  Design that speaks. Websites that work.
-</div>
-
-<div class="resume-link">
-  <a href="resume.html">View My Resume</a>
-</div>
-</div>
 
 </div>
 
-<footer>
-  © 2025 Kanhya Graphic World | Designed with ❤️
-</footer>
+<footer>© 2025 Kanhya Graphic World | Designed with ❤️</footer>
 
 <div class="popup" id="popup" onclick="closePopup()">
   <span>&times;</span>
@@ -361,6 +326,18 @@ function openPopup(el){
 function closePopup(){
   popup.style.display="none";
 }
+
+/* Scroll Reveal */
+const reveals=document.querySelectorAll(".reveal");
+function revealOnScroll(){
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-80){
+      el.classList.add("active");
+    }
+  });
+}
+window.addEventListener("scroll",revealOnScroll);
+window.addEventListener("load",revealOnScroll);
 </script>
 
 </body>
