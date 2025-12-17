@@ -5,23 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Kanhya Graphic World</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ================= RESET ================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Poppins',sans-serif;
   background:linear-gradient(135deg,#eef3ff,#ffffff);
   color:#333;
 }
 
-/* ================= HEADER ================= */
+/* ===== HEADER ===== */
 header{
   position:sticky;
   top:0;
@@ -29,48 +23,79 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 50px;
-  background:#ffffff;
+  padding:15px 40px;
+  background:#fff;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-
 .logo{
   display:flex;
   align-items:center;
   gap:12px;
 }
-.logo img{
-  height:55px;
-}
+.logo img{height:45px;}
 .logo span{
   font-size:20px;
   font-weight:600;
   color:#1a237e;
 }
-
 nav a{
-  margin-left:20px;
+  margin-left:18px;
   text-decoration:none;
   font-weight:500;
   color:#333;
 }
-nav a:hover{
-  color:#3f51b5;
+nav a:hover{color:#3f51b5;}
+
+/* ===== MENU BUTTON ===== */
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
 }
 
-/* ================= CONTENT ================= */
+/* ===== SIDEBAR ===== */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100%;
+  background:#fff;
+  box-shadow:4px 0 20px rgba(0,0,0,.2);
+  padding:25px;
+  transition:.4s;
+  z-index:2000;
+}
+.sidebar.active{left:0;}
+.sidebar a{
+  display:block;
+  margin:18px 0;
+  text-decoration:none;
+  font-weight:500;
+  color:#1a237e;
+}
+.sidebar a:hover{color:#3f51b5;}
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:1500;
+}
+.overlay.active{display:block;}
+
+/* ===== CONTENT ===== */
 .content{
   max-width:1000px;
   margin:60px auto;
   padding:0 20px;
-  animation:fadeUp 0.8s ease;
+  animation:fadeUp .8s ease;
 }
-
 @keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:none;}
 }
-
 .content h1{
   font-size:42px;
   color:#1a237e;
@@ -82,31 +107,27 @@ nav a:hover{
   margin-bottom:40px;
 }
 
-/* ================= CONTACT GRID ================= */
+/* ===== CONTACT GRID ===== */
 .contact-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
 }
-
 .contact-card{
-  background:#ffffff;
+  background:#fff;
   padding:30px;
   border-radius:18px;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  transition:0.3s;
+  transition:.3s;
 }
 .contact-card:hover{
   transform:translateY(-8px);
-  box-shadow:0 18px 40px rgba(0,0,0,0.15);
 }
-
 .contact-card h3{
   font-size:22px;
   margin-bottom:8px;
   color:#3f51b5;
 }
-
 .contact-card a{
   font-size:18px;
   text-decoration:none;
@@ -114,16 +135,15 @@ nav a:hover{
   font-weight:600;
 }
 
-/* ================= WHATSAPP BOX ================= */
+/* ===== WHATSAPP BOX ===== */
 .whatsapp-box{
   margin-top:50px;
   padding:45px;
   text-align:center;
   border-radius:22px;
   background:linear-gradient(135deg,#25D366,#1ebc5a);
-  color:#ffffff;
+  color:#fff;
 }
-
 .whatsapp-box h2{
   font-size:32px;
   margin-bottom:10px;
@@ -132,24 +152,22 @@ nav a:hover{
   font-size:18px;
   margin-bottom:25px;
 }
-
 .whatsapp-btn{
   display:inline-block;
   padding:14px 36px;
-  background:#ffffff;
+  background:#fff;
   color:#25D366;
   font-size:18px;
   font-weight:700;
   text-decoration:none;
   border-radius:50px;
-  transition:0.3s;
+  transition:.3s;
 }
 .whatsapp-btn:hover{
   transform:scale(1.08);
-  box-shadow:0 0 20px rgba(255,255,255,0.7);
 }
 
-/* ================= FLOATING WHATSAPP ================= */
+/* ===== FLOATING WHATSAPP ===== */
 .floating-whatsapp{
   position:fixed;
   right:20px;
@@ -157,25 +175,24 @@ nav a:hover{
   width:60px;
   height:60px;
   background:#25D366;
-  color:#ffffff;
+  color:#fff;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:30px;
   text-decoration:none;
-  box-shadow:0 8px 25px rgba(0,0,0,0.3);
+  box-shadow:0 8px 25px rgba(0,0,0,.3);
   animation:pulse 2s infinite;
-  z-index:2000;
+  z-index:3000;
 }
-
 @keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.6);}
   70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
   100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 footer{
   margin-top:70px;
   text-align:center;
@@ -184,13 +201,11 @@ footer{
   color:#555;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-  header{
-    flex-direction:column;
-    padding:15px 20px;
-  }
-  nav{margin-top:10px;}
+  nav{display:none;}
+  .menu-btn{display:block;}
+  header{padding:15px 20px;}
   .content h1{font-size:34px;}
 }
 </style>
@@ -198,7 +213,6 @@ footer{
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
   <div class="logo">
     <img src="kanhya graphic world.png">
@@ -213,9 +227,21 @@ footer{
     <a href="contact.html">Contact</a>
     <a href="Education.html">Education</a>
   </nav>
+
+  <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
 
-<!-- ===== CONTENT ===== -->
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="Education.html">Education</a>
+</div>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
 <div class="content">
   <h1>Contact Me</h1>
   <p>Have a project in mind? Let’s connect and build something amazing.</p>
@@ -225,7 +251,6 @@ footer{
       <h3>📞 Phone</h3>
       <a href="tel:+918789450325">+91 8789450325</a>
     </div>
-
     <div class="contact-card">
       <h3>📧 Email</h3>
       <a href="mailto:kanhyagraphicworld@gmail.com">
@@ -235,12 +260,12 @@ footer{
   </div>
 
   <div class="whatsapp-box">
-    <h2>Join My WhatsApp Channel</h2>
-    <p>Design updates • Creative work • New projects</p>
+    <h2>Message Me on WhatsApp</h2>
+    <p>Fast reply • Project discussion • Instant support</p>
     <a class="whatsapp-btn"
-       href="https://whatsapp.com/channel/0029Vb7Q9XI6RGJLRCXjUj27"
+       href="https://wa.me/918789450325"
        target="_blank">
-      Follow on WhatsApp
+      Chat on WhatsApp
     </a>
   </div>
 </div>
@@ -249,13 +274,23 @@ footer{
   © 2025 Kanhya Graphic World | Designed with ❤️
 </footer>
 
-<!-- FLOATING WHATSAPP -->
 <a class="floating-whatsapp"
-   href="https://whatsapp.com/channel/0029Vb7Q9XI6RGJLRCXjUj27"
+   href="https://wa.me/918789450325"
    target="_blank"
-   title="Join WhatsApp Channel">
+   title="Chat on WhatsApp">
   🟢
 </a>
+
+<script>
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+}
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+}
+</script>
 
 </body>
 </html>
