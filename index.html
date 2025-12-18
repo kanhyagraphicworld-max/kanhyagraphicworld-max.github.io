@@ -2,7 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Kanhya Graphic World</title>
+
+<!-- ✅ SEO TITLE -->
+<title>Kanhya Graphic World | Graphic Designer & Web Developer</title>
+
+<!-- ✅ SEO META TAGS -->
+<meta name="description" content="Kanhya Graphic World – Professional Graphic Designer and Beginner Web Developer. Logo design, banner, poster, flex, social media creatives and responsive websites.">
+<meta name="keywords" content="Kanhya Graphic World, graphic designer, web developer, logo design, banner design, poster design, website developer">
+<meta name="author" content="Kanhya Graphic World">
+<link rel="canonical" href="https://kanhyagraphicworld-max.github.io/">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,13 +37,11 @@ body{
   animation:slideDown .8s ease;
   transition:.3s;
 }
-
 .site-notice.shrink{
   padding:8px 12px;
   font-size:13px;
   font-weight:500;
 }
-
 @keyframes slideDown{
   from{transform:translateY(-100%);opacity:0}
   to{transform:none;opacity:1}
@@ -63,10 +70,7 @@ header{
   font-weight:600;
   color:#1a237e;
 }
-
-nav{
-  display:flex;
-}
+nav{display:flex;}
 nav a{
   margin-left:20px;
   text-decoration:none;
@@ -108,14 +112,8 @@ nav a:hover{color:#3f51b5;}
   text-decoration:none;
   transition:.3s;
 }
-.btn-primary{
-  background:#3f51b5;
-  color:#fff;
-}
-.btn-outline{
-  border:2px solid #3f51b5;
-  color:#3f51b5;
-}
+.btn-primary{background:#3f51b5;color:#fff;}
+.btn-outline{border:2px solid #3f51b5;color:#3f51b5;}
 
 /* ===== FOOTER ===== */
 footer{
@@ -127,14 +125,8 @@ footer{
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-  header{
-    padding:15px 20px;
-  }
-
-  .menu-btn{
-    display:block;
-  }
-
+  header{padding:15px 20px;}
+  .menu-btn{display:block;}
   nav{
     position:fixed;
     top:0;
@@ -148,26 +140,11 @@ footer{
     transition:0.4s ease;
     z-index:1200;
   }
-
-  nav.active{
-    right:0;
-  }
-
-  nav a{
-    margin:15px 25px;
-    font-size:18px;
-  }
-
-  .hero{
-    padding:60px 20px;
-    text-align:center;
-  }
+  nav.active{right:0;}
+  nav a{margin:15px 25px;font-size:18px;}
+  .hero{padding:60px 20px;text-align:center;}
   .hero h1{font-size:32px;}
-  .hero-btns a{
-    display:block;
-    width:80%;
-    margin:15px auto;
-  }
+  .hero-btns a{display:block;width:80%;margin:15px auto;}
 }
 </style>
 </head>
@@ -215,30 +192,23 @@ footer{
 </footer>
 
 <script>
-/* Auto language switch */
-const messages = [
-  "🚧 Website is being updated. Please check back soon.",
-  "🚧 वेबसाइट पर काम चल रहा है — कुछ सेक्शन अपडेट हो रहे हैं।"
+const messages=[
+"🚧 Website is being updated. Please check back soon.",
+"🚧 वेबसाइट पर काम चल रहा है — कुछ सेक्शन अपडेट हो रहे हैं।"
 ];
-let i = 0;
-setInterval(() => {
-  document.getElementById("smartNotice").innerHTML = messages[i];
-  i = (i + 1) % messages.length;
-}, 4000);
+let i=0;
+setInterval(()=>{
+document.getElementById("smartNotice").innerHTML=messages[i];
+i=(i+1)%messages.length;
+},4000);
 
-/* Scroll shrink notice */
 window.addEventListener("scroll",()=>{
-  const notice = document.getElementById("smartNotice");
-  if(window.scrollY > 60){
-    notice.classList.add("shrink");
-  }else{
-    notice.classList.remove("shrink");
-  }
+const notice=document.getElementById("smartNotice");
+notice.classList.toggle("shrink",window.scrollY>60);
 });
 
-/* Mobile menu */
 function toggleMenu(){
-  document.getElementById("mobileMenu").classList.toggle("active");
+document.getElementById("mobileMenu").classList.toggle("active");
 }
 </script>
 
