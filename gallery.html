@@ -15,7 +15,7 @@ body{
   color:#333;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -27,17 +27,9 @@ header{
   align-items:center;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+.logo{display:flex;align-items:center;gap:10px;}
 .logo img{height:45px;}
-.logo span{
-  font-size:20px;
-  font-weight:600;
-  color:#1a237e;
-}
+.logo span{font-size:20px;font-weight:600;color:#1a237e;}
 nav a{
   margin-left:18px;
   text-decoration:none;
@@ -46,13 +38,12 @@ nav a{
 }
 nav a:hover{color:#3f51b5;}
 
-/* ===== MOBILE MENU ===== */
+/* MOBILE MENU */
 .menu-btn{
   display:none;
   font-size:28px;
   cursor:pointer;
 }
-
 @media(max-width:768px){
   nav{
     position:fixed;
@@ -68,14 +59,11 @@ nav a:hover{color:#3f51b5;}
     transition:.4s;
   }
   nav.active{right:0;}
-  nav a{
-    margin:15px 25px;
-    font-size:18px;
-  }
+  nav a{margin:15px 25px;font-size:18px;}
   .menu-btn{display:block;}
 }
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 .content{
   max-width:1200px;
   margin:60px auto;
@@ -92,7 +80,7 @@ nav a:hover{color:#3f51b5;}
   margin-bottom:30px;
 }
 
-/* ===== SHOW / HIDE BUTTON ===== */
+/* BUTTON */
 .toggle-btn{
   padding:14px 40px;
   background:#3f51b5;
@@ -104,40 +92,40 @@ nav a:hover{color:#3f51b5;}
   cursor:pointer;
   transition:.3s;
 }
-.toggle-btn:hover{
-  background:#1a237e;
-}
+.toggle-btn:hover{background:#1a237e;}
 
-/* ===== GALLERY ===== */
-.gallery-wrapper{
-  margin-top:40px;
-  display:none;
-}
+/* GALLERY */
+.gallery-wrapper{margin-top:40px;display:none;}
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:22px;
 }
+
+/* PREMIUM EFFECT (RESTORED) */
 .gallery img{
   width:100%;
   height:220px;
   object-fit:cover;
-  border-radius:16px;
+  border-radius:18px;
   cursor:pointer;
-  box-shadow:0 10px 25px rgba(0,0,0,.15);
   opacity:0;
-  transform:translateY(30px) scale(.95);
-  transition:.5s;
+  transform:scale(.9) translateY(40px);
+  filter:blur(4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+  transition:all .7s ease;
 }
 .gallery img.show{
   opacity:1;
   transform:none;
+  filter:blur(0);
 }
 .gallery img:hover{
-  transform:translateY(-8px) scale(1.03);
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 20px 50px rgba(63,81,181,.35);
 }
 
-/* ===== POPUP ===== */
+/* POPUP */
 .popup{
   display:none;
   position:fixed;
@@ -166,7 +154,7 @@ nav a:hover{color:#3f51b5;}
   cursor:pointer;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   margin-top:70px;
   padding:20px;
@@ -184,9 +172,7 @@ footer{
     <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
-
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
   <nav id="nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -201,20 +187,25 @@ footer{
   <h1>My Design Gallery</h1>
   <p>Click below to explore my creative work</p>
 
-  <button class="toggle-btn" onclick="toggleGallery()" id="toggleBtn">
+  <button class="toggle-btn" id="toggleBtn" onclick="toggleGallery()">
     Show Designs
   </button>
 
   <div class="gallery-wrapper" id="galleryWrapper">
     <div class="gallery" id="gallery">
+      <!-- ALL IMAGES -->
+      <img src="SHAKTI MOTORS.png" loading="lazy" onclick="openPopup(this)">
+      <img src="new design.png" loading="lazy" onclick="openPopup(this)">
       <img src="logo7.png" loading="lazy" onclick="openPopup(this)">
       <img src="logo4.png" loading="lazy" onclick="openPopup(this)">
-      <img src="logo15.png" loading="lazy" onclick="openPopup(this)">
       <img src="logo17.png" loading="lazy" onclick="openPopup(this)">
-      <img src="design 5.png" loading="lazy" onclick="openPopup(this)">
-      <img src="SHAKTI MOTORS.png" loading="lazy" onclick="openPopup(this)">
+      <img src="logo15.png" loading="lazy" onclick="openPopup(this)">
+      <img src="logo13a.png" loading="lazy" onclick="openPopup(this)">
+      <img src="kanhya graphic world.png" loading="lazy" onclick="openPopup(this)">
       <img src="kaali face.jpg" loading="lazy" onclick="openPopup(this)">
       <img src="Image 2.jpeg" loading="lazy" onclick="openPopup(this)">
+      <img src="image 1.jpeg" loading="lazy" onclick="openPopup(this)">
+      <img src="design 5.png" loading="lazy" onclick="openPopup(this)">
     </div>
   </div>
 </div>
@@ -233,7 +224,6 @@ function toggleMenu(){
   document.getElementById("nav").classList.toggle("active");
 }
 
-/* SHOW / HIDE GALLERY */
 function toggleGallery(){
   const wrap=document.getElementById("galleryWrapper");
   const btn=document.getElementById("toggleBtn");
@@ -249,14 +239,12 @@ function toggleGallery(){
   }
 }
 
-/* STAGGER ANIMATION */
 function animateGallery(){
   document.querySelectorAll(".gallery img").forEach((img,i)=>{
     setTimeout(()=>img.classList.add("show"),i*120);
   });
 }
 
-/* POPUP */
 function openPopup(img){
   popup.style.display="flex";
   popupImg.src=img.src;
