@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kanhyagraphicworld-max.github.io/sitemap.xml
