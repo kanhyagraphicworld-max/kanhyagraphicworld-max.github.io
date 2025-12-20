@@ -8,9 +8,10 @@
 
 <!-- ✅ SEO META TAGS -->
 <meta name="description" content="Kanhya Graphic World – Professional Graphic Designer and Beginner Web Developer. Logo design, banner, poster, flex, social media creatives and responsive websites.">
-<meta name="keywords" content="Kanhya Graphic World, graphic designer, web developer, logo design, banner design, poster design, website developer">
+<meta name="keywords" content="Kanhya Graphic World, graphic designer, web developer, responsive website, HTML CSS JavaScript developer">
 <meta name="author" content="Kanhya Graphic World">
 <link rel="canonical" href="https://kanhyagraphicworld-max.github.io/">
+<meta name="robots" content="index, follow">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -70,7 +71,7 @@ header{
   font-weight:600;
   color:#1a237e;
 }
-nav{display:flex;}
+nav{display:flex;align-items:center;}
 nav a{
   margin-left:20px;
   text-decoration:none;
@@ -78,6 +79,13 @@ nav a{
   color:#333;
 }
 nav a:hover{color:#3f51b5;}
+
+.linkedin-icon svg{
+  width:22px;
+  height:22px;
+  fill:#0a66c2;
+  vertical-align:middle;
+}
 
 /* ===== MOBILE MENU ===== */
 .menu-btn{
@@ -118,9 +126,14 @@ nav a:hover{color:#3f51b5;}
 /* ===== FOOTER ===== */
 footer{
   text-align:center;
-  padding:20px;
+  padding:25px;
   background:#f1f1f1;
   color:#555;
+}
+footer a{
+  text-decoration:none;
+  color:#0a66c2;
+  font-weight:500;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -151,14 +164,13 @@ footer{
 
 <body>
 
-<!-- 🔔 SMART AUTO NOTICE -->
 <div class="site-notice" id="smartNotice">
   🚧 Website is being updated. Please check back soon.
 </div>
 
 <header>
   <div class="logo">
-    <img src="kanhya graphic world.png" alt="Logo">
+    <img src="kanhya graphic world.png" alt="Kanhya Graphic World Logo">
     <span>Kanhya Graphic World</span>
   </div>
 
@@ -171,6 +183,18 @@ footer{
     <a href="gallery.html">Gallery</a>
     <a href="Education.html">Education</a>
     <a href="contact.html">Contact</a>
+
+    <!-- 🔗 LINKEDIN SVG ICON -->
+    <a class="linkedin-icon"
+       href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Connect with Kanhya Kant Singh on LinkedIn"
+       aria-label="LinkedIn Profile">
+      <svg viewBox="0 0 24 24">
+        <path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.003V9h3.104v1.561h.043c.434-.824 1.494-1.693 3.073-1.693 3.285 0 3.889 2.164 3.889 4.977v6.607zM5.337 7.433a1.804 1.804 0 110-3.608 1.804 1.804 0 010 3.608zM6.956 20.452H3.714V9h3.242v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0z"/>
+      </svg>
+    </a>
   </nav>
 </header>
 
@@ -188,7 +212,10 @@ footer{
 </section>
 
 <footer>
-  © 2025 Kanhya Graphic World | Designed with ❤️
+  © 2025 Kanhya Graphic World | Designed with ❤️ <br>
+  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/" target="_blank">
+    Connect on LinkedIn
+  </a>
 </footer>
 
 <script>
