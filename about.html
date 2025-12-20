@@ -2,7 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>About | Kanhya Graphic World</title>
+
+<!-- ✅ SEO TITLE -->
+<title>About Kanhya | Graphic Designer & Web Developer in India</title>
+
+<!-- ✅ SEO META -->
+<meta name="description"
+content="Learn more about Kanhya, a Graphic Designer and Web Developer offering logo design, banners, flex, social media creatives and responsive websites for small businesses.">
+
+<meta name="keywords"
+content="About Kanhya, graphic designer india, web developer beginner, logo designer, banner flex designer, responsive website developer">
+
+<meta name="author" content="Kanhya Graphic World">
+<link rel="canonical" href="https://kanhyagraphicworld-max.github.io/about.html">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -92,7 +105,7 @@ nav a:hover{color:#3f51b5;}
   transition:.35s ease;
 }
 .section:hover{
-  transform:translateY(-8px);
+  transform:translateY(-6px);
   background:#eef3ff;
 }
 
@@ -141,7 +154,7 @@ nav a:hover{color:#3f51b5;}
   transition:.35s;
 }
 .info-card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-8px);
   background:#e8eeff;
 }
 .info-card h3{
@@ -163,7 +176,7 @@ nav a:hover{color:#3f51b5;}
   transition:.35s;
 }
 .skill-card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-8px);
   background:#e9efff;
 }
 .skill-card h3{
@@ -226,15 +239,15 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="kanhya graphic world.png">
+    <img src="kanhya graphic world.png" alt="Kanhya Graphic World Logo">
     <span>Kanhya Graphic World</span>
   </div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html" style="color:#3f51b5;">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
-    <a href="Education.html">Education</a> 
+    <a href="Education.html">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
   <div class="menu-btn" onclick="openMenu()">☰</div>
@@ -252,13 +265,32 @@ footer{
 
 <!-- HERO -->
 <section class="section about-hero">
-  <img src="profile.jpg" onclick="openPopup(this.src)">
+  <img src="profile.jpg"
+       alt="Kanhya Graphic Designer and Web Developer"
+       loading="lazy"
+       onclick="openPopup(this.src)">
   <div>
-    <h1>About Me</h1>
+    <h1>About Kanhya – Graphic Designer & Web Developer</h1>
     <div class="typing" id="typing"></div>
-    <p>I am <b>Kanhya</b>, a creative Graphic Designer and Web Developer.</p>
-    <p>I design logos, banners, posters, flex and responsive websites.</p>
-    <p>Clean design, affordable pricing & client satisfaction is my focus.</p>
+
+    <p>
+      I am <strong>Kanhya</strong>, a creative <strong>Graphic Designer</strong>
+      and beginner <strong>Web Developer</strong> based in India.
+    </p>
+    <p>
+      I specialize in logo design, banner & flex design,
+      social media creatives and responsive HTML & CSS websites
+      for small businesses and individuals.
+    </p>
+    <p>
+      Clean design, affordable pricing and client satisfaction
+      are my top priorities.
+    </p>
+
+    <p>
+      Want to know what I offer?
+      <a href="services.html">View my services</a>.
+    </p>
   </div>
 </section>
 
@@ -271,11 +303,11 @@ footer{
     </div>
     <div class="info-card">
       <h3>💻 Web Development</h3>
-      <p>HTML, CSS & responsive websites.</p>
+      <p>Responsive HTML & CSS websites.</p>
     </div>
     <div class="info-card">
       <h3>🤝 Work Style</h3>
-      <p>Friendly communication & on-time delivery.</p>
+      <p>Clear communication & on-time delivery.</p>
     </div>
   </div>
 </section>
@@ -287,7 +319,7 @@ footer{
     <div class="skill-card"><h3>Graphic Design</h3><p>Logos, banners & creatives</p></div>
     <div class="skill-card"><h3>Photoshop</h3><p>Photo editing & design</p></div>
     <div class="skill-card"><h3>CorelDraw</h3><p>Flex & print designs</p></div>
-    <div class="skill-card"><h3>Web Development</h3><p>HTML, CSS websites</p></div>
+    <div class="skill-card"><h3>Web Development</h3><p>HTML & CSS websites</p></div>
     <div class="skill-card"><h3>MS Office</h3><p>Word, Excel & PowerPoint</p></div>
     <div class="skill-card"><h3>Social Media Design</h3><p>Instagram & WhatsApp</p></div>
   </div>
@@ -318,7 +350,10 @@ function openPopup(src){
 function closePopup(){
   popup.style.display="none";
 }
-let text="Graphic Designer | Web Developer",i=0;
+
+/* Typing Effect */
+let text="Graphic Designer | Web Developer";
+let i=0;
 (function type(){
   if(i<text.length){
     typing.innerHTML+=text[i++];
