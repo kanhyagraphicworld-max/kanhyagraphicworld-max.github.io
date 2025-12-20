@@ -2,15 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <title>Education & Certifications | Kanhya Graphic World</title>
 
-<meta name="description"
-content="Education details, marksheets and professional certificates of Kanhya – Graphic Designer & Web Developer. Includes 10th, 12th, ADCA, Web Development and Typing certificates.">
-
-<meta name="keywords"
-content="Kanhya education, graphic designer education, web developer certification, 10th 12th marksheet, ADCA certificate, web development certificate, typing certificate">
-
+<meta name="description" content="Education details, marksheets and professional certificates of Kanhya – Graphic Designer & Web Developer. Includes 10th, 12th, ADCA, Web Development and Typing certificates.">
+<meta name="keywords" content="Kanhya education, graphic designer education, web developer certification, psychology and design, freelance graphic designer">
 <meta name="author" content="Kanhya Graphic World">
 <link rel="canonical" href="https://kanhyagraphicworld-max.github.io/Education.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,6 +37,109 @@ body{
   background:linear-gradient(135deg,#eef3ff,#ffffff);
   color:#333;
 }
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:1000;
+  background:#fff;padding:15px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo img{height:45px;}
+.logo span{font-size:20px;font-weight:600;color:#1a237e;}
+nav a{margin-left:18px;text-decoration:none;color:#333;font-weight:500;}
+nav a:hover{color:#3f51b5;}
+.menu-btn{display:none;font-size:28px;cursor:pointer}
+
+/* CONTAINER */
+.container{max-width:1200px;margin:40px auto;padding:20px}
+
+/* BOX */
+.box{
+  background:#fff;margin-top:45px;padding:35px;
+  border-radius:22px;
+  box-shadow:0 14px 40px rgba(0,0,0,.1);
+}
+
+/* RESUME */
+.resume-box{
+  margin-top:45px;padding:45px;text-align:center;
+  border-radius:24px;
+  background:linear-gradient(135deg,#3f51b5,#1a237e);
+  color:#fff;
+}
+.resume-actions{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+.resume-btn{
+  padding:14px 36px;border-radius:40px;
+  background:#fff;color:#3f51b5;
+  text-decoration:none;font-weight:600;
+}
+.resume-btn.outline{
+  background:transparent;color:#fff;border:2px solid #fff;
+}
+
+/* FILTER */
+.filter-btn{text-align:center;margin-bottom:25px}
+.filter-btn button{
+  padding:12px 36px;border:none;border-radius:40px;
+  background:#3f51b5;color:#fff;font-weight:600;cursor:pointer;
+}
+
+/* MASONRY */
+.masonry{column-count:4;column-gap:22px;}
+@media(max-width:992px){.masonry{column-count:3}}
+@media(max-width:768px){.masonry{column-count:2}}
+@media(max-width:480px){.masonry{column-count:1}}
+
+.certificates.hide{display:none}
+
+/* CERTIFICATE */
+.certificate{
+  break-inside:avoid;margin-bottom:22px;
+  text-align:center;cursor:pointer;
+  transition:.3s;
+}
+.certificate img{
+  width:100%;border-radius:16px;
+  box-shadow:0 10px 28px rgba(0,0,0,.15);
+  transition:.35s;
+}
+.certificate:hover img{
+  transform:translateY(-10px) scale(1.04);
+  box-shadow:0 22px 55px rgba(63,81,181,.35);
+}
+.certificate p{margin-top:10px;font-weight:600;color:#1a237e}
+
+/* POPUP */
+.popup{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.85);
+  justify-content:center;align-items:center;
+  z-index:3000;
+}
+.popup img{max-width:90%;max-height:90%;border-radius:14px}
+.popup span{
+  position:absolute;top:20px;right:30px;
+  font-size:36px;color:#fff;cursor:pointer;
+}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;background:#f1f1f1;color:#555;margin-top:60px}
+
+/* RESPONSIVE NAV */
+@media(max-width:768px){
+  .menu-btn{display:block}
+  nav{
+    position:fixed;top:0;right:-100%;
+    width:260px;height:100vh;background:#fff;
+    box-shadow:-5px 0 15px rgba(0,0,0,.15);
+    display:flex;flex-direction:column;
+    padding-top:80px;transition:.4s;
+  }
+  nav.active{right:0}
+  nav a{margin:15px 25px;font-size:18px}
+}
 </style>
 </head>
 
@@ -70,33 +168,25 @@ body{
     <p>Academic background and professional certificates</p>
   </div>
 
-  <!-- MY EDUCATION -->
   <div class="box">
     <h2>My Education</h2>
-
     <p>
       I have completed my <strong>12th</strong> education and I am currently
-      pursuing <strong>Psychology Honours</strong>. Along with my academic
-      journey, I am building my career as a
-      <strong>Graphic Designer</strong> and <strong>Web Developer</strong>.
+      pursuing <strong>Psychology Honours</strong>. Along with my academic journey,
+      I am building my career as a <strong>Graphic Designer</strong> and
+      <strong>Web Developer</strong>.
     </p>
-
     <p>
-      My background in <strong>Psychology</strong> helps me understand human
-      behavior, emotions and visual perception. I apply this understanding in
-      my design work to create layouts, colors and visuals that connect better
-      with users and communicate ideas effectively.
+      My background in <strong>Psychology</strong> helps me understand user behavior,
+      emotions and visual perception, which I apply to create effective designs.
     </p>
-
     <p>
       Alongside my studies, I work as a
-      <strong>freelance Graphic Designer and Web Developer</strong>, designing
-      logos, banners, creatives and responsive websites for individuals and
-      small businesses.
+      <strong>freelance Graphic Designer and Web Developer</strong> for individuals
+      and small businesses.
     </p>
   </div>
 
-  <!-- RESUME -->
   <div class="resume-box">
     <h2>My Resume</h2>
     <div class="resume-actions">
@@ -105,58 +195,21 @@ body{
     </div>
   </div>
 
-  <!-- CERTIFICATES SECTION (FIXED & ADDED) -->
   <div class="box">
     <h2>Marksheets & Certificates</h2>
-
     <div class="filter-btn">
-      <button onclick="toggleCertificates()" id="filterBtn">
-        Show Certificates
-      </button>
+      <button onclick="toggleCertificates()" id="filterBtn">Show Certificates</button>
     </div>
 
     <div class="certificates masonry hide" id="certificates">
-
-      <div class="certificate" onclick="openPopup(this)">
-        <img src="10th marksheet.jpg" alt="10th Marksheet">
-        <p>10th Marksheet</p>
-      </div>
-
-      <div class="certificate" onclick="openPopup(this)">
-        <img src="10th certificate.jpg" alt="10th Certificate">
-        <p>10th Certificate</p>
-      </div>
-
-      <div class="certificate" onclick="openPopup(this)">
-        <img src="12thmarksheet.jpg" alt="12th Marksheet">
-        <p>12th Marksheet</p>
-      </div>
-
-      <div class="certificate" onclick="openPopup(this)">
-        <img src="12th certificatea.jpg" alt="12th Certificate">
-        <p>12th Certificate</p>
-      </div>
-
-      <div class="certificate" onclick="openPopup(this)">
-        <img src="adca.jpg" alt="ADCA Certificate">
-        <p>ADCA Certificate</p>
-      </div>
-
-      <div class="certificate" onclick="openPopup(this)">
-        <img src="diploma certificate.png" alt="Web Development Certificate">
-        <p>Web Development Certificate</p>
-      </div>
-
-      <div class="certificate" onclick="openPopup(this)">
-        <img src="diplomamarksheet.png" alt="Web Development Marksheet">
-        <p>Web Development Marksheet</p>
-      </div>
-
-      <div class="certificate" onclick="openPopup(this)">
-        <img src="typing certificate.jpg" alt="Typing Certificate">
-        <p>Typing Certificate</p>
-      </div>
-
+      <div class="certificate" onclick="openPopup(this)"><img src="10th marksheet.jpg"><p>10th Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="10th certificate.jpg"><p>10th Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="12thmarksheet.jpg"><p>12th Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="12th certificatea.jpg"><p>12th Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="adca.jpg"><p>ADCA Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="diploma certificate.png"><p>Web Development Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="diplomamarksheet.png"><p>Web Development Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="typing certificate.jpg"><p>Typing Certificate</p></div>
     </div>
   </div>
 
@@ -164,28 +217,27 @@ body{
 
 <footer>© 2025 Kanhya Graphic World</footer>
 
+<div class="popup" id="popup" onclick="closePopup()">
+  <span>&times;</span>
+  <img id="popupImg">
+</div>
+
 <script>
 function toggleMenu(){
   document.getElementById("mobileMenu").classList.toggle("active");
 }
-
 function toggleCertificates(){
-  const cert=document.getElementById("certificates");
-  const btn=document.getElementById("filterBtn");
-  cert.classList.toggle("hide");
-  if(!cert.classList.contains("hide")){
-    btn.innerText="Hide Certificates";
-  }else{
-    btn.innerText="Show Certificates";
-  }
+  const c=document.getElementById("certificates");
+  const b=document.getElementById("filterBtn");
+  c.classList.toggle("hide");
+  b.innerText=c.classList.contains("hide")?"Show Certificates":"Hide Certificates";
 }
-
 function openPopup(el){
-  popup.style.display="flex";
-  popupImg.src=el.querySelector("img").src;
+  document.getElementById("popup").style.display="flex";
+  document.getElementById("popupImg").src=el.querySelector("img").src;
 }
 function closePopup(){
-  popup.style.display="none";
+  document.getElementById("popup").style.display="none";
 }
 </script>
 
