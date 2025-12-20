@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- ✅ SEO TITLE -->
 <title>Education & Certifications | Kanhya Graphic World</title>
 
-<!-- ✅ SEO META -->
 <meta name="description"
 content="Education details, marksheets and professional certificates of Kanhya – Graphic Designer & Web Developer. Includes 10th, 12th, ADCA, Web Development and Typing certificates.">
 
@@ -15,51 +13,22 @@ content="Kanhya education, graphic designer education, web developer certificati
 
 <meta name="author" content="Kanhya Graphic World">
 <link rel="canonical" href="https://kanhyagraphicworld-max.github.io/Education.html">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ EDUCATION / CERTIFICATE SCHEMA (ALL COVERED) -->
+<!-- SCHEMA -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Kanhya",
-  "url": "https://kanhyagraphicworld-max.github.io",
-  "jobTitle": "Graphic Designer & Web Developer",
-  "knowsAbout": [
-    "Graphic Design",
-    "Web Development",
-    "HTML",
-    "CSS",
-    "Branding",
-    "Photo Editing"
-  ],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "10th Marksheet & Certificate",
-      "credentialCategory": "Secondary Education"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "12th Marksheet & Certificate",
-      "credentialCategory": "Higher Secondary Education"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "ADCA Certificate",
-      "credentialCategory": "Computer Course"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Web Development Certificate & Marksheet",
-      "credentialCategory": "Professional Certification"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Typing Certificate",
-      "credentialCategory": "Skill Certification"
-    }
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Kanhya",
+  "jobTitle":"Graphic Designer & Web Developer",
+  "url":"https://kanhyagraphicworld-max.github.io",
+  "hasCredential":[
+    {"@type":"EducationalOccupationalCredential","name":"10th Marksheet & Certificate"},
+    {"@type":"EducationalOccupationalCredential","name":"12th Marksheet & Certificate"},
+    {"@type":"EducationalOccupationalCredential","name":"ADCA Certificate"},
+    {"@type":"EducationalOccupationalCredential","name":"Web Development Certificate & Marksheet"},
+    {"@type":"EducationalOccupationalCredential","name":"Typing Certificate"}
   ]
 }
 </script>
@@ -67,7 +36,6 @@ content="Kanhya education, graphic designer education, web developer certificati
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ===== ORIGINAL DESIGN – UNCHANGED ===== */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Poppins',sans-serif;
@@ -90,7 +58,6 @@ header{
 .logo{display:flex;align-items:center;gap:12px;}
 .logo img{height:45px;}
 .logo span{font-size:20px;font-weight:600;color:#1a237e;}
-nav{display:flex;}
 nav a{
   margin-left:18px;
   text-decoration:none;
@@ -184,15 +151,27 @@ nav a:hover{color:#3f51b5;}
   text-align:center;
   cursor:pointer;
   opacity:0;
-  transform:translateY(30px) scale(0.95);
+  transform:translateY(30px) scale(.95);
   transition:.6s;
 }
-.certificate.show{opacity:1;transform:none;}
+.certificate.show{
+  opacity:1;
+  transform:none;
+}
+
+/* ✅ HOVER FIX (FINAL) */
 .certificate img{
   width:100%;
   border-radius:16px;
   box-shadow:0 10px 28px rgba(0,0,0,.15);
+  transition:transform .35s ease, box-shadow .35s ease;
+  will-change:transform, box-shadow;
 }
+.certificate:hover img{
+  transform:translateY(-10px) scale(1.04);
+  box-shadow:0 22px 55px rgba(63,81,181,.35);
+}
+
 .certificate p{
   margin-top:10px;
   font-weight:600;
@@ -254,7 +233,7 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="kanhya graphic world.png" alt="Kanhya Graphic World Logo">
+    <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -270,7 +249,6 @@ footer{
 
 <div class="container">
 
-  <!-- SEO H1 -->
   <div class="box">
     <h1 style="color:#1a237e;">Education & Certifications</h1>
     <p>Academic background and professional certificates</p>
@@ -278,46 +256,38 @@ footer{
 
   <div class="box">
     <h2>My Education</h2>
-    <p>
-      I have completed my <b>12th</b> and I am currently pursuing
-      <b>Psychology Honours</b>. Along with studies, I work as a
-      <b>Graphic Designer</b> and <b>Web Developer</b>.
-    </p>
+    <p>I have completed my <b>12th</b> and I am pursuing <b>Psychology Honours</b>.</p>
   </div>
 
   <div class="resume-box">
     <h2>My Resume</h2>
-    <p>View my resume online or download it as a PDF</p>
     <div class="resume-actions">
-      <a class="resume-btn" href="resume.html" target="_blank">👁 View Resume</a>
-      <a class="resume-btn outline" href="resume.html" target="_blank">⬇ Download Resume</a>
+      <a class="resume-btn" href="resume.html">View Resume</a>
+      <a class="resume-btn outline" href="resume.html">Download Resume</a>
     </div>
   </div>
 
   <div class="box">
     <h2>Marksheets & Certificates</h2>
-
     <div class="filter-btn">
       <button onclick="toggleCertificates()" id="filterBtn">Show Certificates</button>
     </div>
 
     <div class="certificates masonry hide" id="certificates">
-      <div class="certificate" onclick="openPopup(this)"><img src="10th marksheet.jpg" alt="10th marksheet of Kanhya" loading="lazy"><p>10th Marksheet</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="10th certificate.jpg" alt="10th certificate of Kanhya" loading="lazy"><p>10th Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="12thmarksheet.jpg" alt="12th marksheet of Kanhya" loading="lazy"><p>12th Marksheet</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="12th certificatea.jpg" alt="12th certificate of Kanhya" loading="lazy"><p>12th Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="adca.jpg" alt="ADCA computer course certificate" loading="lazy"><p>ADCA Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="diploma certificate.png" alt="Web development certificate" loading="lazy"><p>Web Development Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="diplomamarksheet.png" alt="Web development marksheet" loading="lazy"><p>Web Development Marksheet</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="typing certificate.jpg" alt="Typing skill certificate" loading="lazy"><p>Typing Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="10th marksheet.jpg"><p>10th Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="10th certificate.jpg"><p>10th Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="12thmarksheet.jpg"><p>12th Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="12th certificatea.jpg"><p>12th Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="adca.jpg"><p>ADCA Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="diploma certificate.png"><p>Web Development Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="diplomamarksheet.png"><p>Web Development Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="typing certificate.jpg"><p>Typing Certificate</p></div>
     </div>
   </div>
 
 </div>
 
-<footer>
-  © 2025 Kanhya Graphic World | Designed with ❤️
-</footer>
+<footer>© 2025 Kanhya Graphic World</footer>
 
 <div class="popup" id="popup" onclick="closePopup()">
   <span>&times;</span>
@@ -334,11 +304,9 @@ function toggleCertificates(){
   cert.classList.toggle("hide");
   if(!cert.classList.contains("hide")){
     btn.innerText="Hide Certificates";
-    setTimeout(()=>{
-      document.querySelectorAll(".certificate").forEach((el,i)=>{
-        setTimeout(()=>el.classList.add("show"),i*120);
-      });
-    },200);
+    document.querySelectorAll(".certificate").forEach((el,i)=>{
+      setTimeout(()=>el.classList.add("show"),i*120);
+    });
   }else{
     btn.innerText="Show Certificates";
     document.querySelectorAll(".certificate").forEach(c=>c.classList.remove("show"));
