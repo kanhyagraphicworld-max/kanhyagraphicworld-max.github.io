@@ -42,190 +42,6 @@ body{
   background:linear-gradient(135deg,#eef3ff,#ffffff);
   color:#333;
 }
-
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#fff;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
-.logo{display:flex;align-items:center;gap:12px;}
-.logo img{height:45px;}
-.logo span{font-size:20px;font-weight:600;color:#1a237e;}
-nav a{
-  margin-left:18px;
-  text-decoration:none;
-  font-weight:500;
-  color:#333;
-}
-nav a:hover{color:#3f51b5;}
-.menu-btn{display:none;font-size:28px;cursor:pointer;}
-
-/* CONTAINER */
-.container{
-  max-width:1200px;
-  margin:40px auto;
-  padding:20px;
-}
-
-/* BOX */
-.box{
-  background:#fff;
-  margin-top:45px;
-  padding:35px;
-  border-radius:22px;
-  box-shadow:0 14px 40px rgba(0,0,0,0.1);
-  transition:.35s;
-}
-.box:hover{
-  transform:translateY(-8px);
-  background:#eef3ff;
-}
-.box h2{
-  font-size:26px;
-  color:#3f51b5;
-  margin-bottom:20px;
-}
-
-/* RESUME */
-.resume-box{
-  margin-top:45px;
-  padding:45px;
-  text-align:center;
-  border-radius:24px;
-  background:linear-gradient(135deg,#3f51b5,#1a237e);
-  color:#fff;
-}
-.resume-actions{
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  flex-wrap:wrap;
-}
-.resume-btn{
-  padding:14px 38px;
-  background:#fff;
-  color:#3f51b5;
-  font-weight:700;
-  text-decoration:none;
-  border-radius:40px;
-  transition:.35s;
-}
-.resume-btn:hover{transform:translateY(-6px) scale(1.05);}
-.resume-btn.outline{
-  background:transparent;
-  color:#fff;
-  border:2px solid #fff;
-}
-
-/* FILTER */
-.filter-btn{text-align:center;margin-bottom:25px;}
-.filter-btn button{
-  padding:12px 36px;
-  background:#3f51b5;
-  color:#fff;
-  border:none;
-  border-radius:40px;
-  font-weight:600;
-  font-size:16px;
-  cursor:pointer;
-}
-
-/* MASONRY */
-.masonry{column-count:4;column-gap:22px;}
-@media(max-width:1200px){.masonry{column-count:3;}}
-@media(max-width:768px){.masonry{column-count:2;}}
-@media(max-width:480px){.masonry{column-count:1;}}
-.certificates.hide{max-height:0;opacity:0;overflow:hidden;}
-
-/* CERTIFICATE */
-.certificate{
-  break-inside:avoid;
-  margin-bottom:22px;
-  text-align:center;
-  cursor:pointer;
-  opacity:0;
-  transform:translateY(30px) scale(.95);
-  transition:.6s;
-}
-.certificate.show{
-  opacity:1;
-  transform:none;
-}
-
-/* ✅ HOVER FIX (FINAL) */
-.certificate img{
-  width:100%;
-  border-radius:16px;
-  box-shadow:0 10px 28px rgba(0,0,0,.15);
-  transition:transform .35s ease, box-shadow .35s ease;
-  will-change:transform, box-shadow;
-}
-.certificate:hover img{
-  transform:translateY(-10px) scale(1.04);
-  box-shadow:0 22px 55px rgba(63,81,181,.35);
-}
-
-.certificate p{
-  margin-top:10px;
-  font-weight:600;
-  color:#1a237e;
-}
-
-/* POPUP */
-.popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  justify-content:center;
-  align-items:center;
-  z-index:3000;
-}
-.popup img{max-width:90%;max-height:90%;border-radius:14px;}
-.popup span{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:36px;
-  color:#fff;
-  cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-  margin-top:60px;
-  text-align:center;
-  padding:20px;
-  background:#f1f1f1;
-  color:#555;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .menu-btn{display:block;}
-  nav{
-    position:fixed;
-    top:0;
-    right:-100%;
-    width:260px;
-    height:100vh;
-    background:#fff;
-    box-shadow:-5px 0 15px rgba(0,0,0,0.15);
-    flex-direction:column;
-    padding-top:80px;
-    transition:.4s;
-    z-index:2000;
-  }
-  nav.active{right:0;}
-  nav a{margin:15px 25px;font-size:18px;}
-}
 </style>
 </head>
 
@@ -254,11 +70,33 @@ footer{
     <p>Academic background and professional certificates</p>
   </div>
 
+  <!-- MY EDUCATION -->
   <div class="box">
     <h2>My Education</h2>
-    <p>I have completed my <b>12th</b> and I am pursuing <b>Psychology Honours</b>.</p>
+
+    <p>
+      I have completed my <strong>12th</strong> education and I am currently
+      pursuing <strong>Psychology Honours</strong>. Along with my academic
+      journey, I am building my career as a
+      <strong>Graphic Designer</strong> and <strong>Web Developer</strong>.
+    </p>
+
+    <p>
+      My background in <strong>Psychology</strong> helps me understand human
+      behavior, emotions and visual perception. I apply this understanding in
+      my design work to create layouts, colors and visuals that connect better
+      with users and communicate ideas effectively.
+    </p>
+
+    <p>
+      Alongside my studies, I work as a
+      <strong>freelance Graphic Designer and Web Developer</strong>, designing
+      logos, banners, creatives and responsive websites for individuals and
+      small businesses.
+    </p>
   </div>
 
+  <!-- RESUME -->
   <div class="resume-box">
     <h2>My Resume</h2>
     <div class="resume-actions">
@@ -267,21 +105,58 @@ footer{
     </div>
   </div>
 
+  <!-- CERTIFICATES SECTION (FIXED & ADDED) -->
   <div class="box">
     <h2>Marksheets & Certificates</h2>
+
     <div class="filter-btn">
-      <button onclick="toggleCertificates()" id="filterBtn">Show Certificates</button>
+      <button onclick="toggleCertificates()" id="filterBtn">
+        Show Certificates
+      </button>
     </div>
 
     <div class="certificates masonry hide" id="certificates">
-      <div class="certificate" onclick="openPopup(this)"><img src="10th marksheet.jpg"><p>10th Marksheet</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="10th certificate.jpg"><p>10th Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="12thmarksheet.jpg"><p>12th Marksheet</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="12th certificatea.jpg"><p>12th Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="adca.jpg"><p>ADCA Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="diploma certificate.png"><p>Web Development Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="diplomamarksheet.png"><p>Web Development Marksheet</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="typing certificate.jpg"><p>Typing Certificate</p></div>
+
+      <div class="certificate" onclick="openPopup(this)">
+        <img src="10th marksheet.jpg" alt="10th Marksheet">
+        <p>10th Marksheet</p>
+      </div>
+
+      <div class="certificate" onclick="openPopup(this)">
+        <img src="10th certificate.jpg" alt="10th Certificate">
+        <p>10th Certificate</p>
+      </div>
+
+      <div class="certificate" onclick="openPopup(this)">
+        <img src="12thmarksheet.jpg" alt="12th Marksheet">
+        <p>12th Marksheet</p>
+      </div>
+
+      <div class="certificate" onclick="openPopup(this)">
+        <img src="12th certificatea.jpg" alt="12th Certificate">
+        <p>12th Certificate</p>
+      </div>
+
+      <div class="certificate" onclick="openPopup(this)">
+        <img src="adca.jpg" alt="ADCA Certificate">
+        <p>ADCA Certificate</p>
+      </div>
+
+      <div class="certificate" onclick="openPopup(this)">
+        <img src="diploma certificate.png" alt="Web Development Certificate">
+        <p>Web Development Certificate</p>
+      </div>
+
+      <div class="certificate" onclick="openPopup(this)">
+        <img src="diplomamarksheet.png" alt="Web Development Marksheet">
+        <p>Web Development Marksheet</p>
+      </div>
+
+      <div class="certificate" onclick="openPopup(this)">
+        <img src="typing certificate.jpg" alt="Typing Certificate">
+        <p>Typing Certificate</p>
+      </div>
+
     </div>
   </div>
 
@@ -289,29 +164,22 @@ footer{
 
 <footer>© 2025 Kanhya Graphic World</footer>
 
-<div class="popup" id="popup" onclick="closePopup()">
-  <span>&times;</span>
-  <img id="popupImg">
-</div>
-
 <script>
 function toggleMenu(){
   document.getElementById("mobileMenu").classList.toggle("active");
 }
+
 function toggleCertificates(){
   const cert=document.getElementById("certificates");
   const btn=document.getElementById("filterBtn");
   cert.classList.toggle("hide");
   if(!cert.classList.contains("hide")){
     btn.innerText="Hide Certificates";
-    document.querySelectorAll(".certificate").forEach((el,i)=>{
-      setTimeout(()=>el.classList.add("show"),i*120);
-    });
   }else{
     btn.innerText="Show Certificates";
-    document.querySelectorAll(".certificate").forEach(c=>c.classList.remove("show"));
   }
 }
+
 function openPopup(el){
   popup.style.display="flex";
   popupImg.src=el.querySelector("img").src;
