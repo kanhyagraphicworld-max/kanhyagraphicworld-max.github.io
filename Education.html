@@ -10,24 +10,6 @@
 <link rel="canonical" href="https://kanhyagraphicworld-max.github.io/Education.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SCHEMA -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Person",
-  "name":"Kanhya",
-  "jobTitle":"Graphic Designer & Web Developer",
-  "url":"https://kanhyagraphicworld-max.github.io",
-  "hasCredential":[
-    {"@type":"EducationalOccupationalCredential","name":"10th Marksheet & Certificate"},
-    {"@type":"EducationalOccupationalCredential","name":"12th Marksheet & Certificate"},
-    {"@type":"EducationalOccupationalCredential","name":"ADCA Certificate"},
-    {"@type":"EducationalOccupationalCredential","name":"Web Development Certificate & Marksheet"},
-    {"@type":"EducationalOccupationalCredential","name":"Typing Certificate"}
-  ]
-}
-</script>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -55,11 +37,18 @@ nav a:hover{color:#3f51b5;}
 /* CONTAINER */
 .container{max-width:1200px;margin:40px auto;padding:20px}
 
-/* BOX */
+/* BOX + HOVER ANIMATION */
 .box{
   background:#fff;margin-top:45px;padding:35px;
   border-radius:22px;
   box-shadow:0 14px 40px rgba(0,0,0,.1);
+  transition:.35s ease;
+  border:2px solid transparent;
+}
+.box:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 60px rgba(63,81,181,.25);
+  border-color:rgba(63,81,181,.35);
 }
 
 /* RESUME */
@@ -68,6 +57,11 @@ nav a:hover{color:#3f51b5;}
   border-radius:24px;
   background:linear-gradient(135deg,#3f51b5,#1a237e);
   color:#fff;
+  transition:.35s ease;
+}
+.resume-box:hover{
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 30px 70px rgba(26,35,126,.45);
 }
 .resume-actions{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
 .resume-btn{
@@ -110,7 +104,9 @@ nav a:hover{color:#3f51b5;}
   break-inside:avoid;margin-bottom:22px;
   text-align:center;cursor:pointer;
   position:relative;overflow:hidden;
+  transition:.35s ease;
 }
+.certificate:hover{transform:translateY(-8px)}
 
 /* WATERMARK */
 .certificate::after{
@@ -135,15 +131,9 @@ nav a:hover{color:#3f51b5;}
   filter:blur(4px);
   transition:.4s ease;
 }
-
 .certificate:hover img{
   filter:blur(0);
-  transform:translateY(-10px) scale(1.04);
-  box-shadow:0 22px 55px rgba(63,81,181,.35);
-}
-
-.certificate p{
-  margin-top:10px;font-weight:600;color:#1a237e
+  transform:scale(1.04);
 }
 
 /* POPUP */
@@ -159,21 +149,42 @@ nav a:hover{color:#3f51b5;}
   font-size:36px;color:#fff;cursor:pointer;
 }
 
-/* FOOTER */
-footer{text-align:center;padding:20px;background:#f1f1f1;color:#555;margin-top:60px}
+/* POPUP WATERMARK */
+.popup-watermark{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:700;
+  color:rgba(255,255,255,.35);
+  background:repeating-linear-gradient(
+    -30deg,
+    rgba(0,0,0,.3),
+    rgba(0,0,0,.3) 12px,
+    rgba(0,0,0,.45) 12px,
+    rgba(0,0,0,.45) 24px
+  );
+  pointer-events:none;
+  mix-blend-mode:overlay;
+}
 
-/* RESPONSIVE NAV */
-@media(max-width:768px){
-  .menu-btn{display:block}
-  nav{
-    position:fixed;top:0;right:-100%;
-    width:260px;height:100vh;background:#fff;
-    box-shadow:-5px 0 15px rgba(0,0,0,.15);
-    display:flex;flex-direction:column;
-    padding-top:80px;transition:.4s;
-  }
-  nav.active{right:0}
-  nav a{margin:15px 25px;font-size:18px}
+/* FOOTER */
+footer{
+  text-align:center;padding:20px;
+  background:#f1f1f1;color:#555;margin-top:60px;
+}
+.heart-3d{
+  display:inline-block;
+  animation:pulse 1.6s infinite;
+  text-shadow:0 4px 8px rgba(255,0,0,.6),0 0 18px rgba(255,0,0,.5);
+}
+.heart-dot{color:#ff1744;font-size:22px;margin:0 4px}
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.25)}
+}
+
+/* MOBILE SAFE */
+@media (hover:none){
+  .box:hover,.resume-box:hover,.certificate:hover{transform:none}
 }
 </style>
 </head>
@@ -207,7 +218,7 @@ footer{text-align:center;padding:20px;background:#f1f1f1;color:#555;margin-top:6
     <h2>My Education</h2>
     <p>I have completed my <strong>12th</strong> education and am pursuing <strong>Psychology Honours</strong>. I work as a <strong>Graphic Designer</strong> and <strong>Web Developer</strong>.</p>
     <p>My psychology background helps me design user-focused visuals.</p>
-    <p>I also work as a <strong>freelance designer & developer</strong> for small businesses.</p>
+    <p>I also work as a <strong>freelance designer & developer</strong>.</p>
   </div>
 
   <div class="resume-box">
@@ -222,8 +233,7 @@ footer{text-align:center;padding:20px;background:#f1f1f1;color:#555;margin-top:6
     <h2>Marksheets & Certificates</h2>
 
     <div class="certificate-disclaimer">
-      ⚠️ All certificates displayed here are for <strong>verification purposes only</strong>.
-      Any downloading, copying or misuse is strictly prohibited.
+      ⚠️ Certificates are shown for <strong>verification only</strong>. Any misuse is prohibited.
     </div>
 
     <div class="filter-btn">
@@ -236,19 +246,28 @@ footer{text-align:center;padding:20px;background:#f1f1f1;color:#555;margin-top:6
       <div class="certificate" onclick="openPopup(this)"><img src="12thmarksheet.jpg"><p>12th Marksheet</p></div>
       <div class="certificate" onclick="openPopup(this)"><img src="12th certificatea.jpg"><p>12th Certificate</p></div>
       <div class="certificate" onclick="openPopup(this)"><img src="adca.jpg"><p>ADCA Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="diploma certificate.png"><p>Web Development Certificate</p></div>
-      <div class="certificate" onclick="openPopup(this)"><img src="diplomamarksheet.png"><p>Web Development Marksheet</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="diploma certificate.png"><p>Web Dev Certificate</p></div>
+      <div class="certificate" onclick="openPopup(this)"><img src="diplomamarksheet.png"><p>Web Dev Marksheet</p></div>
       <div class="certificate" onclick="openPopup(this)"><img src="typing certificate.jpg"><p>Typing Certificate</p></div>
     </div>
   </div>
 
 </div>
 
-<footer>© 2025 Kanhya Graphic World</footer>
+<footer>
+  © 2025 Kanhya Graphic World. All Rights Reserved.<br>
+  Made with <span class="heart-3d">❤️</span><span class="heart-dot">•</span><br>
+  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/" target="_blank" rel="noopener noreferrer">
+    Connect on LinkedIn
+  </a>
+</footer>
 
 <div class="popup" id="popup" onclick="closePopup()">
   <span>&times;</span>
   <img id="popupImg">
+  <div class="popup-watermark" id="popupWatermark">
+    © Kanhya Graphic World • Verification Only
+  </div>
 </div>
 
 <script>
@@ -262,12 +281,17 @@ function toggleCertificates(){
   b.innerText=c.classList.contains("hide")?"Show Certificates":"Hide Certificates";
 }
 function openPopup(el){
-  document.getElementById("popup").style.display="flex";
-  document.getElementById("popupImg").src=el.querySelector("img").src;
+  popup.style.display="flex";
+  popupImg.src=el.querySelector("img").src;
 }
 function closePopup(){
-  document.getElementById("popup").style.display="none";
+  popup.style.display="none";
 }
+document.addEventListener("mousemove",e=>{
+  const wm=document.getElementById("popupWatermark");
+  if(!wm) return;
+  wm.style.transform=`translate(${e.clientX/40}px,${e.clientY/40}px) rotate(-12deg)`;
+});
 </script>
 
 </body>
