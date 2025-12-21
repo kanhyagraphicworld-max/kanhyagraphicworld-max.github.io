@@ -282,6 +282,15 @@ footer a{
 }
 </style>
 </head>
+  <script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey && (e.key === 'u' || e.key === 's')) {
+    e.preventDefault();
+  }
+});
+</script>
+
 
 <body>
 
@@ -333,9 +342,12 @@ footer a{
 </section>
 
 <footer>
-  © 2025 Kanhya Graphic World | Designed with ❤️ <br>
-  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/" target="_blank">
-    Connect on LinkedIn
+  © 2025 Kanhya Graphic World. All Rights Reserved.
+  <br>
+  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
+     target="_blank"
+     rel="noopener noreferrer">
+     Connect on LinkedIn
   </a>
 </footer>
 
