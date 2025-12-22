@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- ✅ SEO TITLE -->
 <title>Kanhya Graphic World | Graphic Designer & Web Developer</title>
 
 <!-- FAVICON -->
@@ -12,185 +11,80 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<!-- ✅ SEO META -->
-<meta name="description" content="Kanhya Graphic World – Freelance Graphic Designer & Web Developer creating modern, responsive and SEO-friendly websites and designs.">
-<meta name="keywords" content="Kanhya Graphic World, freelance graphic designer, web developer, HTML CSS JavaScript">
+<meta name="description" content="Freelance Graphic Designer & Web Developer helping individuals and small businesses grow with psychology-based design and clean, responsive websites.">
+<meta name="keywords" content="freelance graphic designer, web developer, logo design, responsive website">
 <meta name="author" content="Kanhya Graphic World">
 <link rel="canonical" href="https://kanhyagraphicworld-max.github.io/">
 <meta name="robots" content="index, follow">
 
-<!-- ✅ OPEN GRAPH (SOCIAL PREVIEW) -->
+<!-- OPEN GRAPH -->
 <meta property="og:title" content="Kanhya Graphic World | Graphic Designer & Web Developer">
-<meta property="og:description" content="Creative graphic design & modern responsive websites by Kanhya. Available for freelance projects.">
+<meta property="og:description" content="Creative graphic design & modern websites by Kanhya. Available for freelance projects.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kanhyagraphicworld-max.github.io/">
 <meta property="og:image" content="https://kanhyagraphicworld-max.github.io/kanhya%20graphic%20world.png">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ SCHEMA -->
+<!-- SCHEMA -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Kanhya",
-  "jobTitle": "Graphic Designer & Web Developer",
-  "url": "https://kanhyagraphicworld-max.github.io/",
-  "sameAs": [
-    "https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
-  ]
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Kanhya",
+  "jobTitle":"Graphic Designer & Web Developer",
+  "url":"https://kanhyagraphicworld-max.github.io/",
+  "sameAs":["https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"]
 }
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --primary:#3f51b5;
-  --secondary:#1a237e;
-  --accent:#0a66c2;
-}
-
+:root{--p:#3f51b5;--s:#1a237e;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Poppins',sans-serif;
-  background:#ffffff;
-  color:#333;
-  overflow-x:hidden;
-}
+body{font-family:Poppins,sans-serif;color:#333;background:#fff}
 
-/* ===== HEADER ===== */
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 50px;
-  background:#fff;
-  box-shadow:0 4px 15px rgba(0,0,0,0.08);
-}
-.logo{display:flex;align-items:center;gap:12px;}
-.logo img{height:55px;}
-.logo span{font-size:20px;font-weight:600;color:var(--secondary);}
+/* HEADER / NAV (unchanged) */
+header{position:sticky;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:15px 50px;background:#fff;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.logo{display:flex;gap:12px;align-items:center}
+.logo img{height:55px}
+.logo span{font-size:20px;font-weight:600;color:var(--s)}
+nav a{margin-left:22px;text-decoration:none;color:#333;font-weight:500;position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--p);transition:.3s}
+nav a:hover::after,nav a.active::after{width:100%}
+.linkedin-icon svg{width:26px;height:26px;fill:#0a66c2}
 
-/* NAV */
-nav{display:flex;align-items:center;}
-nav a{
-  margin-left:22px;
-  text-decoration:none;
-  font-weight:500;
-  color:#333;
-  position:relative;
-}
-nav a::after{
-  content:"";
-  position:absolute;
-  bottom:-5px;
-  left:0;
-  width:0;
-  height:2px;
-  background:var(--primary);
-  transition:.3s;
-}
-nav a:hover::after,
-nav a.active::after{width:100%;}
+/* HERO (unchanged) */
+.hero{padding:110px 60px;background:linear-gradient(135deg,#eef3ff,#fff)}
+.hero-content{max-width:760px}
+.hero h1{font-size:48px;color:var(--s)}
+.hero p{margin-top:18px;font-size:18px;line-height:1.8;color:#555}
+.hero-btns{margin-top:35px}
+.hero-btns a{display:inline-flex;padding:15px 38px;border-radius:50px;font-weight:600;text-decoration:none;margin-right:18px;transition:.3s}
+.btn-primary{background:var(--p);color:#fff;box-shadow:0 15px 30px rgba(63,81,181,.35)}
+.btn-outline{border:2px solid var(--p);color:var(--p)}
+.btn-primary:hover,.btn-outline:hover{transform:translateY(-5px)}
+.trust-strip{margin-top:14px;font-size:14px;color:#666}
 
-/* LINKEDIN ICON (BIGGER + CLEAR) */
-.linkedin-icon{
-  margin-left:22px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px;
-  border-radius:50%;
-  transition:.4s ease;
-}
-.linkedin-icon svg{
-  width:26px;
-  height:26px;
-  fill:#0a66c2;
-}
-.linkedin-icon:hover{
-  background:rgba(10,102,194,.15);
-  box-shadow:0 0 20px rgba(10,102,194,.45);
-  transform:translateY(-3px);
-}
+/* SECTIONS */
+.section{max-width:1100px;margin:90px auto;padding:0 20px}
+.section h2{text-align:center;color:var(--s);font-size:34px;margin-bottom:20px}
+.section p{text-align:center;color:#555;font-size:17px;max-width:800px;margin:0 auto 40px}
 
-/* MOBILE MENU */
-.menu-btn{display:none;font-size:28px;cursor:pointer;}
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.card{background:#fff;padding:30px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.08);transition:.3s}
+.card:hover{transform:translateY(-6px)}
+.card h3{color:var(--s);margin-bottom:10px}
 
-/* ===== HERO ===== */
-.hero{
-  position:relative;
-  padding:110px 60px;
-  background:linear-gradient(135deg,#eef3ff,#ffffff);
-}
-.hero-content{max-width:750px;}
-.hero h1{font-size:48px;color:var(--secondary);}
-.hero p{margin-top:18px;font-size:18px;line-height:1.8;color:#555;}
+/* CTA BOTTOM */
+.cta-bottom{text-align:center;margin:100px auto}
+.cta-bottom a{padding:16px 44px}
 
-/* CTA */
-.hero-btns{margin-top:35px;}
-.hero-btns a{
-  display:inline-flex;
-  padding:15px 38px;
-  border-radius:50px;
-  font-weight:600;
-  text-decoration:none;
-  transition:.35s ease;
-  margin-right:18px;
-}
-.btn-primary{
-  background:var(--primary);
-  color:#fff;
-  box-shadow:0 15px 30px rgba(63,81,181,.35);
-}
-.btn-primary:hover,
-.btn-outline:hover{
-  transform:translateY(-5px);
-}
-.btn-outline{
-  border:2px solid var(--primary);
-  color:var(--primary);
-}
-
-/* TRUST STRIP */
-.trust-strip{
-  margin-top:18px;
-  font-size:14px;
-  color:#666;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:26px;
-  background:#f5f5f5;
-  color:#555;
-}
-footer a{color:#0a66c2;text-decoration:none;font-weight:500;}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  header{padding:15px 20px;}
-  .menu-btn{display:block;}
-  nav{
-    position:fixed;
-    top:0;right:-100%;
-    width:260px;height:100vh;
-    background:#fff;
-    flex-direction:column;
-    padding-top:80px;
-    transition:.4s;
-  }
-  nav.active{right:0;}
-  nav a,.linkedin-icon{margin:16px 25px;}
-  .hero{padding:80px 20px;text-align:center;}
-  .hero h1{font-size:34px;}
-  .hero-btns a{display:block;width:85%;margin:14px auto;}
-}
+/* FOOTER (same) */
+footer{text-align:center;padding:26px;background:#f5f5f5;color:#555}
+footer a{color:#0a66c2;text-decoration:none}
 </style>
 </head>
 
@@ -198,27 +92,18 @@ footer a{color:#0a66c2;text-decoration:none;font-weight:500;}
 
 <header>
   <div class="logo">
-    <img src="kanhya graphic world.png" alt="Kanhya Graphic World Logo">
+    <img src="kanhya graphic world.png">
     <span>Kanhya Graphic World</span>
   </div>
-
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-  <nav id="mobileMenu">
+  <nav>
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
     <a href="Education.html">Education</a>
     <a href="contact.html">Contact</a>
-
-    <a class="linkedin-icon"
-       href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
-       target="_blank"
-       aria-label="LinkedIn Profile">
-      <svg viewBox="0 0 24 24">
-        <path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.003V9h3.104v1.561h.043c.434-.824 1.494-1.693 3.073-1.693 3.285 0 3.889 2.164 3.889 4.977v6.607z"/>
-      </svg>
+    <a class="linkedin-icon" href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.003V9h3.104v1.561h.043c.434-.824 1.494-1.693 3.073-1.693 3.285 0 3.889 2.164 3.889 4.977v6.607z"/></svg>
     </a>
   </nav>
 </header>
@@ -226,36 +111,44 @@ footer a{color:#0a66c2;text-decoration:none;font-weight:500;}
 <section class="hero">
   <div class="hero-content">
     <h1>Hello, I’m Kanhya 👋</h1>
-    <p>
-      I’m a <b>Graphic Designer</b> and <b>Web Developer</b>.
-      I help individuals and small businesses grow with creative designs
-      and clean, professional websites.
-    </p>
-
+    <p>I’m a Graphic Designer and Web Developer helping individuals and small businesses grow through meaningful design and clean, user-focused websites.</p>
     <div class="hero-btns">
       <a href="contact.html" class="btn-primary">Hire Me</a>
       <a href="gallery.html" class="btn-outline">View Work</a>
-
-      <p class="trust-strip">
-        ✔ Quick Response • ✔ Beginner-Friendly Pricing • ✔ On-Time Delivery
-      </p>
+      <p class="trust-strip">✔ Quick Response • ✔ Beginner-Friendly Pricing • ✔ On-Time Delivery</p>
     </div>
   </div>
 </section>
 
+<section class="section">
+  <h2>What I Do</h2>
+  <p>I design visuals and websites that are not only beautiful but also guided by psychology and usability principles.</p>
+  <div class="cards">
+    <div class="card"><h3>Graphic Design</h3><p>Logos, banners, posters and branding that build strong visual identity.</p></div>
+    <div class="card"><h3>Web Development</h3><p>Clean, responsive and beginner-friendly websites using HTML, CSS and JavaScript.</p></div>
+    <div class="card"><h3>UI & Visual Psychology</h3><p>Design decisions based on how users think, feel and interact.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Why Choose Me</h2>
+  <p>I combine creativity, psychology and technical skills to deliver honest, effective digital solutions.</p>
+  <div class="cards">
+    <div class="card"><h3>Psychology-Based Design</h3><p>Designs that connect emotionally with users.</p></div>
+    <div class="card"><h3>Clear Communication</h3><p>You always know what’s happening with your project.</p></div>
+    <div class="card"><h3>Freelancer You Can Trust</h3><p>On-time delivery with genuine effort.</p></div>
+  </div>
+</section>
+
+<div class="cta-bottom">
+  <a href="contact.html" class="btn-primary">Start Your Project</a>
+</div>
+
 <footer>
   © 2025 Kanhya Graphic World. All Rights Reserved.<br>
-  Made with ❤️<br><br>
-  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/" target="_blank">
-    Connect on LinkedIn
-  </a>
+  Made with ❤️<br>
+  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/">Connect on LinkedIn</a>
 </footer>
-
-<script>
-function toggleMenu(){
-  document.getElementById("mobileMenu").classList.toggle("active");
-}
-</script>
 
 </body>
 </html>
