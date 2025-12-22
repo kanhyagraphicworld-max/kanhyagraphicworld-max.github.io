@@ -18,6 +18,19 @@ content="graphic design portfolio, logo design gallery, banner poster design, fl
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ADVANCED GALLERY SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Kanhya Graphic World Portfolio",
+  "creator": {
+    "@type": "Person",
+    "name": "Kanhya"
+  }
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -43,20 +56,31 @@ header{
 .logo{display:flex;align-items:center;gap:10px;}
 .logo img{height:45px;}
 .logo span{font-size:20px;font-weight:600;color:#1a237e;}
+
+/* NAV UNDERLINE EFFECT (HOME STYLE) */
 nav a{
   margin-left:18px;
   text-decoration:none;
   font-weight:500;
   color:#333;
+  position:relative;
 }
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#3f51b5;
+  transition:.3s;
+}
+nav a:hover::after,
+nav a.active::after{width:100%;}
 nav a:hover{color:#3f51b5;}
 
 /* MOBILE MENU */
-.menu-btn{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
+.menu-btn{display:none;font-size:28px;cursor:pointer;}
 @media(max-width:768px){
   nav{
     position:fixed;
@@ -83,14 +107,27 @@ nav a:hover{color:#3f51b5;}
   padding:0 20px;
   text-align:center;
 }
-.content h1{
-  font-size:40px;
-  color:#1a237e;
+.content h1{font-size:40px;color:#1a237e;}
+.content p{font-size:18px;color:#555;margin-bottom:25px;}
+
+/* FILTER BUTTONS */
+.filters{
+  margin-bottom:20px;
 }
-.content p{
-  font-size:18px;
-  color:#555;
-  margin-bottom:30px;
+.filters button{
+  margin:6px;
+  padding:8px 18px;
+  border-radius:30px;
+  border:2px solid #3f51b5;
+  background:#fff;
+  color:#3f51b5;
+  cursor:pointer;
+  font-weight:500;
+}
+.filters button.active,
+.filters button:hover{
+  background:#3f51b5;
+  color:#fff;
 }
 
 /* BUTTON */
@@ -115,7 +152,7 @@ nav a:hover{color:#3f51b5;}
   gap:22px;
 }
 
-/* PREMIUM EFFECT (ORIGINAL – SAFE) */
+/* ORIGINAL EFFECT + WATERMARK */
 .gallery img{
   width:100%;
   height:220px;
@@ -127,6 +164,19 @@ nav a:hover{color:#3f51b5;}
   filter:blur(4px);
   box-shadow:0 12px 30px rgba(0,0,0,.15);
   transition:all .7s ease;
+  position:relative;
+}
+.gallery img::after{
+  content:"Kanhya Graphic World";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  color:#000;
+  opacity:.08;
+  pointer-events:none;
 }
 .gallery img.show{
   opacity:1;
@@ -153,6 +203,19 @@ nav a:hover{color:#3f51b5;}
   max-height:90%;
   border-radius:14px;
   animation:zoom .4s ease;
+}
+.popup::after{
+  content:"Kanhya Graphic World • Portfolio";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:36px;
+  color:#fff;
+  opacity:.15;
+  pointer-events:none;
+  transform:rotate(-25deg);
 }
 @keyframes zoom{
   from{transform:scale(.85);opacity:0;}
@@ -190,7 +253,7 @@ footer{
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="gallery.html">Gallery</a>
+    <a href="gallery.html" class="active">Gallery</a>
     <a href="Education.html">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
@@ -198,37 +261,40 @@ footer{
 
 <div class="content">
   <h1>Graphic Design Portfolio & Gallery</h1>
-  <p>
-    Explore my logo designs, banners, posters, flex designs
-    and creative graphic work. Click any image to view full size.
-  </p>
+  <p>Explore logos, banners, posters, flex and creative graphic designs.</p>
 
-  <button class="toggle-btn" id="toggleBtn" onclick="toggleGallery()">
-    Show Designs
-  </button>
+  <div class="filters">
+    <button class="active" onclick="filterGallery('all')">All</button>
+    <button onclick="filterGallery('logo')">Logos</button>
+    <button onclick="filterGallery('banner')">Banners</button>
+    <button onclick="filterGallery('creative')">Creative</button>
+  </div>
+
+  <button class="toggle-btn" id="toggleBtn" onclick="toggleGallery()">Show Designs</button>
 
   <div class="gallery-wrapper" id="galleryWrapper">
     <div class="gallery" id="gallery">
 
-      <img src="SHAKTI MOTORS.png" alt="Shakti Motors banner design" loading="lazy" onclick="openPopup(this)">
-      <img src="new design.png" alt="Creative graphic design project" loading="lazy" onclick="openPopup(this)">
-      <img src="logo7.png" alt="Logo design by Kanhya Graphic World" loading="lazy" onclick="openPopup(this)">
-      <img src="logo4.png" alt="Modern logo design project" loading="lazy" onclick="openPopup(this)">
-      <img src="logo17.png" alt="Business logo design" loading="lazy" onclick="openPopup(this)">
-      <img src="logo15.png" alt="Creative brand logo design" loading="lazy" onclick="openPopup(this)">
-      <img src="logo13a.png" alt="Professional logo design sample" loading="lazy" onclick="openPopup(this)">
-      <img src="kanhya graphic world.png" alt="Kanhya Graphic World branding design" loading="lazy" onclick="openPopup(this)">
-      <img src="kaali face.jpg" alt="Creative photo editing design" loading="lazy" onclick="openPopup(this)">
-      <img src="Image 2.jpeg" alt="Poster design work" loading="lazy" onclick="openPopup(this)">
-      <img src="image 1.jpeg" alt="Graphic design creative poster" loading="lazy" onclick="openPopup(this)">
-      <img src="design 5.png" alt="Banner and flex design" loading="lazy" onclick="openPopup(this)">
+      <img src="SHAKTI MOTORS.png" data-category="banner" alt="Shakti Motors banner design" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="new design.png" data-category="creative" alt="Creative graphic design project" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="logo7.png" data-category="logo" alt="Logo design by Kanhya Graphic World" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="logo4.png" data-category="logo" alt="Modern logo design project" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="logo17.png" data-category="logo" alt="Business logo design" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="logo15.png" data-category="logo" alt="Creative brand logo design" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="logo13a.png" data-category="logo" alt="Professional logo design sample" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="kanhya graphic world.png" data-category="creative" alt="Kanhya Graphic World branding design" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="kaali face.jpg" data-category="creative" alt="Creative photo editing design" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="Image 2.jpeg" data-category="banner" alt="Poster design work" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="image 1.jpeg" data-category="banner" alt="Graphic design creative poster" loading="lazy" decoding="async" onclick="openPopup(this)">
+      <img src="design 5.png" data-category="banner" alt="Banner and flex design" loading="lazy" decoding="async" onclick="openPopup(this)">
 
     </div>
   </div>
 </div>
 
 <footer>
-  © 2025 Kanhya Graphic World | Designed with ❤️
+  © 2025 Kanhya Graphic World. All Rights Reserved.<br>
+  Made with ❤️
 </footer>
 
 <div class="popup" id="popup">
@@ -244,7 +310,6 @@ function toggleMenu(){
 function toggleGallery(){
   const wrap=document.getElementById("galleryWrapper");
   const btn=document.getElementById("toggleBtn");
-
   if(wrap.style.display==="block"){
     wrap.style.display="none";
     btn.innerText="Show Designs";
@@ -266,15 +331,15 @@ function openPopup(img){
   popup.style.display="flex";
   popupImg.src=img.src;
 }
-function closePopup(){
-  popup.style.display="none";
+function closePopup(){popup.style.display="none";}
+
+function filterGallery(cat){
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  event.target.classList.add("active");
+  document.querySelectorAll(".gallery img").forEach(img=>{
+    img.style.display=(cat==="all"||img.dataset.category===cat)?"block":"none";
+  });
 }
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape") closePopup();
-});
-popup.addEventListener("click",e=>{
-  if(e.target===popup) closePopup();
-});
 </script>
 
 </body>
