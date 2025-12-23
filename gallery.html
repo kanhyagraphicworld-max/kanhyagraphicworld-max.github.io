@@ -175,6 +175,59 @@ footer{
   text-align:center;
   color:#555;
 }
+  /* ===== IMAGE WATERMARK ===== */
+.gallery img{
+  position:relative;
+}
+
+.gallery img::after{
+  content:"© Kanhya Graphic World";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  font-weight:600;
+  color:rgba(255,255,255,.28);
+  background:linear-gradient(
+    135deg,
+    rgba(0,0,0,.15),
+    rgba(0,0,0,.35)
+  );
+  opacity:0;
+  transition:.4s ease;
+  pointer-events:none;
+}
+
+.gallery img:hover::after{
+  opacity:1;
+}
+
+/* ===== POPUP WATERMARK (STRONG) ===== */
+.popup::after{
+  content:"© Kanhya Graphic World";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  font-weight:700;
+  color:rgba(255,255,255,.18);
+  pointer-events:none;
+}
+
+/* ===== FOOTER BRANDING ===== */
+footer a{
+  color:#3f51b5;
+  text-decoration:none;
+  font-weight:500;
+}
+footer a:hover{
+  text-decoration:underline;
+}
+
 </style>
 </head>
 
@@ -264,7 +317,7 @@ footer{
      loading="lazy"
      data-cat="creative">
 
-<img src="assets/images/Image-2.jpeg"
+<img src="assets/images/image-2.jpeg"
      alt="Banner and flex design by Kanhya Graphic World"
      title="Banner Design"
      loading="lazy"
@@ -286,7 +339,14 @@ footer{
 </div>
 
 <footer>
-  © 2025 Kanhya Graphic World • All Rights Reserved
+  © 2025 Kanhya Graphic World. All Rights Reserved.
+  <br>
+  Made with <span style="color:red;font-size:18px">❤️</span> •
+  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
+     target="_blank"
+     rel="noopener noreferrer">
+     Connect on LinkedIn
+  </a>
 </footer>
 
 <div class="popup" id="popup">
@@ -296,6 +356,7 @@ footer{
 
 <script>
 const imgs=document.querySelectorAll(".gallery img");
+
 window.addEventListener("load",()=>{
   imgs.forEach((img,i)=>{
     setTimeout(()=>img.classList.add("show"),i*120);
@@ -310,9 +371,14 @@ function toggleMenu(){
 function openPopup(img){
   popup.style.display="flex";
   popupImg.src=img.src;
+
+  // one-click close on image
+  popupImg.onclick = closePopup;
 }
+
 function closePopup(){
   popup.style.display="none";
+  popupImg.src="";
 }
 
 function filterGallery(cat,btn){
