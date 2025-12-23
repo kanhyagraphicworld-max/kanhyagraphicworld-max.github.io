@@ -3,225 +3,160 @@
 <head>
 <meta charset="UTF-8">
 
+<!-- ================= SEO ================= -->
 <title>Kanhya Graphic World | Graphic Designer & Web Developer</title>
 
-<meta name="description"
-content="Kanhya Graphic World – Graphic Designer & Web Developer. Clean design, responsive websites, branding and creative solutions for individuals and small businesses.">
+<meta name="description" content="Kanhya Graphic World – Portfolio of Kanhya Kant Singh, Graphic Designer and beginner Web Developer creating logos, banners, creatives and responsive websites.">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Kanhya Graphic World">
+<meta name="keywords" content="Kanhya Graphic World, Graphic Designer India, Web Developer, Logo Design, Banner Design, Portfolio Website">
+
 <link rel="canonical" href="https://kanhyagraphicworld-max.github.io/">
 
-<!-- Theme -->
-<meta name="theme-color" content="#3f51b5">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Kanhya Graphic World">
-<meta property="og:description" content="Graphic Designer & Web Developer – Clean, modern & user-focused designs.">
+<meta property="og:description" content="Graphic Designer & Web Developer Portfolio">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kanhyagraphicworld-max.github.io/">
+<meta property="og:image" content="assets/images/kanhya-graphic-world.png">
 
 <!-- Schema -->
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
  "@type":"Person",
- "name":"Kanhya",
- "jobTitle":"Graphic Designer & Web Developer",
+ "name":"Kanhya Kant Singh",
  "url":"https://kanhyagraphicworld-max.github.io/",
+ "jobTitle":"Graphic Designer & Web Developer",
  "sameAs":[
    "https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
  ]
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --p:#3f51b5;
-  --s:#1a237e;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Poppins',sans-serif;
-  background:#ffffff;
+  background:#f6f8ff;
   color:#333;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   position:sticky;
   top:0;
-  z-index:1000;
   background:#fff;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 50px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  padding:15px 30px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  z-index:1000;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.logo img{
-  height:55px;
-}
-.logo span{
-  font-size:20px;
   font-weight:600;
-  color:var(--s);
+  color:#1a237e;
+  font-size:20px;
 }
 
+/* NAV */
 nav{
   display:flex;
-  align-items:center;
+  gap:22px;
 }
-
 nav a{
-  margin-left:20px;
   text-decoration:none;
-  font-weight:500;
   color:#333;
   position:relative;
+  font-weight:500;
 }
-
 nav a::after{
-  content:"";
+  content:'';
   position:absolute;
   left:0;
   bottom:-6px;
   width:0;
   height:2px;
-  background:var(--p);
-  transition:0.3s;
+  background:#3f51b5;
+  transition:.3s;
 }
-
 nav a:hover::after,
 nav a.active::after{
   width:100%;
 }
 
-/* LinkedIn icon */
-.linkedin-icon{
-  margin-left:18px;
-  display:inline-flex;
-  align-items:center;
-}
-
-.social-icon{
-  width:36px;
-  height:36px;
+/* ================= HAMBURGER ================= */
+.menu-btn{
+  width:30px;
+  height:22px;
+  display:none;
+  flex-direction:column;
+  justify-content:space-between;
   cursor:pointer;
-  transition:all 0.3s ease;
+}
+.menu-btn span{
+  height:3px;
+  background:#333;
+  border-radius:4px;
+  transition:.4s;
+}
+.menu-btn.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.menu-btn.active span:nth-child(2){
+  opacity:0;
+}
+.menu-btn.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
 }
 
-.linkedin-icon:hover .social-icon{
-  transform:translateY(-5px);
-  filter:brightness(1.25);
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
-}
-
-/* HERO */
-.hero{
-  padding:90px 60px;
-  background:linear-gradient(135deg,#eef3ff,#ffffff);
-}
-
-.hero h1{
-  font-size:46px;
-  color:var(--s);
-}
-
-.hero p{
-  margin-top:15px;
-  font-size:18px;
-  max-width:650px;
-  line-height:1.7;
-  color:#555;
-}
-
-.hero small{
-  display:block;
-  margin-top:10px;
-  font-size:14px;
-  color:#666;
-}
-
-/* CTA buttons */
-.hero-btns a{
-  display:inline-block;
-  margin-top:30px;
-  margin-right:15px;
-  padding:14px 36px;
-  border-radius:40px;
-  font-weight:600;
-  text-decoration:none;
-  transition:all 0.3s ease;
-}
-
-.btn-primary{
-  background:var(--p);
-  color:#fff;
-}
-
-.btn-primary:hover{
-  transform:translateY(-4px);
-  background:var(--s);
-}
-
-.btn-outline{
-  border:2px solid var(--p);
-  color:var(--p);
-}
-
-.btn-outline:hover{
-  background:var(--p);
-  color:#fff;
-  transform:translateY(-4px);
-}
-
-/* TRUST STRIP */
-.trust-strip{
-  margin-top:25px;
-  font-size:15px;
-  color:#444;
-}
-
-/* FOOTER */
-footer{
-  margin-top:80px;
-  text-align:center;
-  padding:25px;
-  background:#f1f1f1;
-  color:#555;
-  font-size:14px;
-}
-
-footer a{
-  color:var(--p);
-  text-decoration:none;
-  font-weight:500;
-}
-
-/* RESPONSIVE */
+/* MOBILE MENU */
 @media(max-width:768px){
-  header{padding:15px 20px;}
-  .hero{
-    padding:60px 20px;
-    text-align:center;
+  nav{
+    position:fixed;
+    right:-100%;
+    top:0;
+    width:260px;
+    height:100vh;
+    background:#fff;
+    flex-direction:column;
+    padding-top:90px;
+    box-shadow:-6px 0 18px rgba(0,0,0,.15);
+    transition:.4s;
   }
-  .hero h1{font-size:32px;}
-  .hero-btns a{
-    display:block;
-    width:80%;
-    margin:15px auto;
-  }
+  nav.active{right:0;}
+  .menu-btn{display:flex;}
+}
+
+/* ================= HERO ================= */
+.hero{
+  padding:90px 20px;
+  text-align:center;
+}
+.hero h1{
+  font-size:36px;
+  color:#1a237e;
+}
+.hero p{
+  margin-top:12px;
+  font-size:16px;
+  color:#555;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#f1f1f1;
+  font-size:14px;
+}
+footer span{
+  color:red;
 }
 </style>
 </head>
@@ -229,61 +164,41 @@ footer a{
 <body>
 
 <header>
-  <div class="logo">
-    <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo">
-    <span>Kanhya Graphic World</span>
-  </div>
+  <div class="logo">Kanhya Graphic World</div>
 
-  <nav>
+  <nav id="nav">
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
-    <a href="Education.html">Education</a>
     <a href="contact.html">Contact</a>
-
-    <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
-       target="_blank"
-       class="linkedin-icon"
-       aria-label="LinkedIn Profile">
-      <img src="assets/images/linkedin.png"
-           alt="LinkedIn Profile"
-           class="social-icon">
-    </a>
   </nav>
+
+  <div class="menu-btn" id="menuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </header>
 
 <section class="hero">
   <h1>Hello, I’m Kanhya 👋</h1>
-
-  <p>
-    I’m a <strong>Graphic Designer</strong> and beginner
-    <strong>Web Developer</strong> helping individuals and small businesses
-    grow with clean visuals and professional websites.
-  </p>
-
-  <small>
-    Freelance Graphic Designer & Web Developer • Available for Projects
-  </small>
-
-  <div class="hero-btns">
-    <a href="contact.html" class="btn-primary" aria-label="Hire Me">Hire Me</a>
-    <a href="gallery.html" class="btn-outline" aria-label="View Work">View Work</a>
-  </div>
-
-  <div class="trust-strip">
-    ✔ Clear Communication &nbsp;•&nbsp;
-    ✔ On-Time Delivery &nbsp;•&nbsp;
-    ✔ Beginner-Friendly Pricing
-  </div>
+  <p>Graphic Designer & Beginner Web Developer</p>
 </section>
 
 <footer>
-  © 2025 Kanhya Graphic World. All Rights Reserved.<br>
-  Made with ❤️ •
-  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
-     target="_blank">Connect on LinkedIn</a>
+  © 2025 Kanhya Graphic World • Made with <span>❤️</span>•
 </footer>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const nav=document.getElementById("nav");
+
+menuBtn.onclick=()=>{
+  menuBtn.classList.toggle("active");
+  nav.classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
