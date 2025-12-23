@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Resume | Kanhya Kant Singh</title>
+<title>Resume | Kanhya Kant Singh – Graphic Designer & Web Developer</title>
+
+<meta name="description"
+content="Resume of Kanhya Kant Singh – Graphic Designer and beginner Web Developer with skills in logo design, banners, social media creatives and responsive websites.">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google Font -->
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- PDF Generator -->
@@ -22,25 +25,26 @@ body{
 
 /* ===== RESUME ===== */
 .resume{
-  max-width:780px;
+  max-width:820px;
   margin:20px auto;
   background:#ffffff;
-  padding:28px;
-  border-radius:12px;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
 
 /* HEADER */
 .header{
   display:flex;
-  gap:20px;
+  gap:22px;
   align-items:center;
-  border-bottom:2px solid #ddd;
-  padding-bottom:15px;
+  border-bottom:2px solid #e0e0e0;
+  padding-bottom:18px;
 }
 
 .photo img{
-  width:110px;
-  height:110px;
+  width:120px;
+  height:120px;
   border-radius:50%;
   border:3px solid #3f51b5;
   object-fit:cover;
@@ -48,12 +52,12 @@ body{
 
 .header h1{
   margin:0;
-  font-size:28px;
+  font-size:30px;
   color:#1a237e;
 }
 
 .header h2{
-  margin:4px 0 0;
+  margin:6px 0 0;
   font-size:16px;
   font-weight:500;
   color:#555;
@@ -61,7 +65,7 @@ body{
 
 /* SECTION */
 .section{
-  margin-top:18px;
+  margin-top:22px;
 }
 
 .section h3{
@@ -72,7 +76,7 @@ body{
 
 .section p, li{
   font-size:14px;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 ul{
@@ -83,38 +87,51 @@ ul{
 /* SKILLS */
 .skills{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:10px;
 }
 
 .skill{
   background:#eef1ff;
-  padding:6px;
+  padding:8px;
   font-size:13px;
   text-align:center;
-  border-radius:6px;
+  border-radius:8px;
   font-weight:500;
 }
 
 /* CONTACT */
 .contact p{
-  margin:3px 0;
+  margin:4px 0;
 }
 
 /* BUTTON */
 .download{
   text-align:center;
-  margin:20px 0;
+  margin:24px 0;
 }
 
 .download button{
-  padding:10px 26px;
+  padding:12px 30px;
   border:none;
   border-radius:40px;
   background:#3f51b5;
   color:#fff;
   font-size:15px;
   cursor:pointer;
+  transition:.3s ease;
+}
+.download button:hover{
+  background:#2f3fa5;
+  transform:translateY(-2px);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .header{
+    flex-direction:column;
+    text-align:center;
+  }
 }
 
 /* PRINT / PDF FIX */
@@ -123,7 +140,8 @@ ul{
   .download{display:none;}
   .resume{
     margin:0;
-    padding:18px;
+    padding:20px;
+    box-shadow:none;
   }
   @page{
     size:A4;
@@ -140,7 +158,7 @@ ul{
   <!-- HEADER -->
   <div class="header">
     <div class="photo">
-      <img src="profile.jpg">
+      <img src="assets/images/profile.jpg" alt="Kanhya Kant Singh Profile Photo">
     </div>
     <div>
       <h1>Kanhya Kant Singh</h1>
@@ -152,8 +170,11 @@ ul{
   <div class="section">
     <h3>Profile</h3>
     <p>
-      Creative Graphic Designer and beginner Web Developer with experience
-      in logos, banners, posters and responsive website layouts using HTML & CSS.
+      Creative <strong>Graphic Designer</strong> and beginner
+      <strong>Web Developer</strong> with a strong interest in human psychology
+      and visual communication. Skilled in creating logos, banners, posters,
+      social media creatives and clean, responsive website layouts using
+      HTML & CSS.
     </p>
   </div>
 
@@ -173,9 +194,10 @@ ul{
       <div class="skill">Logo Design</div>
       <div class="skill">Banner Design</div>
       <div class="skill">Poster Design</div>
-      <div class="skill">Social Media</div>
+      <div class="skill">Social Media Creatives</div>
       <div class="skill">HTML5</div>
       <div class="skill">CSS3</div>
+      <div class="skill">Basic JavaScript</div>
     </div>
   </div>
 
@@ -184,7 +206,8 @@ ul{
     <h3>Experience</h3>
     <p>
       Fresher Graphic Designer with hands-on experience creating
-      digital creatives for local businesses.
+      digital creatives and branding materials for local businesses
+      and personal projects.
     </p>
   </div>
 
@@ -192,15 +215,16 @@ ul{
   <div class="section">
     <h3>Career Goal</h3>
     <p>
-      To grow as a professional graphic designer and web developer
-      and help businesses build strong digital identities.
+      To grow as a professional graphic designer and web developer,
+      combine creativity with psychological understanding, and help
+      businesses build strong and meaningful digital identities.
     </p>
   </div>
 
   <!-- CONTACT -->
   <div class="section contact">
     <h3>Contact</h3>
-    <p>📞 +91 8789450325</p>
+    <p>📞 +91 9288450325</p>
     <p>📧 kanhyagraphicworld@gmail.com</p>
     <p>📍 India</p>
   </div>
