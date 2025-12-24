@@ -9,12 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="assets/css/common.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- ===== SERVICE SCHEMA (ADVANCED SEO) ===== -->
 <script type="application/ld+json">
@@ -271,70 +266,14 @@ footer{
   background:#f1f1f1;
   color:#555;
 }
-  /* ACTIVE PAGE UNDERLINE */
-nav a.active::after{
-  width:100%;
-}
-
-nav a.active{
-  color:#3f51b5;
-  font-weight:600;
-}
-
-/* SIDEBAR ACTIVE */
-.sidebar a.active{
-  color:#3f51b5;
-  font-weight:600;
-}
-
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-  }
-
-  .menu-btn {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
-  }
-
-  .sidebar {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 260px;
-    height: 100vh;
-    background: #fff;
-    padding-top: 80px;
-    transition: .4s;
-    z-index: 1001;
-  }
-
-  .sidebar.active {
-    right: 0;
-  }
-
-  .sidebar a {
-    display: block;
-    padding: 15px 25px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.4);
-    z-index: 1000;
-  }
-
-  .overlay.active {
-    display: block;
-  }
+@media(max-width:768px){
+  nav{display:none;}
+  .menu-btn{display:block;}
+  header{padding:15px 20px;}
+  .page-hero h1{font-size:32px;}
 }
-
 </style>
 </head>
 
@@ -343,6 +282,7 @@ nav a.active{
 <header>
   <div class="logo">
     <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo">
+    <span>Kanhya Graphic World</span>
   </div>
 
   <nav>
@@ -354,10 +294,7 @@ nav a.active{
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- HAMBURGER -->
-  <div class="menu-btn" onclick="openMenu()">
-    ☰
-  </div>
+  <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
 
 <div class="sidebar" id="sidebar">
@@ -427,6 +364,8 @@ nav a.active{
 </section>
 
 <footer>
+  © 2025 Kanhya Graphic World. All Rights Reserved.<br>
+  Made with ❤️
   © 2025 Kanhya Graphic World. All Rights Reserved.
   <br>
   Made with <span style="color:red;font-size:18px">❤️</span> •
@@ -438,22 +377,15 @@ nav a.active{
 </footer>
 
 <script>
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
-
 function openMenu(){
   sidebar.classList.add("active");
   overlay.classList.add("active");
-  document.body.style.overflow="hidden";
 }
-
 function closeMenu(){
   sidebar.classList.remove("active");
   overlay.classList.remove("active");
-  document.body.style.overflow="auto";
 }
 </script>
-
 
 </body>
 </html>
