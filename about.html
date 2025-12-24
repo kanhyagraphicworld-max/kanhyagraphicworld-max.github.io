@@ -3,41 +3,52 @@
 <head>
 <meta charset="UTF-8">
 
-<title>About | Kanhya Graphic World – Graphic Designer & Web Developer</title>
+<title>About Me | Kanhya Graphic World – Graphic Designer & Web Developer</title>
 
 <meta name="description"
-content="About Kanhya – Graphic Designer and beginner Web Developer with a psychology background, freelancing experience, and user-focused design approach.">
+content="About Kanhya – Graphic Designer and beginner Web Developer with a Psychology Honours background. Focused on clean design, user psychology and freelance web solutions.">
+
+<meta name="keywords"
+content="Kanhya Graphic World, graphic designer about, web developer about, psychology based design, freelance graphic designer India">
+
+<meta name="author" content="Kanhya Graphic World">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="canonical" href="https://kanhyagraphicworld-max.github.io/about.html">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Open Graph -->
+<meta property="og:title" content="About Kanhya | Graphic Designer & Web Developer">
+<meta property="og:description" content="Learn about Kanhya – combining design, psychology and web development to create meaningful digital experiences.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kanhyagraphicworld-max.github.io/about.html">
+<meta property="og:image" content="https://kanhyagraphicworld-max.github.io/assets/images/kanhya-graphic-world.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- SCHEMA -->
+<!-- Schema -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Person",
-  "name":"Kanhya Kant Singh",
-  "jobTitle":"Graphic Designer & Web Developer",
+  "name":"Kanhya",
   "url":"https://kanhyagraphicworld-max.github.io",
+  "jobTitle":"Graphic Designer & Web Developer",
   "sameAs":[
-    "https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/",
-    "https://www.fiverr.com/kanhya_gworld"
+    "https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
   ]
 }
 </script>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
+/* ===== EXISTING BASE STYLES (SAFE) ===== */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Poppins',sans-serif;
-  background:#f5f7ff;
+  background:#f6f8ff;
   color:#333;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -49,6 +60,7 @@ header{
   padding:15px 40px;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
+
 .logo{
   display:flex;
   align-items:center;
@@ -61,7 +73,6 @@ header{
   color:#1a237e;
 }
 
-/* NAV underline animation */
 nav a{
   margin-left:18px;
   text-decoration:none;
@@ -69,147 +80,56 @@ nav a{
   color:#333;
   position:relative;
 }
+
 nav a::after{
   content:"";
   position:absolute;
   left:0;
-  bottom:-6px;
+  bottom:-5px;
   width:0;
   height:2px;
   background:#3f51b5;
   transition:.3s;
 }
-nav a:hover::after,
-nav a.active::after{width:100%;}
-nav a:hover,
-nav a.active{color:#3f51b5;}
+nav a:hover::after{width:100%;}
 
-/* ===== HAMBURGER ===== */
 .menu-btn{
   display:none;
-  width:30px;
+  font-size:28px;
   cursor:pointer;
 }
-.menu-btn span{
-  display:block;
-  height:3px;
-  background:#1a237e;
-  margin:6px 0;
-  border-radius:3px;
-  transition:.35s;
-}
-.menu-btn.active span:nth-child(1){
-  transform:rotate(45deg) translate(6px,6px);
-}
-.menu-btn.active span:nth-child(2){
-  opacity:0;
-}
-.menu-btn.active span:nth-child(3){
-  transform:rotate(-45deg) translate(7px,-7px);
-}
 
-/* ===== SIDEBAR ===== */
-.sidebar{
-  position:fixed;
-  top:0;
-  left:-260px;
-  width:260px;
-  height:100%;
-  background:#fff;
-  box-shadow:4px 0 20px rgba(0,0,0,.2);
-  padding:25px;
-  transition:.4s;
-  z-index:2000;
-}
-.sidebar.active{left:0;}
-.sidebar a{
-  display:block;
-  margin:18px 0;
-  text-decoration:none;
-  font-weight:500;
-  color:#1a237e;
-}
-.overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.5);
-  z-index:1500;
-}
-.overlay.active{display:block;}
-
-/* ===== COMMON SECTION ===== */
-.section{
-  max-width:1200px;
-  margin:60px auto;
-  padding:40px;
-  border-radius:26px;
-  background:#ffffff;
-  box-shadow:0 12px 35px rgba(0,0,0,.1);
-  transition:.35s ease;
-}
-.section:hover{
-  transform:translateY(-8px);
-  background:#eef3ff;
-}
-
-/* ===== HERO ===== */
-.about-hero{
-  display:grid;
-  grid-template-columns:260px 1fr;
-  gap:40px;
-  align-items:center;
-}
-.about-hero img{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  object-fit:cover;
-  border:6px solid #3f51b5;
-  cursor:pointer;
-  transition:.3s;
-}
-.about-hero img:hover{transform:scale(1.05);}
-.about-hero h1{
-  font-size:40px;
-  color:#1a237e;
-}
-.typing{
-  font-weight:600;
-  color:#3f51b5;
-  margin:10px 0 20px;
-}
-.about-hero p{
-  font-size:17px;
-  line-height:1.8;
-  margin-bottom:12px;
-}
-
-/* CTA */
-.cta{margin-top:18px;}
-.cta a{
-  display:inline-block;
-  margin-right:12px;
-  padding:12px 26px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:500;
-  transition:.3s;
-}
-.cta .primary{background:#3f51b5;color:#fff;}
-.cta .primary:hover{background:#1a237e;}
-.cta .outline{border:2px solid #3f51b5;color:#3f51b5;}
-.cta .outline:hover{background:#3f51b5;color:#fff;}
-
-/* ===== RESPONSIVE ===== */
+/* MOBILE MENU */
 @media(max-width:768px){
   nav{display:none;}
   .menu-btn{display:block;}
-  header{padding:15px 20px;}
-  .about-hero{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
+}
+
+/* CONTENT */
+.container{
+  max-width:1100px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+.section{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  margin-bottom:30px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+  transition:.3s;
+}
+.section:hover{
+  transform:translateY(-6px);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  background:#f1f1f1;
+  color:#555;
 }
 </style>
 </head>
@@ -222,52 +142,61 @@ nav a.active{color:#3f51b5;}
     <span>Kanhya Graphic World</span>
   </div>
 
-  <nav>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <nav id="menu">
     <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
+    <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
     <a href="Education.html">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
-
-  <div class="menu-btn" id="menuBtn" onclick="openMenu()">
-    <span></span><span></span><span></span>
-  </div>
 </header>
 
-<div class="sidebar" id="sidebar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="Education.html">Education</a>
-  <a href="contact.html">Contact</a>
-</div>
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="container">
 
-<!-- 🔽 बाकी तुम्हारा ORIGINAL CONTENT बिल्कुल same रखा गया है -->
+  <div class="section">
+    <h1>About Me</h1>
+    <p>
+      Hi, I’m <strong>Kanhya</strong>, a <strong>Graphic Designer</strong> and beginner
+      <strong>Web Developer</strong> with a strong interest in human psychology
+      and visual communication.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Design + Psychology</h2>
+    <p>
+      I believe good design is not just about looks — it’s about understanding
+      how people think, feel and interact. My background in
+      <strong>Psychology Honours</strong> helps me create designs that feel natural,
+      clear and engaging.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Freelancing Approach</h2>
+    <p>
+      As a freelancer, I work with individuals and small businesses to create
+      clean branding, professional visuals and simple, functional websites.
+      I focus on clear communication, honest effort and on-time delivery.
+    </p>
+  </div>
+
+</div>
 
 <footer>
-  © 2025 Kanhya Graphic World. All Rights Reserved.
-  <br>
-  Made with <span style="color:red;font-size:18px">❤️</span> •
-  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
-     target="_blank" rel="noopener noreferrer">
-     Connect on LinkedIn
+  © 2025 Kanhya Graphic World. All Rights Reserved. <br>
+  Made with ❤️ •
+  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/" target="_blank">
+    Connect on LinkedIn
   </a>
 </footer>
 
 <script>
-function openMenu(){
-  menuBtn.classList.toggle("active");
-  sidebar.classList.add("active");
-  overlay.classList.add("active");
-}
-function closeMenu(){
-  menuBtn.classList.remove("active");
-  sidebar.classList.remove("active");
-  overlay.classList.remove("active");
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
 }
 </script>
 
