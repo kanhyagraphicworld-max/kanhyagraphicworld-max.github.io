@@ -20,7 +20,7 @@ body{
   color:#333;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   position:sticky;top:0;z-index:1000;
   background:#fff;padding:15px 40px;
@@ -30,14 +30,71 @@ header{
 .logo{display:flex;align-items:center;gap:12px;}
 .logo img{height:45px;}
 .logo span{font-size:20px;font-weight:600;color:#1a237e;}
-nav a{margin-left:18px;text-decoration:none;color:#333;font-weight:500;}
-nav a:hover{color:#3f51b5;}
-.menu-btn{display:none;font-size:28px;cursor:pointer}
 
-/* CONTAINER */
+nav a{margin-left:18px;text-decoration:none;color:#333;font-weight:500;position:relative}
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-6px;
+  width:0;height:2px;
+  background:#3f51b5;
+  transition:.3s;
+}
+nav a:hover::after{width:100%}
+
+/* ================= HAMBURGER ================= */
+.menu-btn{
+  display:none;
+  width:30px;height:22px;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:pointer;
+}
+.menu-btn span{
+  height:3px;
+  background:#333;
+  border-radius:4px;
+  transition:.35s ease;
+}
+
+/* hover animation (3-line) */
+.menu-btn:hover span{background:#3f51b5}
+.menu-btn:hover span:nth-child(1){transform:translateY(-2px)}
+.menu-btn:hover span:nth-child(3){transform:translateY(2px)}
+
+.menu-btn.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.menu-btn.active span:nth-child(2){opacity:0}
+.menu-btn.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* MOBILE NAV */
+@media(max-width:768px){
+  nav{
+    position:fixed;
+    right:-100%;
+    top:0;
+    width:260px;
+    height:100vh;
+    background:#fff;
+    flex-direction:column;
+    padding-top:90px;
+    box-shadow:-6px 0 18px rgba(0,0,0,.15);
+    transition:.4s;
+  }
+  nav.active{right:0;}
+  .menu-btn{display:flex;}
+}
+
+/* lock scroll when menu open */
+body.menu-open{overflow:hidden}
+
+/* ================= CONTAINER ================= */
 .container{max-width:1200px;margin:40px auto;padding:20px}
 
-/* BOX + HOVER ANIMATION */
+/* ================= BOX / SECTION ================= */
 .box{
   background:#fff;margin-top:45px;padding:35px;
   border-radius:22px;
@@ -51,7 +108,12 @@ nav a:hover{color:#3f51b5;}
   border-color:rgba(63,81,181,.35);
 }
 
-/* RESUME */
+/* mobile safety */
+@media (hover:none){
+  .box:hover{transform:none}
+}
+
+/* ================= RESUME ================= */
 .resume-box{
   margin-top:45px;padding:45px;text-align:center;
   border-radius:24px;
@@ -73,25 +135,19 @@ nav a:hover{color:#3f51b5;}
   background:transparent;color:#fff;border:2px solid #fff;
 }
 
-/* DISCLAIMER */
+/* ================= CERTIFICATES ================= */
 .certificate-disclaimer{
-  background:#fff8e1;
-  border-left:4px solid #ff9800;
-  padding:14px 18px;
-  margin:20px 0;
-  font-size:14px;
-  color:#5c4300;
-  border-radius:8px;
+  background:#fff8e1;border-left:4px solid #ff9800;
+  padding:14px 18px;margin:20px 0;
+  font-size:14px;color:#5c4300;border-radius:8px;
 }
 
-/* FILTER */
 .filter-btn{text-align:center;margin-bottom:25px}
 .filter-btn button{
   padding:12px 36px;border:none;border-radius:40px;
   background:#3f51b5;color:#fff;font-weight:600;cursor:pointer;
 }
 
-/* MASONRY */
 .masonry{column-count:4;column-gap:22px;}
 @media(max-width:992px){.masonry{column-count:3}}
 @media(max-width:768px){.masonry{column-count:2}}
@@ -99,7 +155,6 @@ nav a:hover{color:#3f51b5;}
 
 .certificates.hide{display:none}
 
-/* CERTIFICATE */
 .certificate{
   break-inside:avoid;margin-bottom:22px;
   text-align:center;cursor:pointer;
@@ -108,7 +163,6 @@ nav a:hover{color:#3f51b5;}
 }
 .certificate:hover{transform:translateY(-8px)}
 
-/* WATERMARK */
 .certificate::after{
   content:"© Kanhya Graphic World • Verification Only";
   position:absolute;inset:0;
@@ -136,7 +190,7 @@ nav a:hover{color:#3f51b5;}
   transform:scale(1.04);
 }
 
-/* POPUP */
+/* ================= POPUP ================= */
 .popup{
   display:none;position:fixed;inset:0;
   background:rgba(0,0,0,.85);
@@ -148,8 +202,6 @@ nav a:hover{color:#3f51b5;}
   position:absolute;top:20px;right:30px;
   font-size:36px;color:#fff;cursor:pointer;
 }
-
-/* POPUP WATERMARK */
 .popup-watermark{
   position:absolute;inset:0;
   display:flex;align-items:center;justify-content:center;
@@ -166,7 +218,7 @@ nav a:hover{color:#3f51b5;}
   mix-blend-mode:overlay;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
   text-align:center;padding:20px;
   background:#f1f1f1;color:#555;margin-top:60px;
@@ -181,11 +233,6 @@ footer{
   0%,100%{transform:scale(1)}
   50%{transform:scale(1.25)}
 }
-
-/* MOBILE SAFE */
-@media (hover:none){
-  .box:hover,.resume-box:hover,.certificate:hover{transform:none}
-}
 </style>
 </head>
 
@@ -193,10 +240,14 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="assets/images/kanhya-graphic-world.png">
+    <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo">
     <span>Kanhya Graphic World</span>
   </div>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+
   <nav id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -271,22 +322,28 @@ footer{
 </div>
 
 <script>
+const menuBtn=document.getElementById("menuBtn");
+const nav=document.getElementById("mobileMenu");
+
 function toggleMenu(){
-  document.getElementById("mobileMenu").classList.toggle("active");
+  menuBtn.classList.toggle("active");
+  nav.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
 }
+
 function toggleCertificates(){
   const c=document.getElementById("certificates");
   const b=document.getElementById("filterBtn");
   c.classList.toggle("hide");
   b.innerText=c.classList.contains("hide")?"Show Certificates":"Hide Certificates";
 }
+
 function openPopup(el){
   popup.style.display="flex";
   popupImg.src=el.querySelector("img").src;
 }
-function closePopup(){
-  popup.style.display="none";
-}
+function closePopup(){popup.style.display="none"}
+
 document.addEventListener("mousemove",e=>{
   const wm=document.getElementById("popupWatermark");
   if(!wm) return;
