@@ -1,0 +1,25 @@
+/* ================= MOBILE NAV SAFE FIX ================= */
+@media (max-width: 768px) {
+
+  nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  nav a{
+    width: 100%;
+    padding: 15px 30px;
+    margin: 0;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+  }
+
+  nav a::after{
+    left: 30px;
+    bottom: 6px;
+  }
+
+}
