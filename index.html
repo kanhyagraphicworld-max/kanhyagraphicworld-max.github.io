@@ -6,9 +6,11 @@
 <!-- ================= SEO ================= -->
 <title>Kanhya Graphic World | Graphic Designer & Web Developer</title>
 
-<meta name="description" content="Kanhya Graphic World – Portfolio of Kanhya Kant Singh, Graphic Designer and beginner Web Developer creating logos, banners, creatives and responsive websites.">
+<meta name="description"
+content="Kanhya Graphic World – Portfolio of Kanhya Kant Singh, Graphic Designer and beginner Web Developer creating logos, banners, social media creatives and responsive websites.">
 
-<meta name="keywords" content="Kanhya Graphic World, Graphic Designer India, Web Developer, Logo Design, Banner Design, Portfolio Website">
+<meta name="keywords"
+content="Kanhya Graphic World, Graphic Designer India, Web Developer, Logo Design, Banner Design, Portfolio Website">
 
 <link rel="canonical" href="https://kanhyagraphicworld-max.github.io/">
 
@@ -135,28 +137,118 @@ nav a.active::after{
 
 /* ================= HERO ================= */
 .hero{
-  padding:90px 20px;
+  padding:100px 20px 80px;
   text-align:center;
 }
 .hero h1{
-  font-size:36px;
+  font-size:38px;
   color:#1a237e;
 }
 .hero p{
   margin-top:12px;
-  font-size:16px;
+  font-size:17px;
   color:#555;
+  max-width:650px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.hero .status{
+  margin-top:12px;
+  font-size:14px;
+  color:#666;
+}
+
+/* CTA */
+.cta{
+  margin-top:35px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.cta a{
+  text-decoration:none;
+  padding:14px 34px;
+  border-radius:40px;
+  font-weight:600;
+  transition:.3s;
+}
+.cta .primary{
+  background:#3f51b5;
+  color:#fff;
+}
+.cta .primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(63,81,181,.3);
+}
+.cta .outline{
+  border:2px solid #3f51b5;
+  color:#3f51b5;
+}
+.cta .outline:hover{
+  background:#3f51b5;
+  color:#fff;
+  transform:translateY(-3px);
+}
+
+/* ================= SECTIONS ================= */
+.section{
+  max-width:1100px;
+  margin:70px auto;
+  padding:0 20px;
+}
+.section h2{
+  text-align:center;
+  color:#1a237e;
+  margin-bottom:40px;
+  position:relative;
+}
+.section h2::after{
+  content:'';
+  width:60px;
+  height:3px;
+  background:#3f51b5;
+  display:block;
+  margin:10px auto 0;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.card{
+  background:#fff;
+  padding:28px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-6px);
+}
+.card h3{
+  color:#1a237e;
+  margin-bottom:10px;
 }
 
 /* ================= FOOTER ================= */
 footer{
   text-align:center;
-  padding:20px;
+  padding:22px;
   background:#f1f1f1;
   font-size:14px;
 }
 footer span{
   color:red;
+}
+footer a{
+  color:#3f51b5;
+  text-decoration:none;
+}
+footer a:hover{
+  text-decoration:underline;
 }
 </style>
 </head>
@@ -181,15 +273,48 @@ footer span{
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <h1>Hello, I’m Kanhya 👋</h1>
-  <p>Graphic Designer & Beginner Web Developer</p>
+  <p>
+    I’m a <strong>Graphic Designer</strong> and beginner
+    <strong>Web Developer</strong> helping individuals and small businesses
+    grow with creative visuals and clean, responsive websites.
+  </p>
+
+  <p class="status">
+    Freelance Graphic Designer & Web Developer • Available for Projects
+  </p>
+
+  <div class="cta">
+    <a href="contact.html" class="primary">Hire Me</a>
+    <a href="gallery.html" class="outline">View Work</a>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="section">
+  <h2>Why Choose Me</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🎨 Creative Design</h3>
+      <p>Logos, banners, posters and social media creatives that look professional and communicate clearly.</p>
+    </div>
+    <div class="card">
+      <h3>🧠 Psychology-Based Approach</h3>
+      <p>Understanding how users think helps me design layouts and colors that feel right and convert better.</p>
+    </div>
+    <div class="card">
+      <h3>💻 Clean Web Development</h3>
+      <p>Responsive HTML & CSS websites that work smoothly on mobile and desktop.</p>
+    </div>
+  </div>
 </section>
 
 <footer>
   © 2025 Kanhya Graphic World. All Rights Reserved.
   <br>
-  Made with <span style="color:red;font-size:18px">❤️</span> •
+  Made with <span>❤️</span> •
   <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
      target="_blank"
      rel="noopener noreferrer">
