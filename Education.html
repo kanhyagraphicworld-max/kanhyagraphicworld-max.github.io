@@ -108,19 +108,18 @@ body.menu-open{overflow:hidden}
   border-color:rgba(63,81,181,.35);
 }
 
-/* mobile safety */
-@media(max-width:768px){
-  nav{
+/* ================= MOBILE NAV SAFE FIX ================= */
+@media (max-width: 768px) {
+
+  .site-header .site-nav{
     display:flex;
     flex-direction:column;
     align-items:flex-start;
-
-    /* ✅ SAFE FIX  */
-    gap:0;
     justify-content:flex-start;
+    gap:0;
   }
 
-  nav a{
+  .site-header .site-nav a{
     width:100%;
     padding:15px 30px;
     margin:0;
@@ -128,11 +127,13 @@ body.menu-open{overflow:hidden}
     font-size:18px;
   }
 
-  nav a::after{
+  .site-header .site-nav a::after{
     left:30px;
     bottom:6px;
   }
+
 }
+
 
 
 /* ================= RESUME ================= */
@@ -270,7 +271,7 @@ footer{
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
-    <a href="Education.html" class="active">Education</a> 
+    <a href="Education.html" class="active">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
   <div class="menu-btn" onclick="openMenu()">☰</div>
@@ -340,8 +341,15 @@ footer{
 </div>
 
 <script>
-const menuBtn=document.getElementById("menuBtn");
-const nav=document.getElementById("mobileMenu");
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector("nav");
+
+function openMenu(){
+  menuBtn.classList.toggle("active");
+  nav.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+}
+
 
 function toggleMenu(){
   menuBtn.classList.toggle("active");
