@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>About | Kanhya Graphic World</title>
-
-<!-- SEO META -->
+  <!-- SEO META -->
 <meta name="description" content="About Kanhya Kant Singh – Graphic Designer and beginner Web Developer with expertise in logo design, branding, web design and psychology-based visual communication.">
+
 <meta name="keywords" content="Kanhya Graphic World, Graphic Designer India, Web Developer Beginner, Logo Designer, Freelancer Designer, Psychology Design">
+
 <meta name="author" content="Kanhya Kant Singh">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://kanhyagraphicworld-max.github.io/about.html">
-
 <!-- Open Graph -->
 <meta property="og:title" content="About Kanhya Graphic World">
 <meta property="og:description" content="Graphic Designer & Beginner Web Developer focused on clean branding, psychology-based design and user-friendly websites.">
@@ -30,7 +30,7 @@ body{
   color:#333;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
   position:sticky;
   top:0;
@@ -42,10 +42,19 @@ header{
   padding:15px 40px;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-.logo{display:flex;align-items:center;gap:12px;}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 .logo img{height:45px;}
-.logo span{font-size:20px;font-weight:600;color:#1a237e;}
+.logo span{
+  font-size:20px;
+  font-weight:600;
+  color:#1a237e;
+}
 
+/* NAV underline animation */
 nav a{
   margin-left:18px;
   text-decoration:none;
@@ -66,13 +75,19 @@ nav a::after{
 nav a:hover::after{width:100%;}
 nav a:hover{color:#3f51b5;}
 
-.menu-btn{display:none;font-size:28px;cursor:pointer;}
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
 
-/* SIDEBAR */
+/* ===== SIDEBAR ===== */
 .sidebar{
   position:fixed;
-  top:0;left:-260px;
-  width:260px;height:100%;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100%;
   background:#fff;
   box-shadow:4px 0 20px rgba(0,0,0,.2);
   padding:25px;
@@ -96,7 +111,7 @@ nav a:hover{color:#3f51b5;}
 }
 .overlay.active{display:block;}
 
-/* SECTION */
+/* ===== COMMON SECTION ===== */
 .section{
   max-width:1200px;
   margin:60px auto;
@@ -111,7 +126,7 @@ nav a:hover{color:#3f51b5;}
   background:#eef3ff;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .about-hero{
   display:grid;
   grid-template-columns:260px 1fr;
@@ -119,17 +134,34 @@ nav a:hover{color:#3f51b5;}
   align-items:center;
 }
 .about-hero img{
-  width:260px;height:260px;
+  width:260px;
+  height:260px;
   border-radius:50%;
   object-fit:cover;
   border:6px solid #3f51b5;
   cursor:pointer;
+  transition:.3s;
 }
-.about-hero h1{font-size:40px;color:#1a237e;}
-.typing{font-weight:600;color:#3f51b5;margin:10px 0 20px;}
-.about-hero p{font-size:17px;line-height:1.8;margin-bottom:12px;}
+.about-hero img:hover{transform:scale(1.05);}
+.about-hero h1{
+  font-size:40px;
+  color:#1a237e;
+}
+.typing{
+  font-weight:600;
+  color:#3f51b5;
+  margin:10px 0 20px;
+}
+.about-hero p{
+  font-size:17px;
+  line-height:1.8;
+  margin-bottom:12px;
+}
 
-/* CTA */
+/* CTA buttons */
+.cta{
+  margin-top:18px;
+}
 .cta a{
   display:inline-block;
   margin-right:12px;
@@ -139,12 +171,21 @@ nav a:hover{color:#3f51b5;}
   font-weight:500;
   transition:.3s;
 }
-.cta .primary{background:#3f51b5;color:#fff;}
+.cta .primary{
+  background:#3f51b5;
+  color:#fff;
+}
 .cta .primary:hover{background:#1a237e;}
-.cta .outline{border:2px solid #3f51b5;color:#3f51b5;}
-.cta .outline:hover{background:#3f51b5;color:#fff;}
+.cta .outline{
+  border:2px solid #3f51b5;
+  color:#3f51b5;
+}
+.cta .outline:hover{
+  background:#3f51b5;
+  color:#fff;
+}
 
-/* INFO */
+/* ===== INFO CARDS ===== */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -156,10 +197,16 @@ nav a:hover{color:#3f51b5;}
   border-radius:20px;
   transition:.35s;
 }
-.info-card:hover{transform:translateY(-10px);background:#e8eeff;}
-.info-card h3{color:#3f51b5;margin-bottom:8px;}
+.info-card:hover{
+  transform:translateY(-10px);
+  background:#e8eeff;
+}
+.info-card h3{
+  color:#3f51b5;
+  margin-bottom:8px;
+}
 
-/* SKILLS */
+/* ===== SKILLS ===== */
 .skills-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -170,10 +217,23 @@ nav a:hover{color:#3f51b5;}
   padding:30px;
   border-radius:20px;
   text-align:center;
+  transition:.35s;
 }
-.skill-card h3{color:#1a237e;margin-bottom:6px;}
+.skill-card:hover{
+  transform:translateY(-10px);
+  background:#e9efff;
+}
+.skill-card h3{
+  font-size:20px;
+  color:#1a237e;
+  margin-bottom:6px;
+}
+.skill-card p{
+  font-size:15px;
+  color:#555;
+}
 
-/* POPUP */
+/* ===== POPUP ===== */
 .popup{
   display:none;
   position:fixed;
@@ -183,14 +243,21 @@ nav a:hover{color:#3f51b5;}
   align-items:center;
   z-index:3000;
 }
-.popup img{max-width:90%;max-height:90%;border-radius:14px;}
+.popup img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:14px;
+}
 .popup span{
   position:absolute;
-  top:20px;right:30px;
-  font-size:36px;color:#fff;cursor:pointer;
+  top:20px;
+  right:30px;
+  font-size:36px;
+  color:#fff;
+  cursor:pointer;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
   margin-top:70px;
   text-align:center;
@@ -199,33 +266,42 @@ footer{
   color:#555;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
   nav{display:none;}
   .menu-btn{display:block;}
   header{padding:15px 20px;}
-  .about-hero{grid-template-columns:1fr;text-align:center;}
+  .about-hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
 }
 </style>
-
-<!-- SCHEMA -->
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Kanhya Kant Singh",
   "url": "https://kanhyagraphicworld-max.github.io",
+  "image": "https://kanhyagraphicworld-max.github.io/assets/images/profile.jpg",
   "jobTitle": "Graphic Designer & Web Developer",
-  "sameAs": ["https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"]
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Kanhya Graphic World"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
+  ]
 }
 </script>
+
 </head>
 
 <body>
 
 <header>
   <div class="logo">
-    <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo">
+  <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo">
     <span>Kanhya Graphic World</span>
   </div>
   <nav>
@@ -233,7 +309,7 @@ footer{
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
-    <a href="Education.html">Education</a>
+    <a href="Education.html">Education</a> 
     <a href="contact.html">Contact</a>
   </nav>
   <div class="menu-btn" onclick="openMenu()">☰</div>
@@ -249,27 +325,85 @@ footer{
 </div>
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
+<!-- HERO -->
 <section class="section about-hero">
-  <img src="assets/images/profile.jpg" onclick="openPopup(this.src)" alt="Kanhya Profile Photo">
+<img src="assets/images/profile.jpg" onclick="openPopup(this.src)" alt="Kanhya Profile Photo">
   <div>
     <h1>About Me</h1>
     <div class="typing" id="typing"></div>
 
-    <p>Hi, I’m <b>Kanhya</b>, a Graphic Designer and beginner Web Developer with a strong interest in human psychology and visual communication.</p>
-    <p>I believe good design is not just about looking beautiful — it’s about understanding how people think, feel, and react.</p>
+    <p>
+      Hi, I’m <b>Kanhya</b>, a Graphic Designer and beginner Web Developer with a
+      strong interest in human psychology and visual communication.
+    </p>
+
+    <p>
+      I believe good design is not just about looking beautiful —
+      it’s about understanding how people think, feel, and react.
+    </p>
 
     <div class="cta">
-      <a href="https://www.fiverr.com/kanhya_gworld" target="_blank" class="primary">Hire Me on Fiverr</a>
-      <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/" target="_blank" class="outline">Connect on LinkedIn</a>
+      <a href="https://www.fiverr.com/kanhya_gworld" target="_blank" class="primary">
+        Hire Me on Fiverr
+      </a>
+      <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
+         target="_blank" class="outline">
+        Connect on LinkedIn
+      </a>
     </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="section">
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>🎨 Design Philosophy</h3>
+      <p>I believe that good design should guide the user, not confuse them.
+Every layout, color, and spacing decision is made to create clarity,
+not noise, so users instantly understand what to do next.</p>
+    </div>
+    <div class="info-card">
+      <h3>🧠 Psychology + Design</h3>
+      <p>My background in Psychology helps me understand how users think,
+feel, and react to visuals. I use this knowledge to create
+emotion-driven color choices, clear visual hierarchy, and designs
+that connect with users on a deeper level.
+</p>
+    </div>
+    <div class="info-card">
+      <h3>🤝 Freelancing</h3>
+      <p>As a freelancer, I work with individuals, startups, and small
+businesses. I focus on clear communication, honest effort,
+and delivering designs and websites that help clients grow
+digitally with confidence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section">
+  <h2 style="color:#1a237e;margin-bottom:25px;">My Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><h3>Graphic Design</h3><p>Logos, banners & creatives</p></div>
+    <div class="skill-card"><h3>Photoshop</h3><p>Photo editing & design</p></div>
+    <div class="skill-card"><h3>CorelDraw</h3><p>Flex & print designs</p></div>
+    <div class="skill-card"><h3>Web Development</h3><p>HTML, CSS websites</p></div>
+    <div class="skill-card"><h3>MS Office</h3><p>Word, Excel & PowerPoint</p></div>
+    <div class="skill-card"><h3>Social Media Design</h3><p>Instagram & WhatsApp</p></div>
   </div>
 </section>
 
 <footer>
   © 2025 Kanhya Graphic World. All Rights Reserved.<br>
+  Made with ❤️.
+  © 2025 Kanhya Graphic World. All Rights Reserved.
+  <br>
   Made with <span style="color:red;font-size:18px">❤️</span> •
-  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/" target="_blank" rel="noopener noreferrer">
-    Connect on LinkedIn
+  <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
+     target="_blank"
+     rel="noopener noreferrer">
+     Connect on LinkedIn
   </a>
 </footer>
 
@@ -279,41 +413,42 @@ footer{
 </div>
 
 <script>
-const sidebar=document.getElementById("sidebar");
-const overlay=document.getElementById("overlay");
-const popup=document.getElementById("popup");
-const popupImg=document.getElementById("popupImg");
-const typing=document.getElementById("typing");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popupImg");
+const typing = document.getElementById("typing");
 
 function openMenu(){
   sidebar.classList.add("active");
   overlay.classList.add("active");
-  document.body.style.overflow="hidden";
+  document.body.style.overflow = "hidden";
 }
+
 function closeMenu(){
   sidebar.classList.remove("active");
   overlay.classList.remove("active");
-  document.body.style.overflow="auto";
+  document.body.style.overflow = "auto";
 }
+
 function openPopup(src){
   popup.style.display="flex";
   popupImg.src=src;
 }
+
 function closePopup(){
   popup.style.display="none";
 }
 
-/* Typing reset safe */
-let text="Graphic Designer | Freelancer | Web Developer";
-let i=0;
-typing.innerHTML="";
+let text="Graphic Designer | Freelancer | Web Developer", i=0;
 (function type(){
-  if(i<text.length){
-    typing.innerHTML+=text[i++];
-    setTimeout(type,80);
+  if(i < text.length){
+    typing.innerHTML += text[i++];
+    setTimeout(type, 80);
   }
 })();
 </script>
+
 
 </body>
 </html>
