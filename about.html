@@ -126,6 +126,27 @@ nav a:hover{color:#3f51b5;}
   background:#eef3ff;
 }
 
+/* NAV UNDERLINE EFFECT */
+nav a{
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#3f51b5;
+  transition:0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after{
+  width:100%;
+}
+
 /* ===== HERO ===== */
 .about-hero{
   display:grid;
@@ -306,7 +327,7 @@ footer{
   </div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html" class="active">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
     <a href="Education.html">Education</a> 
