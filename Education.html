@@ -70,24 +70,6 @@ nav a:hover::after{width:100%}
   transform:rotate(-45deg) translate(6px,-6px);
 }
 
-/* MOBILE NAV */
-@media(max-width:768px){
-  nav{
-    position:fixed;
-    right:-100%;
-    top:0;
-    width:260px;
-    height:100vh;
-    background:#fff;
-    flex-direction:column;
-    padding-top:90px;
-    box-shadow:-6px 0 18px rgba(0,0,0,.15);
-    transition:.4s;
-  }
-  nav.active{right:0;}
-  .menu-btn{display:flex;}
-}
-
 /* lock scroll when menu open */
 body.menu-open{overflow:hidden}
 
@@ -108,18 +90,31 @@ body.menu-open{overflow:hidden}
   border-color:rgba(63,81,181,.35);
 }
 
-/* ================= MOBILE NAV SAFE FIX ================= */
-@media (max-width: 768px) {
+/* ===== FINAL MOBILE NAV FIX (EDUCATION PAGE SAFE) ===== */
+@media (max-width: 768px){
 
-  .site-header .site-nav{
+  header nav{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:260px;
+    height:100vh;
+    background:#fff;
     display:flex;
     flex-direction:column;
     align-items:flex-start;
     justify-content:flex-start;
-    gap:0;
+    padding-top:90px;
+    box-shadow:-6px 0 18px rgba(0,0,0,.15);
+    transition:.4s ease;
+    z-index:2000;
   }
 
-  .site-header .site-nav a{
+  header nav.active{
+    right:0;
+  }
+
+  header nav a{
     width:100%;
     padding:15px 30px;
     margin:0;
@@ -127,11 +122,14 @@ body.menu-open{overflow:hidden}
     font-size:18px;
   }
 
-  .site-header .site-nav a::after{
+  header nav a::after{
     left:30px;
     bottom:6px;
   }
 
+  .menu-btn{
+    display:flex;
+  }
 }
 
 
@@ -256,6 +254,10 @@ footer{
   0%,100%{transform:scale(1)}
   50%{transform:scale(1.25)}
 }
+  nav a.active::after{
+  width:100%;
+}
+
 </style>
 </head>
 
@@ -274,7 +276,12 @@ footer{
     <a href="Education.html" class="active">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="menu-btn" onclick="openMenu()">☰</div>
+  <div class="menu-btn" onclick="openMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
 </header>
 
 <div class="container">
