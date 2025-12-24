@@ -111,6 +111,26 @@ nav a:hover{color:#3f51b5;}
 }
 .overlay.active{display:block;}
 
+/* Sidebar active underline (mobile) */
+.sidebar a{
+  position:relative;
+}
+
+.sidebar a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:2px;
+  background:#3f51b5;
+  transition:0.3s ease;
+}
+
+.sidebar a.active::after{
+  width:100%;
+}
+
 /* ===== COMMON SECTION ===== */
 .section{
   max-width:1200px;
