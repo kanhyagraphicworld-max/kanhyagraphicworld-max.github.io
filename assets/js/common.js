@@ -1,28 +1,20 @@
-// ================= COMMON SIDEBAR JS =================
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
 
-const menuBtn = document.querySelector(".menu-btn");
-const sidebar = document.querySelector(".sidebar");
-const overlay = document.querySelector(".overlay");
+/* Toggle sidebar */
+menuBtn?.addEventListener("click",()=>{
+  menuBtn.classList.toggle("active");
+  sidebar.classList.toggle("active");
+  document.body.style.overflow =
+    sidebar.classList.contains("active") ? "hidden" : "";
+});
 
-// OPEN MENU
-function openMenu(){
-  sidebar.classList.add("active");
-  overlay.classList.add("active");
-  document.body.style.overflow="hidden";
-}
+/* Auto active page highlight */
+const links = document.querySelectorAll(".sidebar a");
+const current = location.pathname.split("/").pop();
 
-// CLOSE MENU
-function closeMenu(){
-  sidebar.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.style.overflow="auto";
-}
-
-// AUTO ACTIVE PAGE
-const currentPage = location.pathname.split("/").pop() || "index.html";
-
-document.querySelectorAll("nav a, .sidebar a").forEach(link=>{
-  if(link.getAttribute("href") === currentPage){
+links.forEach(link=>{
+  if(link.getAttribute("href") === current){
     link.classList.add("active");
   }
 });
