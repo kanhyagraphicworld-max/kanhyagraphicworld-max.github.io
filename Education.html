@@ -11,6 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/common.css">
+
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -276,10 +279,21 @@ footer{
     <a href="Education.html" class="active">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="menu-btn" onclick="openMenu()">
+  <!-- HAMBURGER -->
+<div class="menu-btn" id="menuBtn">
   <span></span>
   <span></span>
   <span></span>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="education.html">Education</a>
+  <a href="contact.html">Contact</a>
 </div>
 
 </header>
@@ -383,6 +397,8 @@ document.addEventListener("mousemove",e=>{
   wm.style.transform=`translate(${e.clientX/40}px,${e.clientY/40}px) rotate(-12deg)`;
 });
 </script>
+<script src="assets/js/common.js"></script>
+
 
 </body>
 </html>
