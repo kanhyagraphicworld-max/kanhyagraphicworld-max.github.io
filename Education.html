@@ -271,6 +271,7 @@ footer{
   <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo">
     <span>Kanhya Graphic World</span>
   </div>
+  
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -279,21 +280,12 @@ footer{
     <a href="Education.html" class="active">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
+  
   <!-- HAMBURGER -->
 <div class="menu-btn" id="menuBtn">
   <span></span>
   <span></span>
   <span></span>
-</div>
-
-<!-- SIDEBAR -->
-<div class="sidebar" id="sidebar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="education.html">Education</a>
-  <a href="contact.html">Contact</a>
 </div>
 
 </header>
@@ -364,12 +356,6 @@ footer{
 <script>
 const menuBtn = document.querySelector(".menu-btn");
 const nav = document.querySelector("nav");
-
-function openMenu(){
-  menuBtn.classList.toggle("active");
-  nav.classList.toggle("active");
-  document.body.classList.toggle("menu-open");
-}
 
 
 function toggleMenu(){
