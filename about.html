@@ -26,6 +26,7 @@
   <!-- COMMON MOBILE + NAV FIX (future ready) -->
 <link rel="stylesheet" href="assets/css/common.css">
 
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
@@ -346,21 +347,25 @@ footer{
 
 <header>
   <div class="logo">
-  <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo">
+    <img src="assets/images/kanhya-graphic-world.png" alt="Logo">
     <span>Kanhya Graphic World</span>
   </div>
+
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
+    <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
-    <a href="Education.html">Education</a> 
+    <a href="Education.html">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="menu-btn" onclick="openMenu()">☰</div>
+
+  <div class="menu-btn" onclick="openMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </header>
 
-<div class="sidebar" id="sidebar">
+<div class="sidebar">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
@@ -368,7 +373,8 @@ footer{
   <a href="Education.html">Education</a>
   <a href="contact.html">Contact</a>
 </div>
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<div class="overlay" onclick="closeMenu()"></div>
 
 <!-- HERO -->
 <section class="section about-hero">
@@ -492,6 +498,7 @@ let text="Graphic Designer | Freelancer | Web Developer", i=0;
 })();
 </script>
 
+<script src="assets/js/common.js"></script>
 
 </body>
 </html>
