@@ -354,80 +354,53 @@ footer{
 </div>
 
 <script>
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
-
-
-function toggleMenu(){
-  menuBtn.classList.toggle("active");
-  nav.classList.toggle("active");
-  document.body.classList.toggle("menu-open");
-}
-
-function toggleCertificates(){
-  const c=document.getElementById("certificates");
-  const b=document.getElementById("filterBtn");
-  c.classList.toggle("hide");
-  b.innerText=c.classList.contains("hide")?"Show Certificates":"Hide Certificates";
-}
-
-function openPopup(el){
-  popup.style.display="flex";
-  popupImg.src=el.querySelector("img").src;
-}
-function closePopup(){popup.style.display="none"}
-
-document.addEventListener("mousemove",e=>{
-  const wm=document.getElementById("popupWatermark");
-  if(!wm) return;
-  wm.style.transform=`translate(${e.clientX/40}px,${e.clientY/40}px) rotate(-12deg)`;
-});
-</script>
-  <!-- ✅ ADD just before </body> -->
-
-<script>
-/* ================= MOBILE MENU FIX ================= */
+/* ================= GLOBAL ELEMENTS ================= */
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.querySelector("header nav");
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popupImg");
 
-menuBtn.addEventListener("click", () => {
-  menuBtn.classList.toggle("active");
-  nav.classList.toggle("active");
-  document.body.classList.toggle("menu-open");
-});
+/* ================= MOBILE MENU ================= */
+if(menuBtn){
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    nav.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
+}
 
 /* ================= CERTIFICATE FILTER ================= */
 function toggleCertificates(){
-  const c=document.getElementById("certificates");
-  const b=document.getElementById("filterBtn");
+  const c = document.getElementById("certificates");
+  const b = document.getElementById("filterBtn");
+  if(!c || !b) return;
+
   c.classList.toggle("hide");
   b.innerText = c.classList.contains("hide")
     ? "Show Certificates"
     : "Hide Certificates";
 }
 
-/* ================= POPUP SAFE FIX ================= */
-const popup = document.getElementById("popup");
-const popupImg = document.getElementById("popupImg");
-
+/* ================= POPUP ================= */
 function openPopup(el){
-  popup.style.display="flex";
+  if(!popup || !popupImg) return;
+  popup.style.display = "flex";
   popupImg.src = el.querySelector("img").src;
 }
 
 function closePopup(){
-  popup.style.display="none";
+  if(!popup) return;
+  popup.style.display = "none";
 }
 
-/* watermark motion */
+/* ================= WATERMARK MOTION ================= */
 document.addEventListener("mousemove", e => {
   const wm = document.getElementById("popupWatermark");
   if(!wm) return;
   wm.style.transform =
-    `translate(${e.clientX/40}px,${e.clientY/40}px) rotate(-12deg)`;
+    `translate(${e.clientX/40}px, ${e.clientY/40}px) rotate(-12deg)`;
 });
 </script>
 
-  
 </body>
 </html>
