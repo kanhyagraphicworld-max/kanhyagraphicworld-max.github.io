@@ -228,7 +228,46 @@ footer{
   </a>
 </footer>
 
+<div class="popup" id="popup" onclick="closePopup()">
+  <span>&times;</span>
+  <img id="popupImg">
+</div>
 
+<script>
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popupImg");
+const typing = document.getElementById("typing");
+
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
+
+function openPopup(src){
+  popup.style.display="flex";
+  popupImg.src=src;
+}
+
+function closePopup(){
+  popup.style.display="none";
+}
+
+let text="Graphic Designer | Freelancer | Web Developer", i=0;
+(function type(){
+  if(i < text.length){
+    typing.innerHTML += text[i++];
+    setTimeout(type, 80);
+  }
+})();
 </script>
 
 </body>
