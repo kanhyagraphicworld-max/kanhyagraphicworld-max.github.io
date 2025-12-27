@@ -344,14 +344,20 @@ footer a:hover{
 </footer>
 
 <script>
-const menuBtn=document.getElementById("menuBtn");
-const nav=document.getElementById("nav");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
 
-menuBtn.onclick=()=>{
-  menuBtn.classList.toggle("active");
-  nav.classList.toggle("active");
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+  document.body.style.overflow="hidden";
+}
+
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.style.overflow="auto";
 }
 </script>
-
 </body>
 </html>
