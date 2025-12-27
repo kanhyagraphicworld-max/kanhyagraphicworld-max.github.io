@@ -208,29 +208,26 @@ footer{
 
 <header>
   <div class="logo">
-  <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo">
+    <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo" height="40">
     <span>Kanhya Graphic World</span>
   </div>
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html" >About</a>
+
+  <div class="menu-btn" id="menuBtn">
+    <span></span><span></span><span></span>
+  </div>
+
+  <!-- MOBILE + DESKTOP NAV -->
+  <nav id="mainNav" class="">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
-    <a href="Education.html">Education</a> 
+    <a href="Education.html">Education</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="menu-btn" onclick="openMenu()">☰</div>
 </header>
 
-<div class="sidebar" id="sidebar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="Education.html">Education</a>
-  <a href="contact.html">Contact</a>
-</div>
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="overlay" id="overlay"></div>
 
 <section class="hero">
   <h1>Hello, I’m Kanhya 👋</h1>
@@ -261,42 +258,36 @@ footer{
   <img id="popupImg">
 </div>
 
-<script>
-const sidebar = document.getElementById("sidebar");
+    <script>
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("mainNav");
 const overlay = document.getElementById("overlay");
-const popup = document.getElementById("popup");
-const popupImg = document.getElementById("popupImg");
-const typing = document.getElementById("typing");
 
-function openMenu(){
-  sidebar.classList.add("active");
-  overlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-}
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("active");
+  nav.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.style.overflow = nav.classList.contains("active") ? "hidden" : "auto";
+});
 
-function closeMenu(){
-  sidebar.classList.remove("active");
+// close when clicking outside
+overlay.addEventListener("click", () => {
+  menuBtn.classList.remove("active");
+  nav.classList.remove("active");
   overlay.classList.remove("active");
   document.body.style.overflow = "auto";
-}
+});
 
-function openPopup(src){
-  popup.style.display="flex";
-  popupImg.src=src;
-}
-
-function closePopup(){
-  popup.style.display="none";
-}
-
-let text="Graphic Designer | Freelancer | Web Developer", i=0;
-(function type(){
-  if(i < text.length){
-    typing.innerHTML += text[i++];
-    setTimeout(type, 80);
+// active link highlight
+const links = document.querySelectorAll("#mainNav a");
+const current = location.pathname.split("/").pop();
+links.forEach(link => {
+  if(link.getAttribute("href") === current) {
+    link.classList.add("active");
   }
-})();
+});
 </script>
+
 
 </body>
 </html>
