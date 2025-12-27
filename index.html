@@ -7,298 +7,36 @@
 <title>Kanhya Graphic World | Graphic Designer & Web Developer</title>
 
 <meta name="description"
-content="Kanhya Graphic World – Portfolio of Kanhya Kant Singh, Graphic Designer and beginner Web Developer creating logos, banners, social media creatives and responsive websites.">
+content="Kanhya Graphic World – Portfolio of Kanhya Kant Singh, Graphic Designer and beginner Web Developer creating logos, banners and responsive websites.">
 
 <meta name="keywords"
-content="Kanhya Graphic World, Graphic Designer India, Web Developer, Logo Design, Banner Design, Portfolio Website">
-
-<!-- COMMON MOBILE + NAV FIX (future ready) -->
-<link rel="stylesheet" href="assets/css/common.css">
+content="Kanhya Graphic World, Graphic Designer India, Web Developer, Logo Design, Portfolio">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Kanhya Graphic World">
-<meta property="og:description" content="Graphic Designer & Web Developer Portfolio">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://kanhyagraphicworld-max.github.io/">
-<meta property="og:image" content="assets/images/kanhya-graphic-world.png">
+<link rel="canonical" href="https://kanhyagraphicworld-max.github.io/">
 
-<!-- Schema (ONLY JSON) -->
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"Person",
- "name":"Kanhya Kant Singh",
- "url":"https://kanhyagraphicworld-max.github.io/",
- "jobTitle":"Graphic Designer & Web Developer",
- "sameAs":[
-   "https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/"
- ]
-}
-</script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- MAIN STYLE -->
+<link rel="stylesheet" href="style.css">
 
- <!-- COMMON MOBILE + NAV FIX (future ready) -->
+<!-- COMMON SIDEBAR / MOBILE FIX -->
 <link rel="stylesheet" href="assets/css/common.css">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Poppins',sans-serif;
-  background:#f6f8ff;
-  color:#333;
-}
-
-/* ================= HEADER ================= */
-header{
-  position:sticky;
-  top:0;
-  background:#fff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
-  box-shadow:0 4px 15px rgba(0,0,0,.08);
-  z-index:1000;
-}
-
-.logo{
-  font-weight:600;
-  color:#1a237e;
-  font-size:20px;
-}
-
-/* NAV */
-nav{
-  display:flex;
-  gap:22px;
-}
-nav a{
-  text-decoration:none;
-  color:#333;
-  position:relative;
-  font-weight:500;
-}
-nav a::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0;
-  height:2px;
-  background:#3f51b5;
-  transition:.3s;
-}
-nav a:hover::after,
-nav a.active::after{
-  width:100%;
-}
-
-/* ================= HAMBURGER ================= */
-.menu-btn{
-  width:30px;
-  height:22px;
-  display:none;
-  flex-direction:column;
-  justify-content:space-between;
-  cursor:pointer;
-}
-.menu-btn span{
-  height:3px;
-  background:#333;
-  border-radius:4px;
-  transition:.4s;
-}
-.menu-btn.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-.menu-btn.active span:nth-child(2){
-  opacity:0;
-}
-.menu-btn.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/* ===== FINAL MOBILE NAV FIX (INDEX PAGE SAFE) ===== */
-@media(max-width:768px){
-
-  nav{
-    position:fixed;
-    top:0;
-    right:-100%;
-    width:260px;
-    height:100vh;
-    background:#fff;
-    display:flex;
-    flex-direction:column;
-    padding-top:90px;
-    box-shadow:-6px 0 18px rgba(0,0,0,.15);
-    transition:.4s ease;
-    z-index:2000;
-  }
-
-  nav.active{
-    right:0;
-  }
-
-  nav a{
-    width:100%;
-    padding:15px 30px;
-    border-bottom:1px solid #eee;
-    font-size:18px;
-  }
-
-  nav a::after{
-    left:30px;
-    bottom:6px;
-  }
-
-  .menu-btn{
-    display:flex;
-  }
-
-  #overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.5);
-    display:none;
-    z-index:1500;
-  }
-
-  #overlay.active{
-    display:block;
-  }
-}
- 
-/* ================= HERO ================= */
-.hero{
-  padding:100px 20px 80px;
-  text-align:center;
-}
-.hero h1{
-  font-size:38px;
-  color:#1a237e;
-}
-.hero p{
-  margin-top:12px;
-  font-size:17px;
-  color:#555;
-  max-width:650px;
-  margin-left:auto;
-  margin-right:auto;
-}
-.hero .status{
-  margin-top:12px;
-  font-size:14px;
-  color:#666;
-}
-
-/* CTA */
-.cta{
-  margin-top:35px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-.cta a{
-  text-decoration:none;
-  padding:14px 34px;
-  border-radius:40px;
-  font-weight:600;
-  transition:.3s;
-}
-.cta .primary{
-  background:#3f51b5;
-  color:#fff;
-}
-.cta .primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(63,81,181,.3);
-}
-.cta .outline{
-  border:2px solid #3f51b5;
-  color:#3f51b5;
-}
-.cta .outline:hover{
-  background:#3f51b5;
-  color:#fff;
-  transform:translateY(-3px);
-}
-
-/* ================= SECTIONS ================= */
-.section{
-  max-width:1100px;
-  margin:70px auto;
-  padding:0 20px;
-}
-.section h2{
-  text-align:center;
-  color:#1a237e;
-  margin-bottom:40px;
-  position:relative;
-}
-.section h2::after{
-  content:'';
-  width:60px;
-  height:3px;
-  background:#3f51b5;
-  display:block;
-  margin:10px auto 0;
-}
-
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-.card{
-  background:#fff;
-  padding:28px;
-  border-radius:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
-  transition:.3s;
-}
-.card:hover{
-  transform:translateY(-6px);
-}
-.card h3{
-  color:#1a237e;
-  margin-bottom:10px;
-}
-
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:22px;
-  background:#f1f1f1;
-  font-size:14px;
-}
-footer span{
-  color:red;
-}
-footer a{
-  color:#3f51b5;
-  text-decoration:none;
-}
-footer a:hover{
-  text-decoration:underline;
-}
-</style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
   <div class="logo">
-    <img src="assets/images/kanhya-graphic-world.png" alt="Logo">
+    <img src="assets/images/kanhya-graphic-world.png" alt="Kanhya Graphic World Logo" height="40">
     <span>Kanhya Graphic World</span>
   </div>
 
-  <nav id="nav">
+  <!-- Desktop Nav -->
+  <nav class="desktop-nav">
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
@@ -315,26 +53,24 @@ footer a:hover{
   </div>
 </header>
 
-<!-- Overlay -->
-<div id="overlay"></div>
+<!-- ================= SIDEBAR (MOBILE) ================= -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="education.html">Education</a>
+  <a href="contact.html">Contact</a>
+</div>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
   <h1>Hello, I’m Kanhya 👋</h1>
   <p>
     I’m a <strong>Graphic Designer</strong> and beginner
     <strong>Web Developer</strong> helping individuals and small businesses
-    grow with creative visuals and clean, responsive websites.
+    grow with creative visuals and clean websites.
   </p>
-
-  <p class="status">
-    Freelance Graphic Designer & Web Developer • Available for Projects
-  </p>
-
-  <div class="cta">
-    <a href="contact.html" class="primary">Hire Me</a>
-    <a href="gallery.html" class="outline">View Work</a>
-  </div>
 </section>
 
 <!-- WHY ME -->
@@ -367,21 +103,8 @@ footer a:hover{
   </a>
 </footer>
 
-<script>
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
+<!-- COMMON JS -->
+<script src="assets/js/common.js"></script>
 
-function openMenu(){
-  sidebar.classList.add("active");
-  overlay.classList.add("active");
-  document.body.style.overflow="hidden";
-}
-
-function closeMenu(){
-  sidebar.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.style.overflow="auto";
-}
-</script>
 </body>
 </html>
