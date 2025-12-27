@@ -174,10 +174,6 @@ footer{
 
 <body>
 
-<!-- 🔔 SMART AUTO NOTICE -->
-<div class="site-notice" id="smartNotice">
-  🚧 Website is being updated. Please check back soon.
-</div>
 
 <header>
   <div class="logo">
@@ -214,27 +210,6 @@ footer{
   © 2025 Kanhya Graphic World | Designed with ❤️
 </footer>
 
-<script>
-/* Auto language switch */
-const messages = [
-  "🚧 Website is being updated. Please check back soon.",
-  "🚧 वेबसाइट पर काम चल रहा है — कुछ सेक्शन अपडेट हो रहे हैं।"
-];
-let i = 0;
-setInterval(() => {
-  document.getElementById("smartNotice").innerHTML = messages[i];
-  i = (i + 1) % messages.length;
-}, 4000);
-
-/* Scroll shrink notice */
-window.addEventListener("scroll",()=>{
-  const notice = document.getElementById("smartNotice");
-  if(window.scrollY > 60){
-    notice.classList.add("shrink");
-  }else{
-    notice.classList.remove("shrink");
-  }
-});
 
 /* Mobile menu */
 function toggleMenu(){
