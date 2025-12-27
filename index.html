@@ -121,24 +121,47 @@ nav a.active::after{
   transform:rotate(-45deg) translate(6px,-6px);
 }
 
-/* MOBILE MENU */
-@media(max-width:768px){
-  nav{
+/* ===== FINAL MOBILE NAV FIX (INDEX PAGE SAFE) ===== */
+@media (max-width: 768px){
+
+  header nav{
     position:fixed;
-    right:-100%;
     top:0;
+    right:-100%;
     width:260px;
     height:100vh;
     background:#fff;
+    display:flex;
     flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
     padding-top:90px;
     box-shadow:-6px 0 18px rgba(0,0,0,.15);
-    transition:.4s;
+    transition:.4s ease;
+    z-index:2000;
   }
-  nav.active{right:0;}
-  .menu-btn{display:flex;}
-}
 
+  header nav.active{
+    right:0;
+  }
+
+  header nav a{
+    width:100%;
+    padding:15px 30px;
+    margin:0;
+    border-bottom:1px solid #eee;
+    font-size:18px;
+  }
+
+  header nav a::after{
+    left:30px;
+    bottom:6px;
+  }
+
+  .menu-btn{
+    display:flex;
+  }
+}
 /* ================= HERO ================= */
 .hero{
   padding:100px 20px 80px;
