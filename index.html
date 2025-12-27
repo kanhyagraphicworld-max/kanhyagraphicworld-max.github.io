@@ -128,50 +128,48 @@ footer{
   color:#555;
 }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  header{
-    padding:15px 20px;
-  }
+/* ===== FINAL MOBILE NAV FIX (EDUCATION PAGE SAFE) ===== */
+@media (max-width: 768px){
 
-  .menu-btn{
-    display:block;
-  }
-
-  nav{
+  header nav{
     position:fixed;
     top:0;
     right:-100%;
     width:260px;
     height:100vh;
     background:#fff;
-    box-shadow:-5px 0 15px rgba(0,0,0,0.15);
+    display:flex;
     flex-direction:column;
-    padding-top:80px;
-    transition:0.4s ease;
-    z-index:1200;
+    align-items:flex-start;
+    justify-content:flex-start;
+    padding-top:90px;
+    box-shadow:-6px 0 18px rgba(0,0,0,.15);
+    transition:.4s ease;
+    z-index:2000;
   }
 
-  nav.active{
+  header nav.active{
     right:0;
   }
 
-  nav a{
-    margin:15px 25px;
+  header nav a{
+    width:100%;
+    padding:15px 30px;
+    margin:0;
+    border-bottom:1px solid #eee;
     font-size:18px;
   }
 
-  .hero{
-    padding:60px 20px;
-    text-align:center;
+  header nav a::after{
+    left:30px;
+    bottom:6px;
   }
-  .hero h1{font-size:32px;}
-  .hero-btns a{
-    display:block;
-    width:80%;
-    margin:15px auto;
+
+  .menu-btn{
+    display:flex;
   }
 }
+
 </style>
 </head>
 
