@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<title>Resume | Kanhya Kant Singh – Graphic Designer & Web Developer</title>
+<title>Kanhya Kant Singh – Resume</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
 *{ box-sizing:border-box; }
@@ -97,22 +95,23 @@ ul{
   border-radius:6px;
 }
 
-/* DOWNLOAD */
+/* DOWNLOAD BUTTON */
 .download{
   text-align:center;
   margin:20px 0;
 }
 
 .download button{
-  padding:10px 26px;
+  padding:12px 30px;
   border:none;
   border-radius:30px;
   background:#3f51b5;
   color:#fff;
+  font-size:15px;
   cursor:pointer;
 }
 
-/* MOBILE (screen only) */
+/* MOBILE */
 @media screen and (max-width:600px){
   .header{
     flex-direction:column;
@@ -137,7 +136,7 @@ ul{
 
 <body>
 
-<div class="resume" id="resume">
+<div class="resume">
 
 <div class="header">
   <div class="photo">
@@ -151,7 +150,10 @@ ul{
 
 <div class="section">
   <h3>Profile</h3>
-  <p>Creative Graphic Designer and beginner Web Developer with experience in logos, banners, posters, social media creatives and responsive HTML & CSS layouts.</p>
+  <p>
+    Creative Graphic Designer and beginner Web Developer with experience in
+    logos, banners, posters, social media creatives and responsive HTML & CSS layouts.
+  </p>
 </div>
 
 <div class="section">
@@ -203,18 +205,8 @@ ul{
 </div>
 
 <div class="download">
-  <button onclick="downloadPDF()">Download PDF</button>
+  <button onclick="window.print()">⬇ Download PDF</button>
 </div>
-
-<script>
-function downloadPDF(){
-  html2pdf().from(document.getElementById("resume")).set({
-    filename:'Kanhya_Kant_Singh_Resume.pdf',
-    html2canvas:{ scale:1 },
-    jsPDF:{ unit:'mm', format:'a4', orientation:'portrait' }
-  }).save();
-}
-</script>
 
 </body>
 </html>
