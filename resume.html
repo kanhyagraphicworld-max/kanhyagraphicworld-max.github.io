@@ -33,12 +33,14 @@ body{
 
 /* ===== RESUME WRAPPER ===== */
 .resume{
-  width:100%;
-  max-width:794px; /* A4 width */
-  margin:20px auto;
+  width:210mm;
+  min-height:297mm;
+  margin:0 auto;
+  padding:20mm;
   background:#fff;
-  padding:28px 30px;
+  overflow:hidden;
 }
+
 
 /* HEADER */
 .header{
@@ -140,7 +142,7 @@ ul{
 }
 
 /* MOBILE FIX */
-@media(max-width:600px){
+@media screen and (max-width:600px){
   .resume{
     padding:20px;
   }
@@ -250,12 +252,22 @@ ul{
   </div>
 
   <!-- LINKS -->
-  <div class="section links">
-    <h3>Online Presence</h3>
-    <a href="https://kanhyagraphicworld-max.github.io" target="_blank">Website</a>
-    <a href="https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/" target="_blank">LinkedIn</a>
-    <a href="#">Fiverr</a>
-  </div>
+  <div class="section">
+  <h3>Online Presence</h3>
+
+  <p>
+    Website: https://kanhyagraphicworld-max.github.io
+  </p>
+
+  <p>
+    LinkedIn: https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/
+  </p>
+
+  <p>
+    Fiverr: https://www.fiverr.com/s/429q75R
+  </p>
+</div>
+
 
 </div>
 
@@ -265,12 +277,23 @@ ul{
 
 <script>
 function downloadPDF(){
-  html2pdf(document.getElementById("resume"),{
+  const element = document.getElementById("resume");
+
+  html2pdf().set({
     margin:0,
-    filename:"Kanhya_Kant_Singh_Resume.pdf",
-    html2canvas:{scale:2},
-    jsPDF:{unit:"mm",format:"a4",orientation:"portrait"}
-  });
+    filename:'Kanhya_Kant_Singh_Resume.pdf',
+    image:{ type:'jpeg', quality:1 },
+    html2canvas:{
+      scale:1,
+      useCORS:true
+    },
+    jsPDF:{
+      unit:'mm',
+      format:'a4',
+      orientation:'portrait'
+    },
+    pagebreak:{ mode:'avoid-all' }
+  }).from(element).save();
 }
 </script>
 
