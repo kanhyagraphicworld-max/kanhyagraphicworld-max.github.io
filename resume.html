@@ -5,24 +5,13 @@
 
 <title>Resume | Kanhya Kant Singh – Graphic Designer & Web Developer</title>
 
-<meta name="description"
-content="Resume of Kanhya Kant Singh – Graphic Designer and beginner Web Developer skilled in logo design, banners, social media creatives and responsive websites using HTML & CSS.">
-
-<meta name="keywords"
-content="Kanhya Kant Singh resume, graphic designer resume, web developer resume, logo designer, HTML CSS developer, freelance graphic designer India">
-
-<meta name="author" content="Kanhya Kant Singh">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
   margin:0;
@@ -31,15 +20,13 @@ body{
   color:#333;
 }
 
-/* ===== RESUME WRAPPER ===== */
+/* ===== RESUME ===== */
 .resume{
   width:210mm;
-  min-height:297mm;
   margin:0 auto;
   padding:20mm;
   background:#fff;
 }
-
 
 /* HEADER */
 .header{
@@ -73,7 +60,7 @@ body{
 
 /* SECTIONS */
 .section{
-  margin-top:18px;
+  margin-top:16px;
   page-break-inside:avoid;
 }
 
@@ -104,27 +91,13 @@ ul{
 
 .skill{
   background:#eef1ff;
-  padding:6px 8px;
+  padding:6px;
   font-size:13px;
   text-align:center;
   border-radius:6px;
 }
 
-/* CONTACT */
-.contact p{
-  margin:3px 0;
-}
-
-/* LINKS */
-.links a{
-  display:block;
-  font-size:14px;
-  color:#3f51b5;
-  text-decoration:none;
-  margin:3px 0;
-}
-
-/* DOWNLOAD BUTTON */
+/* DOWNLOAD */
 .download{
   text-align:center;
   margin:20px 0;
@@ -136,15 +109,11 @@ ul{
   border-radius:30px;
   background:#3f51b5;
   color:#fff;
-  font-size:14px;
   cursor:pointer;
 }
 
-/* MOBILE FIX */
+/* MOBILE (screen only) */
 @media screen and (max-width:600px){
-  .resume{
-    padding:20px;
-  }
   .header{
     flex-direction:column;
     text-align:center;
@@ -154,21 +123,13 @@ ul{
   }
 }
 
-/* PRINT / PDF */
+/* PRINT */
 @media print{
-  body{
-    background:#fff;
-  }
-  .download{
-    display:none;
-  }
-  .resume{
-    margin:0;
-    padding:20mm;
-  }
+  body{ background:#fff; }
+  .download{ display:none; }
   @page{
     size:A4;
-    margin:0;
+    margin:12mm;
   }
 }
 </style>
@@ -178,95 +139,66 @@ ul{
 
 <div class="resume" id="resume">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="photo">
-      <img src="assets/images/profile.jpg" alt="Kanhya Kant Singh">
-    </div>
-    <div>
-      <h1>Kanhya Kant Singh</h1>
-      <h2>Graphic Designer | Beginner Web Developer</h2>
-    </div>
+<div class="header">
+  <div class="photo">
+    <img src="assets/images/profile.jpg" alt="Kanhya Kant Singh">
   </div>
-
-  <!-- PROFILE -->
-  <div class="section">
-    <h3>Profile</h3>
-    <p>
-      Creative Graphic Designer and beginner Web Developer with strong interest
-      in human psychology and visual communication. Experienced in logos,
-      banners, posters, social media creatives and responsive layouts using
-      HTML & CSS.
-    </p>
+  <div>
+    <h1>Kanhya Kant Singh</h1>
+    <h2>Graphic Designer | Beginner Web Developer</h2>
   </div>
-
-  <!-- EDUCATION -->
-  <div class="section">
-    <h3>Education</h3>
-    <ul>
-      <li>12th Passed</li>
-      <li>Psychology Honours (Pursuing)</li>
-    </ul>
-  </div>
-
-  <!-- SKILLS -->
-  <div class="section">
-    <h3>Skills</h3>
-    <div class="skills">
-      <div class="skill">Logo Design</div>
-      <div class="skill">Banner Design</div>
-      <div class="skill">Poster Design</div>
-      <div class="skill">Social Media Creatives</div>
-      <div class="skill">HTML5</div>
-      <div class="skill">CSS3</div>
-      <div class="skill">Basic JavaScript</div>
-      <div class="skill">Responsive Layouts</div>
-    </div>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div class="section">
-    <h3>Experience</h3>
-    <p>
-      Fresher Graphic Designer with practical experience through personal
-      freelance projects and local business designs.
-    </p>
-  </div>
-
-  <!-- CAREER GOAL -->
-  <div class="section">
-    <h3>Career Goal</h3>
-    <p>
-      To grow as a professional designer and developer by combining creativity
-      with psychological understanding to build meaningful digital identities.
-    </p>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="section contact">
-    <h3>Contact</h3>
-    <p>Phone: +91 8789450325</p>
-    <p>Email: kanhyagraphicworld@gmail.com</p>
-    <p>Location: India</p>
-  </div>
-
-  <!-- LINKS -->
-  <div class="section">
-  <h3>Online Presence</h3>
-
-  <p>
-    Website: https://kanhyagraphicworld-max.github.io
-  </p>
-
-  <p>
-    LinkedIn: https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/
-  </p>
-
-  <p>
-    Fiverr: https://www.fiverr.com/s/429q75R
-  </p>
 </div>
 
+<div class="section">
+  <h3>Profile</h3>
+  <p>Creative Graphic Designer and beginner Web Developer with experience in logos, banners, posters, social media creatives and responsive HTML & CSS layouts.</p>
+</div>
+
+<div class="section">
+  <h3>Education</h3>
+  <ul>
+    <li>12th Passed</li>
+    <li>Psychology Honours (Pursuing)</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h3>Skills</h3>
+  <div class="skills">
+    <div class="skill">Logo Design</div>
+    <div class="skill">Banner Design</div>
+    <div class="skill">Poster Design</div>
+    <div class="skill">Social Media Creatives</div>
+    <div class="skill">HTML5</div>
+    <div class="skill">CSS3</div>
+    <div class="skill">Basic JavaScript</div>
+    <div class="skill">Responsive Layouts</div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Experience</h3>
+  <p>Fresher Graphic Designer with freelance and personal project experience.</p>
+</div>
+
+<div class="section">
+  <h3>Career Goal</h3>
+  <p>To work as a professional designer and developer and build meaningful digital identities.</p>
+</div>
+
+<div class="section">
+  <h3>Contact</h3>
+  <p>Phone: +91 8789450325</p>
+  <p>Email: kanhyagraphicworld@gmail.com</p>
+  <p>Location: India</p>
+</div>
+
+<div class="section">
+  <h3>Online Presence</h3>
+  <p>Website: https://kanhyagraphicworld-max.github.io</p>
+  <p>LinkedIn: https://www.linkedin.com/in/kanhya-kant-singh-0205a4223/</p>
+  <p>Fiverr: https://www.fiverr.com/s/429q75R</p>
+</div>
 
 </div>
 
@@ -276,26 +208,13 @@ ul{
 
 <script>
 function downloadPDF(){
-  const element = document.getElementById("resume");
-
-  html2pdf().set({
-    margin:0,
+  html2pdf().from(document.getElementById("resume")).set({
     filename:'Kanhya_Kant_Singh_Resume.pdf',
-    image:{ type:'jpeg', quality:1 },
-    html2canvas:{
-      scale:1,
-      useCORS:true
-    },
-    jsPDF:{
-      unit:'mm',
-      format:'a4',
-      orientation:'portrait'
-    },
-    pagebreak:{ mode:'avoid-all' }
-  }).from(element).save();
+    html2canvas:{ scale:1 },
+    jsPDF:{ unit:'mm', format:'a4', orientation:'portrait' }
+  }).save();
 }
 </script>
 
 </body>
 </html>
-
